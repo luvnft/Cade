@@ -1,7 +1,19 @@
 import '../styles/globals.css'
-
+import { WalletConnectProvider } from "../components/WalletConnectProvider";
+import "../styles/globals.css";
+import '@solana/wallet-adapter-react-ui/styles.css'
+import Navbar from '../components/Navbar';
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+
+    <WalletConnectProvider>
+      <Navbar />
+      {/* <Hero/> */}
+      <Component {...pageProps} />
+    </WalletConnectProvider>
+
+
+  )
 }
 
 export default MyApp
