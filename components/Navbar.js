@@ -17,7 +17,7 @@ const Navbar = () => {
     <>
       <div className="bg-black">
         <header class="text-gray-600 body-font">
-          <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center cursor-pointer">
             <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
 
               <h1 class="ml-3 text-4xl text-white">Cade</h1>
@@ -32,7 +32,7 @@ const Navbar = () => {
                 borderRadius: "50vw",
               }}
             />
-            <button class="bg-white text-black py-2 px-4 rounded-full inline-flex items-center">
+            <button class="bg-white text-black py-2 px-4 rounded-full inline-flex items-center cursor-pointer">
               <span>
                 <BsFillPersonFill className="text-xl"/>
               </span>
