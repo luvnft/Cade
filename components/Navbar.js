@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Image from 'next/image'
 const Navbar = () => {
   const router = useRouter();
@@ -23,8 +24,9 @@ const Navbar = () => {
               <h1 class="ml-3 text-4xl text-white">Cade</h1>
             </a>
             <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-              <a class="mr-5 text-white text-xl">LeaderBoard</a>
-
+            <Link  className="text-white text-xl" href="/LeaderBoard">
+              LeaderBoard
+              </Link>
             </nav>
             <WalletMultiButtonDynamic
               style={{
@@ -34,7 +36,8 @@ const Navbar = () => {
             />
             <button class="bg-white text-black py-2 px-4 rounded-full inline-flex items-center cursor-pointer">
               <span>
-                <BsFillPersonFill className="text-xl"/>
+              
+                <BsFillPersonFill onClick={()=> router.push("/Profile")} className="text-xl"/>
               </span>
 
             </button>

@@ -78,13 +78,13 @@ const Profile = () => {
                                 for="default-input"
                                 class="block text-xl font-semibold mb-2 text-white dark:text-white"
                             >
-                                what should be your page name
+                                what should we call you
                             </label>
                             <input
                                 type="text"
                                 id="small-input"
 
-                                class="block w-full p-2 text-white border border-gray-300 rounded-lg bg-black focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="block w-full p-2 text-white border border-gray-300 rounded-lg bg-black focus:border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             />
                         </div>
 
@@ -100,7 +100,7 @@ const Profile = () => {
                                 id="default-input"
                                 value="R#@!tt"
 
-                                class="block w-full p-2 text-white border border-gray-300 rounded-lg bg-black focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="block w-full p-2 text-white border border-gray-300 rounded-lg bg-black focus:ring-blue-500 focus:border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             />
                         </div>
                     </div>
