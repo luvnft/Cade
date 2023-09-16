@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import NavbarIcons from "./small/NavbarIcons";
+import NavbarIcons from "./micro/NavbarIcons";
 import styles from "../styles/Wallet.module.css"
 const Navbar = () => {
   const router = useRouter();
