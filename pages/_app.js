@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
 
     <WalletConnectProvider>
-      <Navbar />
+    <Navbar />  
       {/* <Hero/> */}
       <Component {...pageProps} />
     </WalletConnectProvider>

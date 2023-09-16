@@ -1,14 +1,11 @@
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
-import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
-import { BsFillPersonFill } from "react-icons/bs";
 import { useRouter } from "next/router";
-import Link from "next/link";
-import Image from 'next/image'
+import NavbarIcons from "./small/NavbarIcons";
+import styles from "../styles/Wallet.module.css"
 const Navbar = () => {
   const router = useRouter();
   console.log(router.asPath);
-  const WalletMultiButtonDynamic = dynamic(
+  const WalletMultiButton= dynamic(
     async () =>
       (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
     { ssr: false }
@@ -16,34 +13,42 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-black">
-        <header class="text-gray-600 body-font">
-          <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center cursor-pointer">
-            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+   <nav class="bg-black border-gray-200 dark:bg-gray-950 dark:border-gray-900">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="#" class="flex items-center">
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-white">'Cade</span>
+    </a>
+    <button data-collapse-toggle="navbar-multi-level" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-multi-level" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+  
+    <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+   
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0">
+      <NavbarIcons/>
+        <WalletMultiButton style={{background : "black" , borderStyle : "solid" , borderBlockColor : "white"}} />
+        {/* <li>
+          <a href="#" class="block py-2 pl-3 pr-4 mt-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
+        </li>
+        
+        <li>
+          <a href="#" class="block py-2 pl-3 pr-4 mt-2 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Games</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 pl-3 pr-4 mt-2 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">LeaderBoard</a>
+        </li>
+         */}
+      
+      </ul>
+    </div>
+  </div>
+</nav>
 
-              <h1 class="ml-3 text-4xl text-white">Cade</h1>
-            </a>
-            <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-            <Link  className="text-white text-xl" href="/LeaderBoard">
-              LeaderBoard
-              </Link>
-            </nav>
-            <WalletMultiButtonDynamic
-              style={{
-                marginRight: "10px",
-                borderRadius: "50vw",
-              }}
-            />
-            <button class="bg-white text-black py-2 px-4 rounded-full inline-flex items-center cursor-pointer">
-              <span>
-              
-                <BsFillPersonFill onClick={()=> router.push("/Profile")} className="text-xl"/>
-              </span>
 
-            </button>
-          </div>
-        </header>
-      </div>
     </>
   );
 };
