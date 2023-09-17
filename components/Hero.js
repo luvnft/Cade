@@ -3,6 +3,7 @@ import NavbarIcons from "./micro/NavbarIcons";
 import Navbar from "./Navbar";
 import Season from "./micro/Season";
 import FriendsList from "./micro/FriendsList";
+import Games from "./micro/Games";
 const Hero = () => {
 
   return (
@@ -35,6 +36,7 @@ const Hero = () => {
                   />
                 </div>
                 <Season />
+                <Games/>
               </div>
             </div>
           </div>
