@@ -6,7 +6,7 @@ const Quest = () => {
             <div class="p-12 md:w-1/2 flex flex-col items-start">
                 <span class="inline-block py-1 px-2 rounded bg-gray-800 text-yellow-300 text-opacity-75 text-xs font-medium tracking-widest">CADE</span>
                 <h2 class="sm:text-3xl text-2xl title-font font-medium text-white mt-4 mb-4">Uncompleted Quest</h2>
-                <div class="flex border-2 rounded-lg border-gray-800 p-8 sm:flex-row flex-col">
+                <div class="flex border-2 rounded-lg border-white p-8 sm:flex-row flex-col">
                     <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center  text-indigo-400 flex-shrink-0">
                         <BsMagic className='text-4xl text-yellow-400' />
                     </div>
