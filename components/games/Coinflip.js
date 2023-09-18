@@ -1,60 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Coinflip = () => {
-  return (
-   <>
-    <div className="max-w-7xl mx-auto py-4 px-4  sm:px-6 lg:px-8"></div>
-      <div className="flex justify-center">
-        <div className="p-4 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-16 dark:bg-gray-800 dark:border-gray-700 w-1/2">
-          <form className="space-y-6 pb-3" action="#">
-            <h5 className="text-xl font-medium text-gray-900 dark:text-white">Flip a coin!</h5>
-            <div>
-              <label htmlFor="amount" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                Bet amount in SOL
-              </label>
-              <input
-                type="number"
-                id="amount"
-                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white`}
-                placeholder="0.1"
-                step="0.1"
-                
-              />
-            </div>
+    const [betSide, setBetSide] = useState(0);
+    const [betAmount, setBetAmount] = useState("");
+    return (
+        <>
+            <div className="flex justify-center p-16 bg-black">
+                <form className="mt-5 mb-2 w-80 max-w-screen-lg sm:w-96">
+                    <div className="mb-4 flex flex-col gap-6">
+                        <div>
+                            <div class="flex items-center justify-center">
 
-            <div className="flex gap-2">
-              <button
-                className={`w-full text-white ${
-                  betSide === 0 ? "bg-blue-700" : "bg-black-200"
-                } hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center`}
-               
-              >
-                Heads
-              </button>
-              <button
-                className={`w-full text-white ${
-                  betSide === 1 ? "bg-blue-700" : "bg-black-200"
-                } hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center`}
-                
-              >
-                Tails
-              </button>
+                                <div class="bg-[url('/heads.svg')] bg-no-repeat text-blue border-black hover:bg-blue flex h-40 w-40 cursor-pointer flex-col items-center justify-center rounded-full border-2 bg-black uppercase tracking-wide shadow-lg mt-5">
+
+                                    <>
+                                        {/* <div className="shadow-lg rounded-full  align-middle border-none">
+                                            <MdOutlineAddPhotoAlternate className="text-white text-3xl" />
+
+                                            <input type="file" class="hidden" />
+                                        </div> */}
+                                    </>
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="flex flex-col space-y-2 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 mt-5">
+
+                            </div>
+                        </div>
+                        <h1 className='block text-xl font-semibold mb-2 text-white dark:text-white'>Flip a Coin</h1>
+                        <div class="mb-1">
+                            <label
+                                for="default-input"
+                                class="block text-xl font-semibold mb-2 text-white dark:text-white"
+                            >
+                                Bet Amount in Sol
+                            </label>
+                            <input
+                                type="text"
+                                id="small-input"
+
+                                class="block w-full p-2 text-white border border-gray-300 rounded-lg bg-black focus:border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            />
+                        </div>
+
+                    </div>
+                    <div className='flex flex-row mt-5'>
+                    <button
+                        type="button"
+                        class="w-full border ml-5 border-white text-black bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-md  py-3 focus:outline-none"
+                    >
+                        Heads
+                    </button>
+                    <button
+                        type="button"
+                        class="w-full border ml-5 border-white text-black bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-md  py-3 focus:outline-none"
+                    >
+                        Tails
+                    </button>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="w-full border mt-10 border-white text-black bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-md  py-3 focus:outline-none"
+                    >
+                        Play
+                    </button>
+                </form>
             </div>
-            <button
-              onClick={() => playFlip()}
-              className={`w-full text-white  ${
-                betAmount !== "" ? "bg-blue-700" : "bg-gray-500"
-              } focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5 text-center`}
-              
-            >
-              Play
-            </button>
-          </form>
-          <p className="block text-sm font-medium text-gray-900 dark:text-gray-300 mt-3">Status: {statusInfo}</p>
-        </div>
-      </div>
-   </>
-  )
+        </>
+    )
 }
 
 export default Coinflip
