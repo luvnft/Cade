@@ -7,6 +7,7 @@ const Coinflip = () => {
         <>
             <div className="flex justify-center p-16 bg-black">
                 <form className="mt-5 mb-2 w-80 max-w-screen-lg sm:w-96">
+            <h1 className='text-white text-2xl flex justify-center'>Coin Flip Game</h1>
                     <div className="mb-4 flex flex-col gap-6">
                         <div>
                             <div class="flex items-center justify-center">
@@ -14,11 +15,7 @@ const Coinflip = () => {
                                 <div class="bg-[url('/heads.svg')] bg-no-repeat text-blue border-black hover:bg-blue flex h-40 w-40 cursor-pointer flex-col items-center justify-center rounded-full border-2 bg-black uppercase tracking-wide shadow-lg mt-5">
 
                                     <>
-                                        {/* <div className="shadow-lg rounded-full  align-middle border-none">
-                                            <MdOutlineAddPhotoAlternate className="text-white text-3xl" />
 
-                                            <input type="file" class="hidden" />
-                                        </div> */}
                                     </>
 
                                 </div>
@@ -48,18 +45,18 @@ const Coinflip = () => {
 
                     </div>
                     <div className='flex flex-row mt-5'>
-                    <button
-                        type="button"
-                        class="w-full border ml-5 border-white text-black bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-md  py-3 focus:outline-none"
-                    >
-                        Heads
-                    </button>
-                    <button
-                        type="button"
-                        class="w-full border ml-5 border-white text-black bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-md  py-3 focus:outline-none"
-                    >
-                        Tails
-                    </button>
+                        <button
+                            type="button"
+                            class="w-full border ml-5 border-white text-black bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-md  py-3 focus:outline-none"
+                        >
+                            Heads
+                        </button>
+                        <button
+                            type="button"
+                            class="w-full border ml-5 border-white text-black bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-md  py-3 focus:outline-none"
+                        >
+                            Tails
+                        </button>
                     </div>
 
                     <button
