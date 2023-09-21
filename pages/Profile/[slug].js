@@ -4,7 +4,7 @@ import { BsTrophyFill } from 'react-icons/bs'
 const Profile = () => {
     return (
         <>
-        <div className="bg-[url('/kn.jpg')]">
+        <div className="lg:bg-[url('/kn.jpg')]">
             <div className='flex flex-row bg-'>
 
 
@@ -18,20 +18,20 @@ const Profile = () => {
                                             <img className="w-16 h-16  rounded-full ring-2 ring-yellow-400" src="https://picsum.photos/200" alt="Bordered avatar" />
                                         </div>
                                         <div class="flex-grow">
-                                            <h2 class="text-white text-2xl title-font font-medium mb-3">UserName</h2>
+                                            <h2 class="text-white text-6xl font-abc title-font font-medium mb-3">UserName</h2>
 
                                             <div className='flex flex-row'>
                                                 <GiTwoCoins className='text-4xl text-yellow-400' />
-                                                <h1 className='ml-3 text-xl text-white'>100 000 CADE</h1>
+                                                <h1 className='ml-3 text-3xl font-extrabold font-abc text-white'>100 000 CADE</h1>
                                             </div>
-                                            <button type="button" className="focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2">Buy CADE</button>
+                                            <button type="button" className="font-abc text-2xl focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2">Buy CADE</button>
                                         </div>
                                     </div>
                                 </div>
                                 <div className='ml-20 mt-16'>
-                                    <input type="search" id="default-search" value={"https://cade.com/Profile/newuser"} class="text-lg block w-96 p-4 pl-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-                                    <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-                                    <button type="button" className="focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2">Share Profile</button>
+                                    <input type="search" id="default-search" value={"https://cade.com/Profile/newuser"} class="font-abc text-2xl block w-96 p-4 pl-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+                                    
+                                    <button type="button" className="font-abc text-2xl focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2">Share Profile</button>
                                 </div>
                             </div>
 
@@ -43,24 +43,24 @@ const Profile = () => {
                                         <img height={100}  width={100} className='mt-10'  src='/trophy.png' alt='alt'/>
                                     </div>
                                     <div class="flex-grow">
-                                        <h2 class="text-white text-2xl title-font font-medium mb-3">Your Summary</h2>
-                                        <p class="text-white leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan .</p>
+                                        <h2 class="text-white text-6xl font-abc font-medium mb-3">Your Summary</h2>
+                                        <p class="text-white leading-relaxed text-2xl font-abc">Blue bottle crucifix vinyl post-ironic four dollar toast vegan.</p>
                                         <div class="flex flex-row">
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2 ">
-                                                <h2 class="title-font font-medium text-3xl text-yellow-400">27</h2>
-                                                <p class="leading-relaxed text-white">Matches</p>
+                                                <h2 class="title-font font-medium text-4xl font-abc text-yellow-400">27</h2>
+                                                <p class="leading-relaxed text-white text-2xl font-abc">Match</p>
                                             </div>
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                                                <h2 class="title-font font-medium text-3xl text-green-400">18</h2>
-                                                <p class="leading-relaxed text-white">Wins</p>
+                                                <h2 class="title-font font-medium text-4xl font-abc text-green-400">18</h2>
+                                                <p class="leading-relaxed text-white text-2xl font-abc">Wins</p>
                                             </div>
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                                                <h2 class="title-font font-medium text-3xl text-red-500">9</h2>
-                                                <p class="leading-relaxed text-white">Loses</p>
+                                                <h2 class="title-font font-medium text-4xl font-abc text-red-500">9</h2>
+                                                <p class="leading-relaxed text-white text-2xl font-abc">Loses</p>
                                             </div>
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                                                <h2 class="title-font font-medium text-3xl text-green-400">60%</h2>
-                                                <p class="leading-relaxed text-white">Win Rate</p>
+                                                <h2 class="title-font font-medium text-4xl font-abc text-green-400">60%</h2>
+                                                <p class="leading-relaxed text-white text-2xl font-abc">Win Rate</p>
                                             </div>
                                         </div>
                                     </div>
@@ -85,8 +85,8 @@ const Profile = () => {
                             <div className='flex justify-center'>
                             <img  height={200}  width={200} src='/trophy 2.png' alt='gggg'/>
                             </div>
-                                <h2 class="title-font font-medium text-3xl text-white mt-3">2.7K Points</h2>
-                                <p class="mt-2 text-lg leading-relaxed text-white ">Silver Trophies</p>
+                                <h2 class="title-font font-medium text-5xl font-abc text-white mt-3">2.7K Points</h2>
+                                <p class="mt-2 text-3xl font-abc leading-relaxed text-white ">Silver Trophies</p>
                             </div>
                         </div>
                         <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
@@ -94,8 +94,8 @@ const Profile = () => {
                             <div className='flex justify-center'>
                             <img  height={200}  width={200} src='/trophy.png' alt='gggg'/>
                             </div>
-                                <h2 class="title-font font-medium text-3xl text-white mt-3">1.3K Points</h2>
-                                <p class="mt-2 text-lg leading-relaxed text-white">Gold Trophies</p>
+                                <h2 class="title-font font-medium text-5xl font-abc text-white mt-3">1.3K Points</h2>
+                                <p class="mt-2 text-3xl font-abc leading-relaxed text-white">Gold Trophies</p>
                             </div>
                         </div>
                         <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
@@ -103,8 +103,8 @@ const Profile = () => {
                             <div className='flex justify-center'>
                             <img  height={200}  width={200} src='/trophy 4.png' alt='gggg'/>
                             </div>
-                                <h2 class="title-font font-medium text-3xl text-white mt-3">74 Points</h2>
-                                <p class="mt-2 text-lg leading-relaxed text-white">Rare Trophies</p>
+                                <h2 class="title-font font-medium text-5xl font-abc text-white mt-3">74 Points</h2>
+                                <p class="mt-2 text-3xl font-abc leading-relaxed text-white">Rare Trophies</p>
                             </div>
                         </div>
                         <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
@@ -112,8 +112,8 @@ const Profile = () => {
                             <div className='flex justify-center'>
                             <img  height={200}  width={200} src='/trophy 3.png' alt='gggg'/>
                             </div>
-                                <h2 class="title-font font-medium text-3xl text-white mt-3">46 Points</h2>
-                                <p class="mt-2 text-lg leading-relaxed text-white">Legendary Trophies</p>
+                                <h2 class="title-font font-medium text-5xl font-abc text-white mt-3">46 Points</h2>
+                                <p class="mt-2 text-3xl font-abc leading-relaxed text-white">Legendary Trophies</p>
                             </div>
                         </div>
                     </div>

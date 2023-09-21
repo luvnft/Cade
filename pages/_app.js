@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
 
     <WalletConnectProvider>
-     <Navbar />
+      <Navbar />
       <Component {...pageProps} />
     </WalletConnectProvider>
 

@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily : {
+      abc : ["VT323","monospace"]
+    }
   },
   plugins: [],
 }
