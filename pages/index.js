@@ -9,6 +9,7 @@ import LeaderBoard from "./LeaderBoard";
 const Home = () => {
   const router = useRouter()
   const [checking , setChecking] = useState(true)
+  
   return (
     <>
      
