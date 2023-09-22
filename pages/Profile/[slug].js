@@ -24,7 +24,7 @@ const Profile = () => {
 
                                             <div className='flex flex-row'>
                                                 <GiTwoCoins className='text-4xl text-yellow-400' />
-                                                <h1 className='ml-3 text-3xl font-extrabold font-abc text-white'>100 000 CADE</h1>
+                                                <h1 className='ml-3 text-4xl font-extrabold font-abc text-white'>100 000 CADE</h1>
                                             </div>
                                             <button type="button" className="font-abc text-2xl focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2">Buy CADE</button>
                                         </div>
@@ -46,22 +46,22 @@ const Profile = () => {
                                     </div>
                                     <div class="flex-grow">
                                         <h2 class="text-white text-6xl font-abc font-medium mb-3">Your Summary</h2>
-                                        <p class="text-white leading-relaxed text-2xl font-abc">Blue bottle crucifix vinyl post-ironic four dollar toast vegan.</p>
+                                        <p class="text-white leading-relaxed text-3xl font-abc">Blue bottle crucifix vinyl post-ironic.</p>
                                         <div class="flex flex-row">
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2 ">
-                                                <h2 class="title-font font-medium text-4xl font-abc text-yellow-400">27</h2>
+                                                <h2 class="title-font font-medium text-5xl font-abc text-yellow-400">27</h2>
                                                 <p class="leading-relaxed text-white text-2xl font-abc">Match</p>
                                             </div>
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                                                <h2 class="title-font font-medium text-4xl font-abc text-green-400">18</h2>
+                                                <h2 class="title-font font-medium text-5xl font-abc text-green-400">18</h2>
                                                 <p class="leading-relaxed text-white text-2xl font-abc">Wins</p>
                                             </div>
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                                                <h2 class="title-font font-medium text-4xl font-abc text-red-500">9</h2>
+                                                <h2 class="title-font font-medium text-5xl font-abc text-red-500">9</h2>
                                                 <p class="leading-relaxed text-white text-2xl font-abc">Loses</p>
                                             </div>
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2">
-                                                <h2 class="title-font font-medium text-4xl font-abc text-green-400">60%</h2>
+                                                <h2 class="title-font font-medium text-5xl font-abc text-green-400">60%</h2>
                                                 <p class="leading-relaxed text-white text-2xl font-abc">Win Rate</p>
                                             </div>
                                         </div>

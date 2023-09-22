@@ -19,7 +19,7 @@ const Rank = () => {
                         </button>
                         </div>
                         <h2 class="text-white font-abc text-3xl font-medium mb-3 mt-5">1,093,531</h2>
-                        <p class="leading-relaxed text-2xl font-abc text-white">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                        <p class="leading-relaxed text-2xl font-abc text-white">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy.</p>
                        
 
                     </div>

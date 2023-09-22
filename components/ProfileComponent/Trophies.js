@@ -46,6 +46,7 @@ const Trophies = () => {
                                 <p class="mt-2 text-3xl font-abc leading-relaxed text-white">Legendary Trophies</p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </section>
