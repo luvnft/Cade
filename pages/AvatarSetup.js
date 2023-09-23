@@ -30,6 +30,8 @@ const AvatarSetup = () => {
                             </div>
 
                         </div>
+
+                        
                     </div>
 
 
