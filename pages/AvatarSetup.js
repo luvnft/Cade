@@ -9,11 +9,16 @@ const AvatarSetup = () => {
                     <div class="lg:w-2/3 md:w-1/2 bg-black rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start">
 
                         <div class="px-10 bg-black  flex-grow  py-6 rounded shadow-md">
-                                <h2 class=" font-abc text-white text-5xl mb-1 font-medium title-font">Create Your Avatar</h2>
+                            <h2 class=" font-abc text-white text-5xl mb-1 font-medium title-font">Create Your Avatar</h2>
                             <div class=" sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full  flex-shrink-0">
 
                                 <img height={200} width={200} className='mt-10 rounded-full' src='/personn.png' alt='alt' />
+                                <div className='p-10 py-10'>
+
+                                    <button class="text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Change</button>
+                                </div>
                             </div>
+
                             <div class=" bg-black flex-grow  md:ml-auto w-full md:py-8 mt-8 md:mt-0">
                                 <p class="leading-relaxed mb-5 text-2xl font-abc text-white">Post-ironic portland shabby chic echo park, banjo fashion axefghgfjffjtru</p>
                                 <div class="flex flex-col mb-4">
@@ -31,15 +36,15 @@ const AvatarSetup = () => {
 
                         </div>
 
-                        
+
                     </div>
 
 
                     <div class="lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-                        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
-                        <p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
-                       
-                       <SuppliesAvatar/>
+                        <h2 class="text-white font-abc text-4xl px-10 mb-1 font-medium title-font">Additional Items</h2>
+                        <p class="leading-relaxed mb-5 text-white font-abc text-2xl px-10">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
+
+                        <SuppliesAvatar />
                     </div>
                 </div>
             </section>
