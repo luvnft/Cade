@@ -1,12 +1,20 @@
-import React from 'react'
-import FriendsList from '../../components/micro/FriendsList';
+import React, { useState } from 'react'
 import Coinflip from '../../components/games/Coinflip';
-const Games = () => {
+const Games = ({ slug }) => {
+    const [show, setshow] = useState(true)
 
     const Data = [
         {
-            name: "Space Game",
+            name: "Space Invaders",
             img: "/spacenew.webp"
+        },
+        {
+            name: "Coin Flip",
+            img: "/coinflip.jpg"
+        },
+        {
+            name: "Dice Game",
+            img: "/dice.jpg"
         },
         {
             name: "Car Race",
@@ -16,24 +24,35 @@ const Games = () => {
     return (
         <>
 
-            <div class="bg-[url('/kn.jpg')] flex">
-                <div class="flex w-16 p-4 text-white bg-gray-800 mb-40 mt-20 ml-2 rounded-2xl">
-                    <FriendsList />
-                </div>
-                <div class="w-4/5 min-h-screen min-w-1/2">
-                    <section class="text-gray-600 body-font mt-20">
-
+            <section class="text-gray-600 body-font relative bg-[url('/kn.jpg')]">
+                <div class="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
+                    <div class="lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 ">
                         <div className='flex justify-center'>
-
-                            <Coinflip />
+                            <div className='flex flex-row'>
+                                <h1 className='text-white font-abc text-6xl mt-5'>{slug}</h1>
+                            </div>
                         </div>
+                        <div className='flex justify-center p-2'>
+                        <button class="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
+                        onClick={()=>setshow(!show)}
+                        >Play</button>
+                        </div>
+                        <div>
+                            {show ? (
 
-                    </section>
-                </div>
-                <div class="w-1/5 min-h-screen min-w-1/2 bg-gray-900">
-                    <section class="text-gray-600 body-fon">
-                        <h1 className='text-white text-2xl flex justify-center mt-10 font-bold'>Recommended Games</h1>
-                        <div class="container px-5 py-24 mx-auto">
+                                <img height={600} width={1000} src='/gamethu1.jpg' alt='gggg' />
+
+                            ) : (
+                                <Coinflip />
+                            )}
+
+                        </div>
+                    </div>
+
+
+                    <div class="lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+                        <h1 className='text-white font-abc text-6xl mt-5 ml-5'>Play More</h1>
+                        <div class="container px-5 py-5 mx-auto">
                             <div class="flex flex-col">
                                 <div class="p-2">
                                     <div className='flex flex-col'>
@@ -63,9 +82,9 @@ const Games = () => {
 
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </div>
-            </div>
+            </section>
         </>
     )
 }
