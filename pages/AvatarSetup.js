@@ -1,6 +1,6 @@
 import React from 'react'
 import SuppliesAvatar from '../components/AvatarSetup/SuppliesAvatar'
-
+import AvatarList from '../components/AvatarSetup/AvatarList'
 const AvatarSetup = () => {
     return (
         <>
@@ -11,16 +11,15 @@ const AvatarSetup = () => {
                         <div class="px-10 bg-black  flex-grow  py-6 rounded shadow-md">
                             <h2 class=" font-abc text-white text-5xl mb-1 font-medium title-font">Create Your Avatar</h2>
                             <div class=" sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full  flex-shrink-0">
-
-                                <img height={200} width={200} className='mt-10 rounded-full' src='/personn.png' alt='alt' />
-                                <div className='p-10 py-10'>
-
-                                    <button class="text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Change</button>
+                                <div>
+                                    <img height={200} width={200} className='mt-10 rounded-full' src='/personn.png' alt='alt' />
+                                    <AvatarList/>
                                 </div>
                             </div>
 
                             <div class=" bg-black flex-grow  md:ml-auto w-full md:py-8 mt-8 md:mt-0">
                                 <p class="leading-relaxed mb-5 text-2xl font-abc text-white">Post-ironic portland shabby chic echo park, banjo fashion axefghgfjffjtru</p>
+
                                 <div class="flex flex-col mb-4">
                                     <label for="name" class="text-3xl font-abc text-white">Name</label>
                                     <input type="text" id="name" name="name" class="mb-5 w-1/2 mt-5 bg-gray-900 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
