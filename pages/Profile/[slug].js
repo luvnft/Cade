@@ -20,7 +20,7 @@ const Profile = () => {
                                             <img className="w-16 h-16  rounded-full ring-2 ring-yellow-400" src="https://picsum.photos/200" alt="Bordered avatar" />
                                         </div>
                                         <div class="flex-grow">
-                                            <h2 class="text-white text-6xl font-abc title-font font-medium mb-3">UserName</h2>
+                                            <h2 class="text-white text-5xl font-abc title-font font-medium mb-3">UserName</h2>
 
                                             <div className='flex flex-row'>
                                                 <GiTwoCoins className='text-4xl text-yellow-400' />
@@ -31,7 +31,7 @@ const Profile = () => {
                                     </div>
                                 </div>
                                 <div className='ml-20 mt-16'>
-                                    <input type="search" id="default-search" value={"https://cade.com/Profile/newuser"} class="font-abc text-2xl block w-96 p-4 pl-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+                                    <input type="search" id="default-search" value={"https://cade.com/Profile/newuser"} class="font-abc text-2xl block  p-4 pl-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
                                     
                                     <button type="button" className="font-abc text-2xl focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2">Share Profile</button>
                                 </div>
@@ -45,7 +45,7 @@ const Profile = () => {
                                         <img height={100}  width={100} className='mt-10'  src='/trophy.png' alt='alt'/>
                                     </div>
                                     <div class="flex-grow">
-                                        <h2 class="text-white text-6xl font-abc font-medium mb-3">Your Summary</h2>
+                                        <h2 class="text-white text-5xl font-abc font-medium mb-3">Your Summary</h2>
                                         <p class="text-white leading-relaxed text-3xl font-abc">Blue bottle crucifix vinyl post-ironic.</p>
                                         <div class="flex flex-row">
                                             <div class="py-4 sm:w-1/2 lg:w-1/4 w-1/2 ">

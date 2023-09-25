@@ -37,10 +37,10 @@ const Games = ({ slug }) => {
                         onClick={()=>setshow(!show)}
                         >Play</button>
                         </div>
-                        <div>
+                        <div className='ml-16'>
                             {show ? (
 
-                                <img height={600} width={1000} src='/gamethu1.jpg' alt='gggg' />
+                                <img height={600} width={900} src='/gamethu1.jpg' alt='gggg' />
 
                             ) : (
                                 <Coinflip />
@@ -50,8 +50,8 @@ const Games = ({ slug }) => {
                     </div>
 
 
-                    <div class="lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-                        <h1 className='text-white font-abc text-6xl mt-5 ml-5'>Play More</h1>
+                    <div class="p-5 lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+                        <h1 className='text-white font-abc text-5xl mt-5 ml-5'>Play More</h1>
                         <div class="container px-5 py-5 mx-auto">
                             <div class="flex flex-col">
                                 <div class="p-2">
@@ -61,9 +61,9 @@ const Games = ({ slug }) => {
                                                 <>
                                                     <div className='mt-10'>
                                                         <a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                                                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={item.img} alt="d" />
+                                                            <img class="object-cover w-full rounded-t-lg h-50 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={item.img} alt="d" />
                                                             <div class="flex flex-col justify-between p-4 leading-normal">
-                                                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{item.name}</h5>
+                                                                <h5 class="font-abc mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{item.name}</h5>
 
                                                             </div>
                                                         </a>
