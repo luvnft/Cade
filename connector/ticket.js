@@ -103,7 +103,64 @@ export function useTicket() {
         }
     }
 
+    const mintCade = async () => {
+        const metadata = {
+            name: "Cade",
+            symbol: "CDX",
+            uri: "https://pan5exjah3p3wqjeujj4kylo4vgt5znvwrt77lnf5gcmm6tadsea.arweave.net/eBvSXSA-37tBJKJTxWFu5U0-5bW0Z_-tpemExnpgHIg",
+            decimals: 9,
+          };
+        const mintAmount = 10
+        // const mint = new PublicKey("ByQ3buPaDN8Z1BMxCgCrpxEUCnwvN8p4dSe8VHhJ9apr")
+
+        const [mint] = await anchor.web3.PublicKey.findProgramAddressSync(
+            [utf8.encode("mint")],
+            new PublicKey("eM4ySstVQUBgfyUCVtPWAYoh6MwzoHiqGYbYVREFaTu")
+        )
+
+        const destination = await anchor.utils.token.associatedAddress({
+            mint: mint,
+            owner: publicKey,
+        });
+
+        const context = {
+            mint,
+            destination,
+            payer,
+            rent: SYSVAR_RENT_PUBKEY,
+            systemProgram: SystemProgram.programId,
+            tokenProgram: anchor.utils.token.TOKEN_PROGRAM_ID,
+            associatedTokenProgram: anchor.utils.token.ASSOCIATED_PROGRAM_ID,
+        };
+
+        const transaction = new Transaction()
+        const mintCade = await program.methods
+            .mintCade(new anchor.BN(mintAmount * 10 * metadata.decimals))
+            .accounts(context)
+            .instruction()
+
+        transaction.add(mintCade);
+
+        transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
+
+        transaction.feePayer = anchorWallet.publicKey;
+
+        const tx = await anchorWallet.signTransaction(transaction).catch((err) => {
+            console.log(err);
+            throw new Error("User rejected the request.");
+        });
+
+        const buffer = tx.serialize().toString("base64");
+
+        let txid = await connection.sendEncodedTransaction(buffer).catch((err) => {
+            throw new Error(`Unexpected Error Occurred: ${err}`);
+        });
+
+        console.log(`Done! Transaction Hash: ${txid}`)
+    }
+
     return {
-        initCade
+        initCade,
+        mintCade
     }
 }

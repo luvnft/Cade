@@ -2,7 +2,7 @@ import React from 'react'
 import { BiSolidUpArrow } from "react-icons/bi"
 import {useTicket} from "../../connector/ticket"
 const Rank = () => {
-    const {initCade} = useTicket()
+    const {initCade,mintCade} = useTicket()
     return (
         <>
             <div class="p-12 md:w-1/2 flex flex-col items-start">
@@ -16,7 +16,7 @@ const Rank = () => {
                         <h2 class="text-white text-4xl font-abc title-font font-medium mb-3">Rank</h2>
                         <div className='flex flex-row'>
                         <h2 class="text-white text-5xl font-abc title-font font-medium mb-3"># 94</h2>
-                        <button onClick={()=> initCade()} class="text-4xl font-abc bg-transparent ml-5 hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
+                        <button onClick={()=> mintCade()} class="text-4xl font-abc bg-transparent ml-5 hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
                             LeaderBoard
                         </button>
                         </div>
