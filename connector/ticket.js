@@ -73,8 +73,8 @@ export function useTicket() {
             }
 
             const tx = await program.methods
-                .initCade()
-                .accounts()
+                .initCade(metadata)
+                .accounts(context)
                 .rpc()
 
             console.log("DONE")
