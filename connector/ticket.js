@@ -1,17 +1,15 @@
-import * as anchor from "@project-serum/anchor";
+import * as anchor from "@coral-xyz/anchor";
 import { useEffect, useMemo, useState } from "react";
 import { TICKET_PROGRAM_ID } from "../constant";
-import ticketIDL from "../constant/ticket.json";
-
-import { PublicKey, SYSVAR_RENT_PUBKEY, SystemProgram } from "@solana/web3.js";
-import { utf8 } from "@project-serum/anchor/dist/cjs/utils/bytes";
-import { findProgramAddressSync } from "@project-serum/anchor/dist/cjs/utils/pubkey";
+import { IDL } from "../constant/idl";
+import { PublicKey, SYSVAR_RENT_PUBKEY, SystemProgram, Transaction } from "@solana/web3.js";
+import { utf8 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
 import {
     useAnchorWallet,
     useConnection,
     useWallet,
 } from "@solana/wallet-adapter-react";
-import { TOKEN_PROGRAM_ID } from "@project-serum/anchor/dist/cjs/utils/token";
+import { TOKEN_PROGRAM_ID } from "@coral-xyz/anchor/dist/cjs/utils/token";
 
 export function useTicket() {
     const { connection } = useConnection();
@@ -27,7 +25,7 @@ export function useTicket() {
                 anchorWallet,
                 anchor.AnchorProvider.defaultOptions()
             );
-            return new anchor.Program(ticketIDL, TICKET_PROGRAM_ID, provider);
+            return new anchor.Program(IDL, TICKET_PROGRAM_ID, provider);
         }
     }, [connection, anchorWallet]);
 
@@ -48,12 +46,12 @@ export function useTicket() {
             };
             const mintAmount = 10;
 
-            const [mint] = findProgramAddressSync(
+            const [mint] = await anchor.web3.PublicKey.findProgramAddressSync(
                 [utf8.encode(MINT_SEED)],
                 new PublicKey("3BkA6x8tQjMjGtRVnTMyHYqvznJbmGpVp85c1poqCTy8")
             )
 
-            const [metadataAddress] = findProgramAddressSync(
+            const [metadataAddress] = await anchor.web3.PublicKey.findProgramAddressSync(
                 [
                     utf8.encode(METADATA_SEED),
                     TOKEN_METADATA_PROGRAM_ID.toBuffer(),
@@ -64,20 +62,39 @@ export function useTicket() {
 
             const context = {
                 metadata: metadataAddress,
-                mint,
-                publicKey,
+                mint: mint,
+                payer: publicKey,
                 rent: SYSVAR_RENT_PUBKEY,
                 systemProgram: SystemProgram.programId,
                 tokenProgram: TOKEN_PROGRAM_ID,
-                tokenMetaDataProgram: TOKEN_METADATA_PROGRAM_ID
+                tokenMetadataProgram: TOKEN_METADATA_PROGRAM_ID
             }
 
-            const tx = await program.methods
+            const transaction = new Transaction();
+
+            const cadeInit = await program.methods
                 .initCade(metadata)
                 .accounts(context)
-                .rpc()
+                .instruction();
 
-            console.log("DONE")
+            transaction.add(cadeInit);
+
+            transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
+
+            transaction.feePayer = anchorWallet.publicKey;
+
+            const tx = await anchorWallet.signTransaction(transaction).catch((err) => {
+                console.log(err);
+                throw new Error("User rejected the request.");
+            });
+
+            const buffer = tx.serialize().toString("base64");
+
+            let txid = await connection.sendEncodedTransaction(buffer).catch((err) => {
+                throw new Error(`Unexpected Error Occurred: ${err}`);
+            });
+
+            console.log(`Done! Transaction Hash: ${txid}`)
         } catch (error) {
             console.log(error)
             setLoading(false)

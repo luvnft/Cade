@@ -10,7 +10,7 @@ export const WalletConnectProvider = ({children}) =>{
 
     const endpoint = useMemo(()=>{
         if(network ===WalletAdapterNetwork.Devnet){
-            return 'https://solemn-ancient-liquid.solana-devnet.discover.quiknode.pro/1849a9a948872208a291c23da45c385169c01a70/'
+            return `https://devnet.helius-rpc.com/?api-key=${process.env.NEXT_PUBLIC_HELIUS_API_KEY}`
         }
 
         return clusterApiUrl(network)
