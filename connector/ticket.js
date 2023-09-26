@@ -48,7 +48,7 @@ export function useTicket() {
 
             const [mint] = await anchor.web3.PublicKey.findProgramAddressSync(
                 [utf8.encode(MINT_SEED)],
-                new PublicKey("3BkA6x8tQjMjGtRVnTMyHYqvznJbmGpVp85c1poqCTy8")
+                new PublicKey("eM4ySstVQUBgfyUCVtPWAYoh6MwzoHiqGYbYVREFaTu")
             )
 
             const [metadataAddress] = await anchor.web3.PublicKey.findProgramAddressSync(
