@@ -110,7 +110,7 @@ export function useTicket() {
             uri: "https://pan5exjah3p3wqjeujj4kylo4vgt5znvwrt77lnf5gcmm6tadsea.arweave.net/eBvSXSA-37tBJKJTxWFu5U0-5bW0Z_-tpemExnpgHIg",
             decimals: 9,
           };
-        const mintAmount = 10
+        const mintAmount = 1000
         // const mint = new PublicKey("ByQ3buPaDN8Z1BMxCgCrpxEUCnwvN8p4dSe8VHhJ9apr")
 
         const [mint] = await anchor.web3.PublicKey.findProgramAddressSync(
@@ -122,11 +122,12 @@ export function useTicket() {
             mint: mint,
             owner: publicKey,
         });
+         console.log(`destination:${destination}`)
 
         const context = {
             mint,
             destination,
-            payer,
+            publicKey,
             rent: SYSVAR_RENT_PUBKEY,
             systemProgram: SystemProgram.programId,
             tokenProgram: anchor.utils.token.TOKEN_PROGRAM_ID,
