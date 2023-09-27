@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Coinflip from '../../components/games/Coinflip';
 import { BiSolidUpArrow } from "react-icons/bi"
-const Games = ({ slug }) => {
+import { useTicket } from '../../connector/ticket';
+const Games = ({ slug , description , img , isGameExist}) => {
+    const {mintCade} = useTicket()
     const [show, setshow] = useState(true)
 
     const Data = [
@@ -22,6 +24,13 @@ const Games = ({ slug }) => {
             img: "/car.jpg"
         }
     ]
+
+    const renderGame = () => {
+        if(slug=="CoinFlip"){
+            return <Coinflip/>
+        }
+    }
+
     return (
         <>
 
@@ -31,11 +40,13 @@ const Games = ({ slug }) => {
                         <div className='flex justify-center'>
 
                         </div>
-                        <section class="text-gray-400 bg-gray-900 body-font rounded-xl">
+                        {isGameExist ? (
+                            <>
+                            <section class="text-gray-400 bg-gray-900 body-font rounded-xl">
                             <div class="container px-5 py-10 mx-auto">
                                 <div class="flex flex-wrap -m-4 text-center">
                                     <div class="p-4 sm:w-1/4 w-1/2">
-                                        <h2 class="font-abc title-font font-medium sm:text-4xl text-3xl text-white">CoinFlip</h2>
+                                        <h2 class="font-abc title-font font-medium sm:text-4xl text-3xl text-white">{slug}</h2>
                                         <p class="text-white font-abc text-3xl">Game</p>
                                     </div>
                                     <div class="p-4 sm:w-1/4 w-1/2">
@@ -57,7 +68,7 @@ const Games = ({ slug }) => {
                                             <a class="inline-flex items-center">
                                                 <img src='/cade.png' height={50} width={50} alt='cade' />
                                                 <span class="flex-grow flex flex-col pl-3">
-                                                    <span class="text-4xl font-abc text-white">100+ XP</span>
+                                                    <span class="text-4xl font-abc text-white">Cade 0.1+</span>
                                                 </span>
                                             </a>
 
@@ -76,28 +87,37 @@ const Games = ({ slug }) => {
                                     </div>
                                     <div className='ml-16 '>
                                     <button class="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
-                                        onClick={() => setshow(!show)}
+                                        onClick={() => mintCade()}
                                     >Claim XP and Cade</button>
                                     </div>
                                 </div>
                             </div>
                         </section>
-                        {/* <div className='flex justify-center p-2'>
-                            <button class="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
-                                onClick={() => setshow(!show)}
-                            >Play</button>
-                        </div> */}
+                            </>
+                        ):(
+                            <div className='flex justify-center mt-16'>
+                              <h1 className='font-abc text-5xl text-white'>No such Game Exist</h1>  
+                            </div>
+                        )}
+                       
+                       {isGameExist ? (
+                        <>
                         <div className=''>
                             {show ? (
                                 <div className='p-10'>
-                                    <img width={800} src='/gamethu1.jpg' alt='gggg' />
+                                    <img width={800} src={img} alt='gggg' />
                                 </div>
 
                             ) : (
-                                <Coinflip />
+                                renderGame()
                             )}
 
                         </div>
+                        </>
+                       ):(
+                        <></>
+                       )}
+                        
                     </div>
 
 
@@ -141,9 +161,21 @@ const Games = ({ slug }) => {
 }
 export async function getServerSideProps(context) {
     const { slug } = context.query;
+    let description = "";
+    let img = ""
+    let isGameExist = false
     console.log(`slug is my ${slug}`);
+    if(slug=='CoinFlip') {
+      description = "A coinflipgame",
+      img = "/gamethu1.jpg"
+      isGameExist = true
+    }
+    else{
+        description = "No Such Game Found"
+    }
     return {
-        props: { slug },
+        props: { slug , description, img , isGameExist },
+        
     };
 }
 
