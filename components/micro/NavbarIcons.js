@@ -7,6 +7,14 @@ const NavbarIcons = () => {
       <div className='flex flex-row '>
 
         <h2 className='font-abc text-2xl text-white mt-2'>
+          0
+        </h2>
+        <img height={50} width={50} className='rounded-full' src='/freeticket.webp' alt='alt' />
+      </div>
+
+      <div className='flex flex-row '>
+
+        <h2 className='font-abc text-2xl text-white mt-2'>
           10
         </h2>
         <img height={50} width={50} className='rounded-full' src='/heartr.png' alt='alt' />
