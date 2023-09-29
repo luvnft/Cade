@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
+import SelllerTable from '../components/P2P/SelllerTable'
 
 const P2P = () => {
     const [showSellNowList, setShowSellList] = useState(false)
     return (
         <>
-
+        <div>
+            <h1 className='text-white font-abc text-6xl ml-5 mt-5'>Cade P2P Market</h1>
+        </div>
             <section class="antialiased bg-black text-gray-600 h-screen px-4">
                 <div class="flex flex-col py-12 h-full">
 
                     <div class="w-full mx-auto bg-black shadow-lg rounded-sm border border-gray-200">
                         <header class="px-5 py-4 border-b border-gray-100">
                             <div className='flex flex-row'>
-                                {/* <h2 class="font-abc  text-4xl text-yellow-400 ml-10 bg-gray-900 p-2 rounded-2xl ">Sellers</h2> */}
-                                <h2 onClick={() => setShowSellList(!showSellNowList)} class="font-abc  text-4xl text-yellow-400 ml-5 bg-gray-900 p-2 rounded-2xl ">Sell Now</h2>
+
+                                <button onClick={() => setShowSellList(!showSellNowList)} class="p-2 text-black font-abc bg-yellow-400 border-0 py-2 px-6 focus:outline-none rounded text-3xl">Sell Now</button>
                             </div>
 
                         </header>
@@ -40,267 +43,23 @@ const P2P = () => {
 
                         <header class="px-5 py-4 border-b border-gray-100">
                             <div className='flex flex-row'>
-                                {/* <h2 class="font-abc  text-4xl text-yellow-400 ml-10 bg-gray-900 p-2 rounded-2xl ">Sellers</h2> */}
-                                <h2 onClick={() => setShowSellList(!showSellNowList)} class="font-abc  text-4xl text-yellow-400 ml-5 bg-gray-900 p-2 rounded-2xl ">Your Listing</h2>
+
+                                <h2 onClick={() => setShowSellList(!showSellNowList)} class="font-abc  text-4xl text-yellow-400  bg-gray-900 p-2 rounded-2xl ">Your Listing</h2>
                             </div>
                             <div class="p-3">
-                                {/* <div class="overflow-x-auto">
-                                    <table class="table-auto w-full">
-                                        <thead class="text-xs font-semibold uppercase text-gray-400 bg-black">
-                                            <tr>
-                                                <th class="p-2 whitespace-nowrap">
-                                                    <div class="font-abc text-2xl text-white text-left">Name</div>
-                                                </th>
-                                                <th class="p-2 whitespace-nowrap">
-                                                    <div class="font-abc text-2xl text-white text-left">XP</div>
-                                                </th>
-                                                <th class="p-2 whitespace-nowrap">
-                                                    <div class="font-abc text-2xl text-white text-left">Game Life</div>
-                                                </th>
-                                                <th class="p-2 ml-10 whitespace-nowrap">
-                                                    <div class="font-abc text-2xl text-white text-left">Game Pass</div>
-                                                </th>
-                                                <th class="p-2 ml-10 whitespace-nowrap">
-                                                    <div class="font-abc text-2xl text-white text-left">Trophies Count</div>
-                                                </th>
-                                                <th class="p-2 ml-10 whitespace-nowrap">
-                                                    <div class="font-abc text-2xl text-white text-left">Price</div>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="text-sm divide-y divide-gray-100">
-                                            <tr>
-                                                <td class="p-2 whitespace-nowrap">
-                                                    <div class="flex items-center">
-                                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov" /></div>
-                                                        <div class="font-abc text-3xl text-white">Alex Shatov</div>
-                                                    </div>
-                                                </td>
-                                                <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left font-abc text-3xl text-white">1200</div>
-                                                </td>
-                                                <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left font-abc text-3xl text-white">66</div>
-                                                </td>
-                                                <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left font-abc text-3xl text-white">66</div>
-                                                </td>
-                                                <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left font-abc text-3xl text-white">66</div>
-                                                </td>
-                                                <td class="p-2 whitespace-nowrap">
-                                                    <div class="text-left font-abc text-3xl text-white">2 Cade</div>
-                                                </td>
-                                            </tr>
-
-
-
-                                        </tbody>
-                                    </table>
-                                </div> */}
+                            
                                 <div className='flex justify-center'>
-                                <h1 className='text-white font-abc text-3xl'>You have No Listed Item To Sell</h1>
+                                    <h1 className='text-white font-abc text-3xl'>You have No Listed Item To Sell</h1>
                                 </div>
                             </div>
                         </header>
                         <header class="px-5 py-4 border-b border-gray-100">
                             <div className='flex flex-row'>
-                                {/* <h2 class="font-abc  text-4xl text-yellow-400 ml-10 bg-gray-900 p-2 rounded-2xl ">Sellers</h2> */}
-                                <h2 onClick={() => setShowSellList(!showSellNowList)} class="font-abc  text-4xl text-yellow-400 ml-5 bg-gray-900 p-2 rounded-2xl ">Sellers</h2>
-                            </div>
-                        <div class="p-3">
-                            <div class="overflow-x-auto">
-                                <table class="table-auto w-full">
-                                    <thead class="text-xs font-semibold uppercase text-gray-400 bg-black">
-                                        <tr>
-                                            <th class="p-2 whitespace-nowrap">
-                                                <div class="font-abc text-2xl text-white text-left">Name</div>
-                                            </th>
-                                            <th class="p-2 whitespace-nowrap">
-                                                <div class="font-abc text-2xl text-white text-left">XP</div>
-                                            </th>
-                                            <th class="p-2 whitespace-nowrap">
-                                                <div class="font-abc text-2xl text-white text-left">Game Life</div>
-                                            </th>
-                                            <th class="p-2 ml-10 whitespace-nowrap">
-                                                <div class="font-abc text-2xl text-white text-left">Game Pass</div>
-                                            </th>
-                                            <th class="p-2 ml-10 whitespace-nowrap">
-                                                <div class="font-abc text-2xl text-white text-left">Trophies Count</div>
-                                            </th>
-                                            <th class="p-2 ml-10 whitespace-nowrap">
-                                                <div class="font-abc text-2xl text-white text-left">Price</div>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-sm divide-y divide-gray-100">
-                                        <tr>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov" /></div>
-                                                    <div class="font-abc text-3xl text-white">Alex Shatov</div>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">1200</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">2 Cade</div>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov" /></div>
-                                                    <div class="font-abc text-3xl text-white">Alex Shatov</div>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">1200</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">2 Cade</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov" /></div>
-                                                    <div class="font-abc text-3xl text-white">Alex Shatov</div>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">1200</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">2 Cade</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov" /></div>
-                                                    <div class="font-abc text-3xl text-white">Alex Shatov</div>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">1200</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">2 Cade</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov" /></div>
-                                                    <div class="font-abc text-3xl text-white">Alex Shatov</div>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">1200</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">2 Cade</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov" /></div>
-                                                    <div class="font-abc text-3xl text-white">Alex Shatov</div>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">1200</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">2 Cade</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg" width="40" height="40" alt="Alex Shatov" /></div>
-                                                    <div class="font-abc text-3xl text-white">Alex Shatov</div>
-                                                </div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">1200</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">66</div>
-                                            </td>
-                                            <td class="p-2 whitespace-nowrap">
-                                                <div class="text-left font-abc text-3xl text-white">2 Cade</div>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                                <h2 onClick={() => setShowSellList(!showSellNowList)} class="font-abc  text-4xl text-yellow-400 bg-gray-900 p-2 rounded-2xl ">Sellers</h2>
                             </div>
-                        </div>
+
+                            <SelllerTable />
                         </header>
                     </div>
                 </div>
