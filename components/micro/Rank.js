@@ -2,9 +2,11 @@ import React from 'react'
 import { BiSolidUpArrow } from "react-icons/bi"
 import {useTicket} from "../../connector/ticket"
 import {useCoinFlip} from '../../connector/coinflip'
+import {useUSDCPay} from "../../hooks/transfer"
+import { PublicKey } from '@solana/web3.js'
 const Rank = () => {
+    const {createTransaction} = useUSDCPay()
     const {initCade,mintCade} = useTicket()
-    const {setup} = useCoinFlip()
     return (
         <>
             <div class="p-12 md:w-1/2 flex flex-col items-start">

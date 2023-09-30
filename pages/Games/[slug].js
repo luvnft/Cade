@@ -3,7 +3,12 @@ import Coinflip from '../../components/games/Coinflip';
 import { BiSolidUpArrow } from "react-icons/bi"
 import { useTicket } from '../../connector/ticket';
 import { DownwardBar } from '../../components/GameBar/DownwardBar';
+import { useUSDCPay } from '../../hooks/transfer'
+import {
+    PublicKey,
+  } from "@solana/web3.js";
 const Games = ({ slug, description, img, isGameExist }) => {
+    const { createTransaction } = useUSDCPay()
     const { mintCade } = useTicket()
     const [show, setshow] = useState(true)
 
@@ -30,6 +35,17 @@ const Games = ({ slug, description, img, isGameExist }) => {
         if (slug == "CoinFlip") {
             return <Coinflip />
         }
+    }
+
+    const initgame = () => {
+        createTransaction(
+            new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+            new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+            0.000005
+        )
+        setTimeout(()=>{
+            setshow(!show)
+        },8000)
     }
 
     return (
@@ -83,7 +99,7 @@ const Games = ({ slug, description, img, isGameExist }) => {
                                             </div>
                                             <div className='ml-16 '>
                                                 <button class="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
-                                                    onClick={() => setshow(!show)}
+                                                    onClick={() => initgame()}
                                                 >Play Now</button>
                                             </div>
                                             <div className='ml-16 '>
