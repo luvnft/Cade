@@ -142,6 +142,7 @@ export function useTicket() {
 
         transaction.add(mintCade);
 
+
         transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
 
         transaction.feePayer = anchorWallet.publicKey;
@@ -151,7 +152,11 @@ export function useTicket() {
             throw new Error("User rejected the request.");
         });
 
+       
+
         const buffer = tx.serialize().toString("base64");
+
+        console.log(buffer)
 
         let txid = await connection.sendEncodedTransaction(buffer).catch((err) => {
             throw new Error(`Unexpected Error Occurred: ${err}`);
