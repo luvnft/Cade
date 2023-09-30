@@ -1,6 +1,6 @@
 import React from 'react'
 import { BiSolidUpArrow } from "react-icons/bi"
-export const DownwardBar = ({ slug }) => {
+export const DownwardBar = ({ slug , playerOne , secondPlayer , thirdPlayer , description }) => {
     return (
         <>
             <>
@@ -18,7 +18,7 @@ export const DownwardBar = ({ slug }) => {
                                     </div>
                                 </div>
                                 <div class="md:flex-grow">
-                                    <h2 class="font-abc text-5xl font-medium text-white title-font mb-2">Jimmy</h2>
+                                    <h2 class="font-abc text-5xl font-medium text-white title-font mb-2">{playerOne}</h2>
 
                                 </div>
                             </div>
@@ -29,7 +29,7 @@ export const DownwardBar = ({ slug }) => {
                                     </div>
                                 </div>
                                 <div class="md:flex-grow">
-                                    <h2 class="font-abc text-5xl font-medium text-white title-font mb-2">Tommy</h2>
+                                    <h2 class="font-abc text-5xl font-medium text-white title-font mb-2">{secondPlayer}</h2>
 
                                 </div>
                             </div>
@@ -40,7 +40,7 @@ export const DownwardBar = ({ slug }) => {
                                     </div>
                                 </div>
                                 <div class="md:flex-grow">
-                                    <h2 class="font-abc text-5xl font-medium text-white title-font mb-2">any21</h2>
+                                    <h2 class="font-abc text-5xl font-medium text-white title-font mb-2">{thirdPlayer}</h2>
 
                                 </div>
                             </div>

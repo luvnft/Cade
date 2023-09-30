@@ -8,9 +8,11 @@ import {
     Commitment,
     PublicKey,
 } from '@solana/web3.js';
+import { useUSDCPay } from '../hooks/transfer'
 import * as bs58 from 'bs58';
-import { getOrCreateAssociatedTokenAccount , transfer } from '@solana/spl-token';
+import { getOrCreateAssociatedTokenAccount, transfer } from '@solana/spl-token';
 const Redeem = () => {
+    const { createTransaction } = useUSDCPay()
     const [loading, setLoading] = useState(false)
     const signTransaction = async (
         encodedTransaction,
@@ -88,55 +90,13 @@ const Redeem = () => {
             console.log(`Mint v2 - ${mint}`);
 
 
-        transferCNFT(mint);
+            transferCNFT(mint);
 
 
         } catch (error) {
             console.log('error from v2' + error);
         }
     };
-
-    // const mintCNFT = (type, transfer, metadata) => {
-    //     setLoading(true);
-    //     var myHeaders = new Headers();
-    //     myHeaders.append('Content-Type', 'application/json');
-    //     myHeaders.append('x-api-key', 'HI_eHFd0SX8ykSDW');
-
-    //     var raw = JSON.stringify({
-    //         network: 'devnet',
-    //         wallet_address: '2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767',
-    //         max_depth_size_pair: {
-    //             max_depth: 14,
-    //             max_buffer_size: 64,
-    //         },
-    //         canopy_depth: 10,
-    //     });
-
-    //     var requestOptions = {
-    //         method: 'POST',
-    //         headers: myHeaders,
-    //         body: raw,
-    //         redirect: 'follow',
-    //     };
-
-    //     fetch(
-    //         'https://api.shyft.to/sol/v1/nft/compressed/create_tree',
-    //         requestOptions,
-    //     )
-    //         .then(response => response.json())
-    //         .then(result =>
-
-    //             signTransaction(
-    //                 result.result.encoded_transaction,
-    //                 wallet,
-    //                 "5t9aVjzfeeUvXsiQ1wFFHtsMYAgBv9gzMCAqw1PGmH3A",
-    //                 type,
-    //                 transfer,
-    //                 metadata,
-    //             ),
-    //         )
-    //         .catch(error => console.log('error', error));
-    // };
 
     const finalCFTMint = (
         tree,
@@ -208,9 +168,31 @@ const Redeem = () => {
 
                 signTransactionv3(result.result.encoded_transaction, wallet),
             )
-        setLoading(false)
+
             .catch(error => console.log('error', error));
     };
+
+    const execute = () => {
+
+        createTransaction(
+            new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+            new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+            0.00005
+        )
+
+        setLoading(true)
+
+        setTimeout(() => {
+            finalCFTMint(
+                "5t9aVjzfeeUvXsiQ1wFFHtsMYAgBv9gzMCAqw1PGmH3A",
+                "event",
+                true,
+                "https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4"
+            )
+            setLoading(false)
+        }, [5000])
+
+    }
 
     const Data = [
         {
@@ -307,14 +289,8 @@ const Redeem = () => {
                                         <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">CADE STORE</h3>
                                         <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
-                                        <button onClick={() => finalCFTMint(
-                                            "5t9aVjzfeeUvXsiQ1wFFHtsMYAgBv9gzMCAqw1PGmH3A",
-                                            "event",
-                                            true,
-                                            "https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4"
-                                        )
-                                           
-                                        } class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                        {/* needs onClick execute function  */}
+                                        <button class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
 
                                     </div>
                                 </>

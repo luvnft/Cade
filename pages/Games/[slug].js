@@ -6,8 +6,9 @@ import { DownwardBar } from '../../components/GameBar/DownwardBar';
 import { useUSDCPay } from '../../hooks/transfer'
 import {
     PublicKey,
-  } from "@solana/web3.js";
-const Games = ({ slug, description, img, isGameExist }) => {
+} from "@solana/web3.js";
+import TowerDefence from '../../components/games/TowerDefence';
+const Games = ({ slug, description, img, isGameExist, playerOne, secondPlayer, thirdPlayer }) => {
     const { createTransaction } = useUSDCPay()
     const { mintCade } = useTicket()
     const [show, setshow] = useState(true)
@@ -35,17 +36,20 @@ const Games = ({ slug, description, img, isGameExist }) => {
         if (slug == "CoinFlip") {
             return <Coinflip />
         }
+        if (slug == "TowerDefence") {
+            return <TowerDefence />
+        }
     }
 
     const initgame = () => {
-        createTransaction(
-            new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
-            new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-            0.000005
-        )
-        setTimeout(()=>{
+        // createTransaction(
+        //     new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+        //     new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+        //     0.000005
+        // )
+        setTimeout(() => {
             setshow(!show)
-        },8000)
+        }, 0)
     }
 
     return (
@@ -128,7 +132,7 @@ const Games = ({ slug, description, img, isGameExist }) => {
                                     ) : (
                                         renderGame()
                                     )}
-                                    <DownwardBar slug={slug} show={show} />
+                                    <DownwardBar slug={slug} show={show} playerOne={playerOne} secondPlayer={secondPlayer} thirdPlayer={thirdPlayer} />
                                 </div>
                             </>
                         ) : (
@@ -181,17 +185,31 @@ export async function getServerSideProps(context) {
     let description = "";
     let img = ""
     let isGameExist = false
+    let playerOne = ""
+    let secondPlayer = ""
+    let thirdPlayer = ""
     console.log(`slug is my ${slug}`);
     if (slug == 'CoinFlip') {
         description = "A coinflipgame",
             img = "/gamethu1.jpg"
-        isGameExist = true
+        isGameExist = true,
+            playerOne = "John",
+            secondPlayer = "Ben",
+            thirdPlayer = "Josh"
+    }
+    if (slug == "TowerDefence") {
+        description = "A TowerDefence Game",
+            img = "/tower.jpg",
+            isGameExist = true,
+            playerOne = "TolyMan",
+            secondPlayer = "OnlySolana",
+            thirdPlayer = "Elliot"
     }
     else {
         description = "No Such Game Found"
     }
     return {
-        props: { slug, description, img, isGameExist },
+        props: { slug, description, img, isGameExist  , playerOne , secondPlayer , thirdPlayer},
 
     };
 }
