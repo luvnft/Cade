@@ -44,7 +44,7 @@ export const playGame = (program, gamePublicKey, cell, payer, setError) => {
                     })
                     .rpc()
             } catch (error) { console.log(error) }
-        })
+        })()
     }
 }
 
