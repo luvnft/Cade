@@ -8,6 +8,7 @@ import {
     PublicKey,
 } from "@solana/web3.js";
 import TowerDefence from '../../components/games/TowerDefence';
+import FourInLine from '../../components/games/FourInLine';
 const Games = ({ slug, description, img, isGameExist, playerOne, secondPlayer, thirdPlayer }) => {
     const { createTransaction } = useUSDCPay()
     const { mintCade } = useTicket()
@@ -38,6 +39,10 @@ const Games = ({ slug, description, img, isGameExist, playerOne, secondPlayer, t
         }
         if (slug == "TowerDefence") {
             return <TowerDefence />
+        }
+
+        if (slug == "FourInLine"){
+            return <FourInLine/>
         }
     }
 
@@ -191,19 +196,27 @@ export async function getServerSideProps(context) {
     console.log(`slug is my ${slug}`);
     if (slug == 'CoinFlip') {
         description = "A coinflipgame",
-            img = "/gamethu1.jpg"
+        img = "/gamethu1.jpg"
         isGameExist = true,
-            playerOne = "John",
-            secondPlayer = "Ben",
-            thirdPlayer = "Josh"
+        playerOne = "John",
+        secondPlayer = "Ben",
+        thirdPlayer = "Josh"
     }
     if (slug == "TowerDefence") {
         description = "A TowerDefence Game",
-            img = "/tower.jpg",
-            isGameExist = true,
-            playerOne = "TolyMan",
-            secondPlayer = "OnlySolana",
-            thirdPlayer = "Elliot"
+        img = "/tower.jpg",
+        isGameExist = true,
+        playerOne = "TolyMan",
+        secondPlayer = "OnlySolana",
+        thirdPlayer = "Elliot"
+    }
+    if(slug == "FourInLine") {
+        description = "A Four In Line Game"
+        img = "/fourinline.png"
+        isGameExist = true
+        playerOne = "Niunjap#22"
+        secondPlayer = "Bhindi"
+        thirdPlayer = "Akkobaiii"       
     }
     else {
         description = "No Such Game Found"

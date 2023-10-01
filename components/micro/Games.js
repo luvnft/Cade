@@ -12,8 +12,8 @@ const Games = () => {
       img: "/coinflip.jpg"
     },
     {
-      name: "Dice Game",
-      img: "/dice.jpg"
+      name: "Four In Line Game",
+      img: "/fourinline.png"
     },
     {
       name: "Tower Defence",
