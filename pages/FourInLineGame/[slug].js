@@ -22,7 +22,7 @@ const FourInLineGame = () => {
   useEffect(() => {
     if (program) {
       const [pda] = web3.PublicKey.findProgramAddressSync(
-        [Buffer.from("game"), Buffer.from(slug.toString())],
+        [Buffer.from("game"), Buffer.from(slug?.toString() ?? "")],
         program.programId
       );
       setGamePublicKey(pda);
