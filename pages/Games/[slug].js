@@ -134,7 +134,7 @@ const Games = ({ slug, description, img, isGameExist, playerOne, secondPlayer, t
                             </>
                         ) : (
                             <div className='flex justify-center mt-16'>
-                                <h1 className='font-abc text-5xl text-white'>No such Game Exist</h1>
+                                <h1 className='font-abc text-5xl text-white'>{slug} Game Comming Soon</h1>
                             </div>
                         )}
 
