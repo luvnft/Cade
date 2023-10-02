@@ -68,7 +68,7 @@ const FourInLine = () => {
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
 
                 </div>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Game Name" required />
+                <input  autoComplete='off' type="text" value={name} onChange={(e) => setName(e.target.value)} id="voice-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Game Name" required />
                 <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3">
 
                 </button>
@@ -77,17 +77,18 @@ const FourInLine = () => {
                 Create
               </button>
 
-              {created && (
-                <div className="text-white text-center mt-5">
-                  <strong>
-                    If this don't redirect you automatically{" "}
-                    <h1 className="text-white text-3xl">
-                      Learn <a href={`/FourInLineGame/${name}`}>Next.js!</a>
-                    </h1>
-                  </strong>
-                </div>
-              )}
             </div>
+            {created && (
+              <div className="text-white text-center mt-5">
+                <div>
+
+                  <button class="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
+                  >
+                    <a href={`/FourInLineGame/${name}`}>Launch Your Game Now</a>
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </>

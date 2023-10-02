@@ -35,14 +35,26 @@ const Games = ({ slug, description, img, isGameExist, playerOne, secondPlayer, t
 
     const renderGame = () => {
         if (slug == "CoinFlip") {
-            return <Coinflip />
+            return (
+                <div className='mt-10'>
+                    <Coinflip />
+                </div>
+            )
         }
         if (slug == "TowerDefence") {
-            return <TowerDefence />
+            return (
+                <div className='mt-10'>
+                    <TowerDefence />
+                </div>
+            )
         }
 
         if (slug == "FourInLine"){
-            return <FourInLine/>
+            return (
+                <div className='mt-10'>
+                    <FourInLine />
+                </div>
+            )
         }
     }
 
