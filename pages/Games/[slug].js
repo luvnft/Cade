@@ -66,7 +66,7 @@ const Games = ({ slug, description, img, isGameExist, playerOne, secondPlayer, t
         // )
         setTimeout(() => {
             setshow(!show)
-        }, 7000)
+        },0)
     }
 
     return (
