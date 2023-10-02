@@ -4,21 +4,15 @@ export const OpenChest = [
         name: "Cade Life x1",
         img: "/heartr.png",
         desc: "Play Again If You Loose",
-        price: "4"
+        price: "9"
     },
     {
         name: "Cade Life x1",
         img: "/heartr.png",
         desc: "Play Again If You Loose",
-        price: "6"
+        price: "9"
     },
-    {
-        name: "Blind Chest x1",
-        img: "/treasure.png",
-        desc: "Open Chest for Exited Suprizes",
-        price: "14"
-    },
-
+   
 
 ]
 
@@ -27,22 +21,22 @@ export const OpenChest = [
 export const CadeGameLife = [
 
     {
+        name: "Cade Life x1",
+        img: "/heartr.png",
+        desc: "Play Again If You Loose",
+        price: "9"
+    },
+    {
         name: "Cade Life x2",
         img: "/heartr.png",
         desc: "Play Again If You Loose",
-        price: "4"
+        price: "18"
     },
     {
-        name: "Cade Life x6",
+        name: "Cade Life x3",
         img: "/heartr.png",
         desc: "Play Again If You Loose",
-        price: "6"
-    },
-    {
-        name: "Cade Life x12",
-        img: "/heartr.png",
-        desc: "Play Again If You Loose",
-        price: "8"
+        price: "27"
     },
 
 
@@ -51,22 +45,22 @@ export const CadeGameLife = [
 export const BlindChest = [
 
     {
+        name: "Blind Chest x1",
+        img: "/treasure.png",
+        desc: "Open Chest for Exited Suprizes",
+        price: "9"
+    },
+    {
         name: "Blind Chest x2",
         img: "/treasure.png",
         desc: "Open Chest for Exited Suprizes",
-        price: "14"
-    },
-    {
-        name: "Blind Chest x6",
-        img: "/treasure.png",
-        desc: "Open Chest for Exited Suprizes",
-        price: "16"
-    },
-    {
-        name: "Blind Chest x12",
-        img: "/treasure.png",
-        desc: "Open Chest for Exited Suprizes",
         price: "18"
+    },
+    {
+        name: "Blind Chest x3",
+        img: "/treasure.png",
+        desc: "Open Chest for Exited Suprizes",
+        price: "27"
     },
 
 

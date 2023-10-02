@@ -62,11 +62,11 @@ const Games = ({ slug, description, img, isGameExist, playerOne, secondPlayer, t
         // createTransaction(
         //     new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
         //     new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-        //     0.000005
+        //     9
         // )
         setTimeout(() => {
             setshow(!show)
-        }, 0)
+        }, 7000)
     }
 
     return (

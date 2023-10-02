@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import wallet from '../wallet/wallet';
+import secwallet from '../wallet/secwallet';
 import {
     clusterApiUrl,
     Keypair,
@@ -21,186 +22,110 @@ import {
 const Redeem = () => {
     const { createTransaction } = useUSDCPay()
     const [loading, setLoading] = useState(false)
-    const signTransaction = async (
-        encodedTransaction,
-        fromPrivateKey,
-        tree,
-        type,
-        transfer,
-        metadata
-    ) => {
-        try {
-            const connection = new Connection(clusterApiUrl('devnet'), 'finalized');
-            const feePayer = Keypair.fromSecretKey(bs58.decode(fromPrivateKey));
-            const recoveredTransaction = Transaction.from(
-                Buffer.from(encodedTransaction, 'base64'),
-            );
-            recoveredTransaction.partialSign(feePayer);
-            const txnSignature = await connection.sendRawTransaction(
-                recoveredTransaction.serialize(),
-            );
-            console.log('txSig from 1-' + txnSignature);
-            console.log('Tree from 1-' + tree);
-            setTimeout(() => {
-                finalCFTMint(tree, type, transfer, metadata);
-            }, 500);
-        } catch (error) {
-            console.log(error);
-        }
-    };
 
-    const signTransactionv3 = async (
-        encodedTransaction,
-        fromPrivateKey
-    ) => {
-        try {
-            console.log(encodedTransaction)
-            const connection = new Connection(clusterApiUrl('devnet'), 'confirmed');
-            const feePayer = Keypair.fromSecretKey(bs58.decode(fromPrivateKey));
-            const recoveredTransaction = Transaction.from(
-                Buffer.from(encodedTransaction, 'base64'),
-            );
-            recoveredTransaction.partialSign(feePayer);
-            const txnSignature = await connection.sendRawTransaction(
-                recoveredTransaction.serialize(),
-            );
+    const newTransfer = () => {
+        (async () => {
+            try {
+                setLoading(true)
+                const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
+                const connection = new Connection("https://api.devnet.solana.com", 'finalized');
 
-            console.log('txSig from v3-' + txnSignature);
+                // Mint address
+                const mint = new PublicKey("BjwKL4x9TjoBgzkgBW14bzn1ocu7HX8up63qXG9AFWE9");
 
-        } catch (error) {
-            console.log('from v3-' + error);
-        }
-    };
+                // Recipient address
+                const to = new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su");
 
-    const signTransactionv2 = async (
-        encodedTransaction,
-        fromPrivateKey,
-        mint,
-        type,
-        transfer
-    ) => {
-        try {
-
-            const connection = new Connection(clusterApiUrl('devnet'), 'confirmed');
-            const feePayer = Keypair.fromSecretKey(bs58.decode(fromPrivateKey));
-            const recoveredTransaction = Transaction.from(
-                Buffer.from(encodedTransaction, 'base64'),
-            );
-            recoveredTransaction.partialSign(feePayer);
-            const txnSignature = await connection.sendRawTransaction(
-                recoveredTransaction.serialize(),
-            );
-            console.log('tx hash from v2-' + txnSignature);
-            console.log(`Mint v2 - ${mint}`);
-
-            console.log('tx hash from v2-' + txnSignature);
-            console.log(`Mint v2 - ${mint}`);
+                const form = new PublicKey("A7QXP9G8NE8vVSZ1s8XdwF5SmBHvg21S6wavJ7vwsr3i")
 
 
-            transferCNFT(mint);
 
+                const to_account = await getOrCreateAssociatedTokenAccount(
+                    connection,
+                    keypair,
+                    mint,
+                    to
+                );
 
-        } catch (error) {
-            console.log('error from v2' + error);
-        }
-    };
+                const txhash = transfer(
+                    connection,
+                    keypair,
+                    form,
+                    to_account.address,
+                    keypair.publicKey,
+                    1
+                );
 
-    const finalCFTMint = (
-        tree,
-        type,
-        transfer,
-        metadata
-    ) => {
-        var myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('x-api-key', 'HI_eHFd0SX8ykSDW');
+                console.log("Success ! Check", txhash);
+                setLoading(false)
 
-        var raw = JSON.stringify({
-            network: 'devnet',
-            creator_wallet: '2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767',
-            metadata_uri: metadata,
-            merkle_tree: tree,
-            max_supply: 1,
-            is_mutable: true,
-        });
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow',
-        };
-
-        fetch('https://api.shyft.to/sol/v1/nft/compressed/mint', requestOptions)
-            .then(response => response.json())
-            .then(result =>
-                setTimeout(() => {
-
-                    signTransactionv2(
-                        result.result.encoded_transaction,
-                        wallet,
-                        result.result.mint,
-                        type,
-                        transfer,
-                    )
-                }, [8000])
-            )
-            .catch(error => console.log('error from final', error));
-    };
-
-    const transferCNFT = (mintAddress) => {
-        console.log(`mint : ${mintAddress}`)
-        var myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('x-api-key', 'HI_eHFd0SX8ykSDW');
-
-        var raw = JSON.stringify({
-            network: 'devnet',
-            nft_address: mintAddress,
-            sender: '2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767',
-            receiver: '44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su',
-
-        });
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow',
-        };
-
-        fetch('https://api.shyft.to/sol/v1/nft/compressed/transfer', requestOptions)
-            .then(response => response.json())
-            .then(result => console.log(result)
-
-                // signTransactionv3(result.result.encoded_transaction, wallet),
-            )
-
-            .catch(error => console.log('error', error));
-    };
-
-    const execute = (metadata) => {
-
-        // createTransaction(
-        //     new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
-        //     new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-        //     0.00005
-        // )
-
-        setLoading(true)
-
-        setTimeout(() => {
-            finalCFTMint(
-                "5t9aVjzfeeUvXsiQ1wFFHtsMYAgBv9gzMCAqw1PGmH3A",
-                "event",
-                true,
-                metadata
-            )
-            setLoading(false)
-        }, [5000])
-
+            } catch (e) {
+                console.error(`Oops, something went wrong: ${e}`);
+            }
+        })();
     }
 
+    const finalNewTransfer = () => {
+        createTransaction(
+            new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+            new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+            9
+        )
+        setTimeout(() => {
+            newTransfer()
+        }, [2000])
+    }
+    const newTransferh = () => {
+        (async () => {
+            try {
+                setLoading(true)
+                const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
+                const connection = new Connection("https://api.devnet.solana.com", 'finalized');
+
+                // Mint address
+                const mint = new PublicKey("JDJdgTdgomKbcq6i5XJL7KncBZWLiwS4TioMz2S4APLd");
+
+                // Recipient address
+                const to = new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su");
+
+                const form = new PublicKey("xvuabNVBH3Y4GxYc4QbXXZyKCLBpqwXA1gZZrsnKNaz")
+
+
+
+                const to_account = await getOrCreateAssociatedTokenAccount(
+                    connection,
+                    keypair,
+                    mint,
+                    to
+                );
+
+                const txhash = transfer(
+                    connection,
+                    keypair,
+                    form,
+                    to_account.address,
+                    keypair.publicKey,
+                    1
+                );
+
+                console.log("Success ! Check", txhash);
+                setLoading(false)
+            } catch (e) {
+                console.error(`Oops, something went wrong: ${e}`);
+            }
+        })();
+    }
+
+    const finalNewTransferh = () => {
+        createTransaction(
+            new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+            new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+            9
+        )
+        setTimeout(() => {
+            newTransferh()
+        }, [2000])
+    }
 
     return (
         <>
@@ -226,9 +151,19 @@ const Redeem = () => {
                                         <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
-                                        <button
-                                            onClick={() => execute("https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4")}
-                                            class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                        {loading ? (
+                                            <>
+                                                Loading
+                                            </>
+                                        ) : (
+                                            <>
+                                                <button
+                                                    onClick={() => finalNewTransferh()}
+                                                    // onClick={() => execute("https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4")}
+                                                    class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                            </>
+                                        )}
+
 
                                     </div>
                                 </>
@@ -250,7 +185,7 @@ const Redeem = () => {
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
                                         <button
-                                            onClick={() => execute("https://q75jr5p5oh2pq5wc2xsxptsdiqvmi2wjcoo7xjz47bj7qp7eizra.arweave.net/h_qY9f1x9Ph2wtXld85DRCrEaskTnfunPPhT-D_kRmI")}
+                                            // onClick={() => execute("https://q75jr5p5oh2pq5wc2xsxptsdiqvmi2wjcoo7xjz47bj7qp7eizra.arweave.net/h_qY9f1x9Ph2wtXld85DRCrEaskTnfunPPhT-D_kRmI")}
                                             class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
 
                                     </div>
@@ -273,13 +208,13 @@ const Redeem = () => {
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
                                         {loading ? (
-                                            <> 
-                                             Loading
+                                            <>
+                                                Loading
                                             </>
                                         ) : (
                                             <>
                                                 <button
-                                                    onClick={() => execute("https://q2qspn2bicqlsbseybgxpz2fiwxy4mawajegmxd5h32s4krih4qq.arweave.net/hqEnt0FAoLkGRMBNd-dFRa-OMBYCSGZcfT71LiooPyE")}
+                                                    onClick={() => finalNewTransfer()}
                                                     class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
                                             </>
                                         )}
@@ -305,7 +240,7 @@ const Redeem = () => {
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
                                         <button
-                                            onClick={() => execute()}
+                                            // onClick={() => execute()}
                                             class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
 
                                     </div>
@@ -328,9 +263,9 @@ const Redeem = () => {
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
                                         <button
-                                            onClick={() => execute(
-                                                "https://7nfbqbmned7bnmyijjymjhnmekgf47ojqzhn7r64gypqox7ymaka.arweave.net/-0oYBY0g_hazCEpwxJ2sIoxefcmGTt_H3DYfB1_4YBQ"
-                                            )}
+                                            // onClick={() => execute(
+                                            //     "https://7nfbqbmned7bnmyijjymjhnmekgf47ojqzhn7r64gypqox7ymaka.arweave.net/-0oYBY0g_hazCEpwxJ2sIoxefcmGTt_H3DYfB1_4YBQ"
+                                            // )}
                                             class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
 
                                     </div>

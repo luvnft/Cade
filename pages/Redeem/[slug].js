@@ -2,8 +2,75 @@ import React, { useState } from 'react'
 import {
   OpenChest
 } from '../../components/Data/data'
+import {
+  clusterApiUrl,
+  Keypair,
+  Transaction,
+  Connection,
+  Commitment,
+  PublicKey,
+} from '@solana/web3.js';
+import * as bs58 from 'bs58';
+import secwallet from '../../wallet/secwallet';
+import { useUSDCPay } from '../../hooks/transfer'
+import { getOrCreateAssociatedTokenAccount, transfer } from '@solana/spl-token';
 const RedeemBlindChest = ({ name, img }) => {
-  const [redeem , setRedeem] = useState(false)
+  const { createTransaction } = useUSDCPay()
+  const [redeem, setRedeem] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const newTransferh = () => {
+    (async () => {
+      try {
+        setLoading(true)
+        const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
+        const connection = new Connection("https://api.devnet.solana.com", 'finalized');
+
+        // Mint address
+        const mint = new PublicKey("JDJdgTdgomKbcq6i5XJL7KncBZWLiwS4TioMz2S4APLd");
+
+        // Recipient address
+        const to = new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su");
+
+        const form = new PublicKey("xvuabNVBH3Y4GxYc4QbXXZyKCLBpqwXA1gZZrsnKNaz")
+
+
+
+        const to_account = await getOrCreateAssociatedTokenAccount(
+          connection,
+          keypair,
+          mint,
+          to
+        );
+
+        const txhash = transfer(
+          connection,
+          keypair,
+          form,
+          to_account.address,
+          keypair.publicKey,
+          1
+        );
+
+        console.log("Success ! Check", txhash);
+        setLoading(false)
+      } catch (e) {
+        console.error(`Oops, something went wrong: ${e}`);
+      }
+    })();
+  }
+
+  const finalNewTranactionh = () => {
+    createTransaction(
+      new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+      new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+      9
+    )
+    setTimeout(() => {
+      newTransferh()
+    }, 2000)
+  }
+
   return (
     <>
       <div className='flex justify-center mt-10'>
@@ -17,7 +84,7 @@ const RedeemBlindChest = ({ name, img }) => {
               <h5 class="mt-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{name}</h5>
             </a>
             <button
-            onClick={()=> setRedeem(!redeem)}
+              onClick={() => setRedeem(!redeem)}
               class="ml-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Redeem</button>
           </div>
         </div>
@@ -25,34 +92,41 @@ const RedeemBlindChest = ({ name, img }) => {
 
 
       </div>
-      
+
       {redeem ? (
         <>
-        <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-        {OpenChest.map((item) => {
-          return (
-            <>
-              <div class="bg-black p-6 rounded-lg">
-                <img height={100} width={100} class="h-60 rounded w-full object-cover object-center mb-6" src={item.img} alt="content" />
-                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">CADE STORE</h3>
-                <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
-                <p class="text-white font-abc text-2xl">{item.desc}</p>
-                {/* needs onClick execute function  */}
-                <button
-                  onClick={() => execute("https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4")}
-                  class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+          <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+            {OpenChest.map((item) => {
+              return (
+                <>
+                  <div class="bg-black p-6 rounded-lg">
+                    <img height={20} width={20} class="h-80 rounded w-full object-cover object-center mb-6" src={item.img} alt="content" />
+                    <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">CADE STORE</h3>
+                    <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
+                    <p class="text-white font-abc text-2xl">{item.desc}</p>
+                    {/* needs onClick execute function  */}
+                    {loading ? (
+                      <>
+                        Loading
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          onClick={() => finalNewTranactionh()}
+                          class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                      </>
+                    )}
+                  </div>
+                </>
+              )
+            })}
 
-              </div>
-            </>
-          )
-        })}
-
-      </div>
+          </div>
         </>
       ) : (
         <></>
       )}
-      
+
     </>
   )
 }
