@@ -171,21 +171,21 @@ const Redeem = () => {
 
         fetch('https://api.shyft.to/sol/v1/nft/compressed/transfer', requestOptions)
             .then(response => response.json())
-            .then(result =>
+            .then(result => console.log(result)
 
-                signTransactionv3(result.result.encoded_transaction, wallet),
+                // signTransactionv3(result.result.encoded_transaction, wallet),
             )
 
             .catch(error => console.log('error', error));
     };
 
-    const execute = () => {
+    const execute = (metadata) => {
 
-        createTransaction(
-            new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
-            new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-            0.00005
-        )
+        // createTransaction(
+        //     new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+        //     new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+        //     0.00005
+        // )
 
         setLoading(true)
 
@@ -194,7 +194,7 @@ const Redeem = () => {
                 "5t9aVjzfeeUvXsiQ1wFFHtsMYAgBv9gzMCAqw1PGmH3A",
                 "event",
                 true,
-                "https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4"
+                metadata
             )
             setLoading(false)
         }, [5000])
@@ -226,7 +226,9 @@ const Redeem = () => {
                                         <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
-                                        <button class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                        <button
+                                            onClick={() => execute("https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4")}
+                                            class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
 
                                     </div>
                                 </>
@@ -247,7 +249,9 @@ const Redeem = () => {
                                         <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
-                                        <button class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                        <button
+                                            onClick={() => execute("https://q75jr5p5oh2pq5wc2xsxptsdiqvmi2wjcoo7xjz47bj7qp7eizra.arweave.net/h_qY9f1x9Ph2wtXld85DRCrEaskTnfunPPhT-D_kRmI")}
+                                            class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
 
                                     </div>
                                 </>
@@ -268,7 +272,18 @@ const Redeem = () => {
                                         <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
-                                        <button class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                        {loading ? (
+                                            <> 
+                                             Loading
+                                            </>
+                                        ) : (
+                                            <>
+                                                <button
+                                                    onClick={() => execute("https://q2qspn2bicqlsbseybgxpz2fiwxy4mawajegmxd5h32s4krih4qq.arweave.net/hqEnt0FAoLkGRMBNd-dFRa-OMBYCSGZcfT71LiooPyE")}
+                                                    class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                            </>
+                                        )}
+
 
                                     </div>
                                 </>
@@ -289,7 +304,9 @@ const Redeem = () => {
                                         <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
-                                        <button class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                        <button
+                                            onClick={() => execute()}
+                                            class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
 
                                     </div>
                                 </>
@@ -310,7 +327,11 @@ const Redeem = () => {
                                         <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
                                         <p class="text-white font-abc text-2xl">{item.desc}</p>
                                         {/* needs onClick execute function  */}
-                                        <button class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
+                                        <button
+                                            onClick={() => execute(
+                                                "https://7nfbqbmned7bnmyijjymjhnmekgf47ojqzhn7r64gypqox7ymaka.arweave.net/-0oYBY0g_hazCEpwxJ2sIoxefcmGTt_H3DYfB1_4YBQ"
+                                            )}
+                                            class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
 
                                     </div>
                                 </>

@@ -1,3 +1,29 @@
+export const OpenChest = [
+
+    {
+        name: "Cade Life x1",
+        img: "/heartr.png",
+        desc: "Play Again If You Loose",
+        price: "4"
+    },
+    {
+        name: "Cade Life x1",
+        img: "/heartr.png",
+        desc: "Play Again If You Loose",
+        price: "6"
+    },
+    {
+        name: "Blind Chest x1",
+        img: "/treasure.png",
+        desc: "Open Chest for Exited Suprizes",
+        price: "14"
+    },
+
+
+]
+
+
+
 export const CadeGameLife = [
 
     {
