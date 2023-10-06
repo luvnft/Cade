@@ -7,16 +7,17 @@
 .content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: black;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    width: 200px;
+    width: 400px;
     z-index: 1;
 }
 
 /* Styles for the popover arrow */
 .arrow {
+    background-color: black;
     position: absolute;
     width: 0;
     height: 0;
