@@ -2,29 +2,31 @@ import React from 'react'
 import { MdExplore } from 'react-icons/md'
 import { AiOutlineUsergroupAdd } from 'react-icons/ai'
 import styles from '../../styles/Popover.module.css'
+import {AiOutlineSend} from 'react-icons/ai'
 const FriendsList = () => {
     const Data = [
         {
             img: "https://picsum.photos/202",
-            name : "User1"
+            name: "User1"
         },
         {
             img: "https://picsum.photos/202",
-            name : "User2"
+            name: "User2"
         },
         {
             img: "https://picsum.photos/203",
-            name : "User3"
+            name: "User3"
         },
         {
             img: "https://picsum.photos/204",
-            name : "User4"
+            name: "User4"
         },
         {
             img: "https://picsum.photos/205",
-            name : "User5"
+            name: "User5"
         }
     ]
+ 
     return (
         <>
             <div className="flex flex-col mt-20">
@@ -52,6 +54,17 @@ const FriendsList = () => {
                                             <h1 class="font-abc text-2xl text-white ml-5">10 Followers</h1>
                                         </div>
                                         <div>
+                                            <h1 class="mt-5 font-abc text-3xl ">Chats</h1>
+                                            <div class="text-white font-abc text-2xl mr-2 ml-2 mt-5 rounded-2xl w-30">
+                                                <h1 class="w-1/2 bg-green-500 p-2 m-2  rounded-xl">My Message</h1>
+                                               
+                                            
+                                            </div>
+
+                                            <div class="flex justify-between mr-3 mt-5">
+                                                <input value="fdf" class="bg-gray-900 p-2 rounded-2xl w-30" />
+                                               <AiOutlineSend className='text-xl mt-3 ml-2'/>
+                                            </div>
                                         </div>
 
                                     </div>
