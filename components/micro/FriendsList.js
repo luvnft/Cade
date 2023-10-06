@@ -1,6 +1,7 @@
 import React from 'react'
 import { MdExplore } from 'react-icons/md'
 import { AiOutlineUsergroupAdd } from 'react-icons/ai'
+import styles from '../../styles/Popover.module.css'
 const FriendsList = () => {
     return (
         <>
@@ -8,7 +9,13 @@ const FriendsList = () => {
                 <div>
                     <MdExplore className='text-4xl' />
                 </div>
-                <img class="w-24 h-8 mt-5 rounded-full" src="https://picsum.photos/200" alt="Rounded avatar"></img>
+                <div className={styles.container}>
+                    <img class="w-24 h-8 mt-5 rounded-full" src="https://picsum.photos/200" alt="Rounded avatar"></img>
+                    <div className={styles.content}>
+                        <div className={styles.arrow}></div>
+                        This is the popover content
+                    </div>
+                </div>
                 <img class="w-24 h-8 mt-5 rounded-full" src="https://picsum.photos/201" alt="Rounded avatar"></img>
                 <img class="w-24 h-8 mt-5 rounded-full" src="https://picsum.photos/202" alt="Rounded avatar"></img>
                 <img class="w-24 h-8 mt-5 rounded-full" src="https://picsum.photos/203" alt="Rounded avatar"></img>
