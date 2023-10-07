@@ -20,7 +20,7 @@ const Home = () => {
           </div>
           <div class="flex flex-1 flex-col">
     
-            <div class="flex flex-1 overflow-y-auto paragraph px-4">
+            <div class="flex 2xl:block flex-1 overflow-y-auto paragraph px-4">
               <div id="top">
                 <div
                   style={{
