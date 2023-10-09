@@ -1,284 +1,342 @@
-import { useState } from 'react'
-import wallet from '../wallet/wallet';
-import secwallet from '../wallet/secwallet';
+import { useState } from "react";
+import wallet from "../wallet/wallet";
+import secwallet from "../wallet/secwallet";
 import {
-    clusterApiUrl,
-    Keypair,
-    Transaction,
-    Connection,
-    Commitment,
-    PublicKey,
-} from '@solana/web3.js';
-import { useUSDCPay } from '../hooks/transfer'
-import * as bs58 from 'bs58';
-import { getOrCreateAssociatedTokenAccount, transfer } from '@solana/spl-token';
+  clusterApiUrl,
+  Keypair,
+  Transaction,
+  Connection,
+  Commitment,
+  PublicKey,
+} from "@solana/web3.js";
+import { useUSDCPay } from "../hooks/transfer";
+import * as bs58 from "bs58";
+import { getOrCreateAssociatedTokenAccount, transfer } from "@solana/spl-token";
 import {
-    BlindChest,
-    GamePass,
-    BlindBag,
-    LotteryTicket,
-    CadeGameLife
-} from '../components/Data/data'
+  BlindChest,
+  GamePass,
+  BlindBag,
+  LotteryTicket,
+  CadeGameLife,
+} from "../components/Data/data";
 const Redeem = () => {
-    const { createTransaction } = useUSDCPay()
-    const [loading, setLoading] = useState(false)
+  const { createTransaction } = useUSDCPay();
+  const [loading, setLoading] = useState(false);
 
-    const newTransfer = () => {
-        (async () => {
-            try {
-                setLoading(true)
-                const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
-                const connection = new Connection("https://api.devnet.solana.com", 'finalized');
+  const newTransfer = () => {
+    (async () => {
+      try {
+        setLoading(true);
+        const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
+        const connection = new Connection(
+          "https://api.devnet.solana.com",
+          "finalized"
+        );
 
-                // Mint address
-                const mint = new PublicKey("BjwKL4x9TjoBgzkgBW14bzn1ocu7HX8up63qXG9AFWE9");
+        // Mint address
+        const mint = new PublicKey(
+          "BjwKL4x9TjoBgzkgBW14bzn1ocu7HX8up63qXG9AFWE9"
+        );
 
-                // Recipient address
-                const to = new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su");
+        // Recipient address
+        const to = new PublicKey(
+          "44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"
+        );
 
-                const form = new PublicKey("A7QXP9G8NE8vVSZ1s8XdwF5SmBHvg21S6wavJ7vwsr3i")
+        const form = new PublicKey(
+          "A7QXP9G8NE8vVSZ1s8XdwF5SmBHvg21S6wavJ7vwsr3i"
+        );
 
+        const to_account = await getOrCreateAssociatedTokenAccount(
+          connection,
+          keypair,
+          mint,
+          to
+        );
 
+        const txhash = transfer(
+          connection,
+          keypair,
+          form,
+          to_account.address,
+          keypair.publicKey,
+          1
+        );
 
-                const to_account = await getOrCreateAssociatedTokenAccount(
-                    connection,
-                    keypair,
-                    mint,
-                    to
-                );
+        console.log("Success ! Check", txhash);
+        setLoading(false);
+      } catch (e) {
+        console.error(`Oops, something went wrong: ${e}`);
+      }
+    })();
+  };
 
-                const txhash = transfer(
-                    connection,
-                    keypair,
-                    form,
-                    to_account.address,
-                    keypair.publicKey,
-                    1
-                );
+  const finalNewTransfer = () => {
+    createTransaction(
+      new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+      new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+      9
+    );
+    setTimeout(() => {
+      newTransfer();
+    }, [2000]);
+  };
+  const newTransferh = () => {
+    (async () => {
+      try {
+        setLoading(true);
+        const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
+        const connection = new Connection(
+          "https://api.devnet.solana.com",
+          "finalized"
+        );
 
-                console.log("Success ! Check", txhash);
-                setLoading(false)
+        // Mint address
+        const mint = new PublicKey(
+          "JDJdgTdgomKbcq6i5XJL7KncBZWLiwS4TioMz2S4APLd"
+        );
 
-            } catch (e) {
-                console.error(`Oops, something went wrong: ${e}`);
-            }
-        })();
-    }
+        // Recipient address
+        const to = new PublicKey(
+          "44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"
+        );
 
-    const finalNewTransfer = () => {
-        createTransaction(
-            new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
-            new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-            9
-        )
-        setTimeout(() => {
-            newTransfer()
-        }, [2000])
-    }
-    const newTransferh = () => {
-        (async () => {
-            try {
-                setLoading(true)
-                const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
-                const connection = new Connection("https://api.devnet.solana.com", 'finalized');
+        const form = new PublicKey(
+          "xvuabNVBH3Y4GxYc4QbXXZyKCLBpqwXA1gZZrsnKNaz"
+        );
 
-                // Mint address
-                const mint = new PublicKey("JDJdgTdgomKbcq6i5XJL7KncBZWLiwS4TioMz2S4APLd");
+        const to_account = await getOrCreateAssociatedTokenAccount(
+          connection,
+          keypair,
+          mint,
+          to
+        );
 
-                // Recipient address
-                const to = new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su");
+        const txhash = transfer(
+          connection,
+          keypair,
+          form,
+          to_account.address,
+          keypair.publicKey,
+          1
+        );
 
-                const form = new PublicKey("xvuabNVBH3Y4GxYc4QbXXZyKCLBpqwXA1gZZrsnKNaz")
+        console.log("Success ! Check", txhash);
+        setLoading(false);
+      } catch (e) {
+        console.error(`Oops, something went wrong: ${e}`);
+      }
+    })();
+  };
 
+  const finalNewTransferh = () => {
+    createTransaction(
+      new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+      new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+      9
+    );
+    setTimeout(() => {
+      newTransferh();
+    }, [2000]);
+  };
 
+  return (
+    <>
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-wrap w-full mb-20">
+            <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
+              <h1 className="font-abc text-7xl font-medium title-font mb-2 text-white ml-16">
+                Redeem Cade
+              </h1>
+            </div>
+            <p className="lg:w-1/2 w-full font-abc text-white text-5xl mt-2">
+              Redeem Your Cade for Cool Prizes.
+            </p>
+          </div>
 
-                const to_account = await getOrCreateAssociatedTokenAccount(
-                    connection,
-                    keypair,
-                    mint,
-                    to
-                );
-
-                const txhash = transfer(
-                    connection,
-                    keypair,
-                    form,
-                    to_account.address,
-                    keypair.publicKey,
-                    1
-                );
-
-                console.log("Success ! Check", txhash);
-                setLoading(false)
-            } catch (e) {
-                console.error(`Oops, something went wrong: ${e}`);
-            }
-        })();
-    }
-
-    const finalNewTransferh = () => {
-        createTransaction(
-            new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
-            new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-            9
-        )
-        setTimeout(() => {
-            newTransferh()
-        }, [2000])
-    }
-
-    return (
-        <>
-            <section class="text-gray-600 body-font">
-                <div class="container px-5 py-24 mx-auto">
-                    <div class="flex flex-wrap w-full mb-20">
-                        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-                            <h1 class="font-abc text-7xl font-medium title-font mb-2 text-white ml-16">Redeem Cade</h1>
-
-                        </div>
-                        <p class="lg:w-1/2 w-full font-abc text-white text-5xl mt-2">Redeem Your Cade for Cool Prizes.</p>
-                    </div>
-
-                    {/* CadeGameLife */}
-                    <h1 className='text-white text-5xl font-abc ml-16'>Cade Game Life</h1>
-                    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                        {CadeGameLife.map((item) => {
-                            return (
-                                <>
-                                    <div class="bg-black p-6 rounded-lg">
-                                        <img height={100} width={100} class="h-60 rounded w-full object-cover object-center mb-6" src={item.img} alt="content" />
-                                        <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">CADE STORE</h3>
-                                        <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
-                                        <p class="text-white font-abc text-2xl">{item.desc}</p>
-                                        {/* needs onClick execute function  */}
-                                        {loading ? (
-                                            <>
-                                                Loading
-                                            </>
-                                        ) : (
-                                            <>
-                                                <button
-                                                    onClick={() => finalNewTransferh()}
-                                                    // onClick={() => execute("https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4")}
-                                                    class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
-                                            </>
-                                        )}
-
-
-                                    </div>
-                                </>
-                            )
-                        })}
-
-                    </div>
-
-                    {/* GamePass */}
-                    <h1 className='text-white text-5xl font-abc ml-16'>Cade Game Pass</h1>
-                    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                        {GamePass.map((item) => {
-                            return (
-                                <>
-                                    <div class="bg-black p-6 rounded-lg">
-                                        <img height={100} width={100} class="h-60 rounded w-full object-cover object-center mb-6" src={item.img} alt="content" />
-                                        <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">CADE STORE</h3>
-                                        <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
-                                        <p class="text-white font-abc text-2xl">{item.desc}</p>
-                                        {/* needs onClick execute function  */}
-                                        <button
-                                            // onClick={() => execute("https://q75jr5p5oh2pq5wc2xsxptsdiqvmi2wjcoo7xjz47bj7qp7eizra.arweave.net/h_qY9f1x9Ph2wtXld85DRCrEaskTnfunPPhT-D_kRmI")}
-                                            class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
-
-                                    </div>
-                                </>
-                            )
-                        })}
-
-                    </div>
-
-                    {/* BlindChest */}
-                    <h1 className='text-white text-5xl font-abc ml-16'>Cade Blind Chest</h1>
-                    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                        {BlindChest.map((item) => {
-                            return (
-                                <>
-                                    <div class="bg-black p-6 rounded-lg">
-                                        <img height={100} width={100} class="h-60 rounded w-full object-cover object-center mb-6" src={item.img} alt="content" />
-                                        <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">CADE STORE</h3>
-                                        <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
-                                        <p class="text-white font-abc text-2xl">{item.desc}</p>
-                                        {/* needs onClick execute function  */}
-                                        {loading ? (
-                                            <>
-                                                Loading
-                                            </>
-                                        ) : (
-                                            <>
-                                                <button
-                                                    onClick={() => finalNewTransfer()}
-                                                    class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
-                                            </>
-                                        )}
-
-
-                                    </div>
-                                </>
-                            )
-                        })}
-
-                    </div>
-
-                    {/* LotteryTicket */}
-                    <h1 className='text-white text-5xl font-abc ml-16'>LotteryTicket</h1>
-                    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                        {LotteryTicket.map((item) => {
-                            return (
-                                <>
-                                    <div class="bg-black p-6 rounded-lg">
-                                        <img height={100} width={100} class="h-60 rounded w-full object-cover object-center mb-6" src={item.img} alt="content" />
-                                        <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">CADE STORE</h3>
-                                        <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
-                                        <p class="text-white font-abc text-2xl">{item.desc}</p>
-                                        {/* needs onClick execute function  */}
-                                        <button
-                                            // onClick={() => execute()}
-                                            class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
-
-                                    </div>
-                                </>
-                            )
-                        })}
-
-                    </div>
-
-                    {/* Blindbag */}
-                    <h1 className='text-white text-5xl font-abc ml-16'>Cade BlindBag</h1>
-                    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                        {BlindBag.map((item) => {
-                            return (
-                                <>
-                                    <div class="bg-black p-6 rounded-lg">
-                                        <img height={100} width={100} class="h-60 rounded w-full object-cover object-center mb-6" src={item.img} alt="content" />
-                                        <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">CADE STORE</h3>
-                                        <h2 class="text-white text-3xl font-abc title-font mb-4">{item.name}</h2>
-                                        <p class="text-white font-abc text-2xl">{item.desc}</p>
-                                        {/* needs onClick execute function  */}
-                                        <button
-                                            // onClick={() => execute(
-                                            //     "https://7nfbqbmned7bnmyijjymjhnmekgf47ojqzhn7r64gypqox7ymaka.arweave.net/-0oYBY0g_hazCEpwxJ2sIoxefcmGTt_H3DYfB1_4YBQ"
-                                            // )}
-                                            class="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl">Buy for {item.price} Cade</button>
-
-                                    </div>
-                                </>
-                            )
-                        })}
-
-                    </div>
-
+          {/* CadeGameLife */}
+          <h1 className="text-white text-5xl font-abc ml-16">Cade Game Life</h1>
+          <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            {CadeGameLife.map((item) => {
+              return (
+                <div className="bg-black p-6 rounded-lg" key={item.name}>
+                  <img
+                    height={100}
+                    width={100}
+                    className="h-60 rounded w-full object-cover object-center mb-6"
+                    src={item.img}
+                    alt="content"
+                  />
+                  <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                    CADE STORE
+                  </h3>
+                  <h2 className="text-white text-3xl font-abc title-font mb-4">
+                    {item.name}
+                  </h2>
+                  <p className="text-white font-abc text-2xl">{item.desc}</p>
+                  {/* needs onClick execute function  */}
+                  {loading ? (
+                    <>Loading</>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => finalNewTransferh()}
+                        // onClick={() => execute("https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4")}
+                        className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
+                      >
+                        Buy for {item.price} Cade
+                      </button>
+                    </>
+                  )}
                 </div>
-            </section>
-        </>
-    )
-}
+              );
+            })}
+          </div>
 
-export default Redeem
+          {/* GamePass */}
+          <h1 className="text-white text-5xl font-abc ml-16">Cade Game Pass</h1>
+          <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            {GamePass.map((item) => {
+              return (
+                <div className="bg-black p-6 rounded-lg" key={item.name}>
+                  <img
+                    height={100}
+                    width={100}
+                    className="h-60 rounded w-full object-cover object-center mb-6"
+                    src={item.img}
+                    alt="content"
+                  />
+                  <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                    CADE STORE
+                  </h3>
+                  <h2 className="text-white text-3xl font-abc title-font mb-4">
+                    {item.name}
+                  </h2>
+                  <p className="text-white font-abc text-2xl">{item.desc}</p>
+                  {/* needs onClick execute function  */}
+                  <button
+                    // onClick={() => execute("https://q75jr5p5oh2pq5wc2xsxptsdiqvmi2wjcoo7xjz47bj7qp7eizra.arweave.net/h_qY9f1x9Ph2wtXld85DRCrEaskTnfunPPhT-D_kRmI")}
+                    className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
+                  >
+                    Buy for {item.price} Cade
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* BlindChest */}
+          <h1 className="text-white text-5xl font-abc ml-16">
+            Cade Blind Chest
+          </h1>
+          <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            {BlindChest.map((item) => {
+              return (
+                <div className="bg-black p-6 rounded-lg" key={item.name}>
+                  <img
+                    height={100}
+                    width={100}
+                    className="h-60 rounded w-full object-cover object-center mb-6"
+                    src={item.img}
+                    alt="content"
+                  />
+                  <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                    CADE STORE
+                  </h3>
+                  <h2 className="text-white text-3xl font-abc title-font mb-4">
+                    {item.name}
+                  </h2>
+                  <p className="text-white font-abc text-2xl">{item.desc}</p>
+                  {/* needs onClick execute function  */}
+                  {loading ? (
+                    <>Loading</>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => finalNewTransfer()}
+                        className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
+                      >
+                        Buy for {item.price} Cade
+                      </button>
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* LotteryTicket */}
+          <h1 className="text-white text-5xl font-abc ml-16">LotteryTicket</h1>
+          <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            {LotteryTicket.map((item) => {
+              return (
+                <div className="bg-black p-6 rounded-lg" key={item.name}>
+                  <img
+                    height={100}
+                    width={100}
+                    className="h-60 rounded w-full object-cover object-center mb-6"
+                    src={item.img}
+                    alt="content"
+                  />
+                  <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                    CADE STORE
+                  </h3>
+                  <h2 className="text-white text-3xl font-abc title-font mb-4">
+                    {item.name}
+                  </h2>
+                  <p className="text-white font-abc text-2xl">{item.desc}</p>
+                  {/* needs onClick execute function  */}
+                  <button
+                    // onClick={() => execute()}
+                    className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
+                  >
+                    Buy for {item.price} Cade
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Blindbag */}
+          <h1 className="text-white text-5xl font-abc ml-16">Cade BlindBag</h1>
+          <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            {BlindBag.map((item) => {
+              return (
+                <>
+                  <div className="bg-black p-6 rounded-lg" key={key.name}>
+                    <img
+                      height={100}
+                      width={100}
+                      className="h-60 rounded w-full object-cover object-center mb-6"
+                      src={item.img}
+                      alt="content"
+                    />
+                    <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+                      CADE STORE
+                    </h3>
+                    <h2 className="text-white text-3xl font-abc title-font mb-4">
+                      {item.name}
+                    </h2>
+                    <p className="text-white font-abc text-2xl">{item.desc}</p>
+                    {/* needs onClick execute function  */}
+                    <button
+                      // onClick={() => execute(
+                      //     "https://7nfbqbmned7bnmyijjymjhnmekgf47ojqzhn7r64gypqox7ymaka.arweave.net/-0oYBY0g_hazCEpwxJ2sIoxefcmGTt_H3DYfB1_4YBQ"
+                      // )}
+                      className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
+                    >
+                      Buy for {item.price} Cade
+                    </button>
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Redeem;
