@@ -1,5 +1,5 @@
 <p  align="center">
-  <img  src="https://firebasestorage.googleapis.com/v0/b/shrine-76128.appspot.com/o/woo%20w7.png?alt=media&token=8281f58b-4525-429c-8b9f-a3f373b51a35"  width="200">
+  <img  src="https://firebasestorage.googleapis.com/v0/b/shrine-76128.appspot.com/o/woo%20w7.png?alt=media&token=8281f58b-4525-429c-8b9f-a3f373b51a35">
 </p>  
 
 # Whats Cade
