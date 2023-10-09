@@ -197,9 +197,9 @@ const Redeem = () => {
           {/* GamePass */}
           <h1 className="text-white text-5xl font-abc ml-16">Cade Game Pass</h1>
           <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-            {GamePass.map((item) => {
+            {GamePass.map((item , key) => {
               return (
-                <div className="bg-black p-6 rounded-lg" key={item.name}>
+                <div className="bg-black p-6 rounded-lg">
                   <img
                     height={100}
                     width={100}
@@ -301,7 +301,7 @@ const Redeem = () => {
           {/* Blindbag */}
           <h1 className="text-white text-5xl font-abc ml-16">Cade BlindBag</h1>
           <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-            {BlindBag.map((item) => {
+            {BlindBag.map((item , key) => {
               return (
                 <>
                   <div className="bg-black p-6 rounded-lg" key={key.name}>
