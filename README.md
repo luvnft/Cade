@@ -1,5 +1,5 @@
 <p  align="center">
-  <img  src="https://firebasestorage.googleapis.com/v0/b/shrine-76128.appspot.com/o/hehe.png?alt=media&token=ce686f0e-457b-41ae-b05d-26da23310f7d">
+  <img  src="https://firebasestorage.googleapis.com/v0/b/shrine-76128.appspot.com/o/hehe.png?alt=media&token=ce686f0e-457b-41ae-b05d-26da23310f7d" height={100}>
 </p>  
 <br>
 <img src="https://i.imgur.com/N6oQbzv.png">
