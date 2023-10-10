@@ -171,8 +171,8 @@ const Games = ({
               <>
                 <div className="">
                   {show ? (
-                    <div className="p-10">
-                      <img width={800} src={img} alt="gggg" />
+                    <div className="flex justify-center p-10 rounded-xl mt-10 bg-gray-950">
+                      <img width={800} className="rounded-xl" src={img} alt="gggg" />
                     </div>
                   ) : (
                     renderGame()

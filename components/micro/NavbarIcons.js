@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 const NavbarIcons = () => {
+  const router = useRouter()
   return (
     <>
       <div className="flex flex-row ">
@@ -34,17 +36,21 @@ const NavbarIcons = () => {
         <h2 className="font-abc text-2xl text-white mt-2">100 000</h2>
         <img
           className="w-12 h-12 ml-2 rounded-full"
-          src="https://7fxmftuovhqylofjio4jlm2rrwdcmfrkz5hpgxiz25ffjjhskcvq.arweave.net/-W7Czo6p4YW4qUO4lbNRjYYmFirPTvNdGddKVKTyUKs"
+          src="/cadenew.png"
           alt="Rounded avatar"
         ></img>
       </div>
 
-      <h2 className="font-abc text-2xl text-white mt-2">UserName</h2>
+
       <img
-        className="w-10 h-10 ml-2 rounded-full"
-        src="https://picsum.photos/200/300"
+        onClick={() => router.push("/Profile/Joeey")}
+        className="w-10 h-10 ml-2 rounded-full cursor-pointer"
+        src="https://gravatar.com/avatar/de8b837bd975130ff76a7940c6cba552?s=400&d=retro&r=x"
         alt="Rounded avatar"
-      ></img>
+      >
+
+      </img>
+
     </>
   );
 };

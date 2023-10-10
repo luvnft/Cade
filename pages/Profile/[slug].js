@@ -3,10 +3,10 @@ import { GiTwoCoins } from "react-icons/gi";
 import { BsTrophyFill } from "react-icons/bs";
 import Trophies from "../../components/ProfileComponent/Trophies";
 import GameHistory from "../../components/ProfileComponent/GameHistory";
-const Profile = () => {
+const Profile = ({slug}) => {
   return (
     <>
-      <div className="lg:bg-[url('/kn.jpg')]">
+      <div className="bg-[url('/kn.jpg')]">
         <div className="flex flex-row bg-">
           <section className="text-gray-600 body-font lg:px-28">
             <div className="container px-5 py-5 mx-auto flex flex-wrap">
@@ -14,24 +14,27 @@ const Profile = () => {
                 <div className="flex flex-row">
                   <div className="p-4 lg:w-1/2 md:w-full">
                     <div className="flex rounded-lg  border-opacity-50 p-8 sm:flex-row flex-col">
-                      <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-inherit text-indigo-500 flex-shrink-0">
+                      <div className="ml-3 w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-inherit text-indigo-500 flex-shrink-0">
                         <img
                           className="w-16 h-16  rounded-full ring-2 ring-yellow-400"
-                          src="https://picsum.photos/200"
+                          src="https://gravatar.com/avatar/de8b837bd975130ff76a7940c6cba552?s=400&d=retro&r=x"
                           alt="Bordered avatar"
                         />
                       </div>
-                      <div className="flex-grow">
+                      <div className="ml-3 flex-grow">
                         <h2 className="text-white text-5xl font-abc title-font font-medium mb-3">
-                          UserName
+                          {slug}
                         </h2>
 
-                        <div className="flex flex-row">
-                          <GiTwoCoins className="text-4xl text-yellow-400" />
+                        <div className="flex flex-col">
+                        <div>
+                          <img src="/cadenew.png" width={100} height={100} alt="cade_img"/>
+                          </div>
                           <h1 className="ml-3 text-4xl font-extrabold font-abc text-white">
-                            100 000 CADE
+                            100 CADE
                           </h1>
                         </div>
+                       
                         <button
                           type="button"
                           className="font-abc text-2xl focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2"
@@ -41,7 +44,7 @@ const Profile = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="ml-20 mt-16">
+                  <div className="hidden xl:block ml-20 mt-16">
                     <input
                       type="search"
                       id="default-search"
@@ -60,7 +63,7 @@ const Profile = () => {
                   </div>
                 </div>
 
-                <div className="p-4 lg:w-1/3 md:w-full ml-20">
+                <div className="p-4 lg:w-1/3 md:w-full">
                   <div className="flex rounded-lg  border-opacity-50 p-8 sm:flex-row flex-col">
                     <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full  flex-shrink-0">
                       {/* <BsTrophyFill className='text-7xl mt-5 text-red-500' /> */}
@@ -84,7 +87,7 @@ const Profile = () => {
                           <h2 className="title-font font-medium text-5xl font-abc text-yellow-400">
                             27
                           </h2>
-                          <p className="leading-relaxed text-white text-2xl font-abc">
+                          <p className="leading-relaxed text-white text-3xl m-3 font-abc">
                             Match
                           </p>
                         </div>
@@ -92,7 +95,7 @@ const Profile = () => {
                           <h2 className="title-font font-medium text-5xl font-abc text-green-400">
                             18
                           </h2>
-                          <p className="leading-relaxed text-white text-2xl font-abc">
+                          <p className="leading-relaxed text-white text-3xl m-3 font-abc">
                             Wins
                           </p>
                         </div>
@@ -100,7 +103,7 @@ const Profile = () => {
                           <h2 className="title-font font-medium text-5xl font-abc text-red-500">
                             9
                           </h2>
-                          <p className="leading-relaxed text-white text-2xl font-abc">
+                          <p className="leading-relaxed text-white text-3xl m-3 font-abc">
                             Loses
                           </p>
                         </div>
@@ -108,7 +111,7 @@ const Profile = () => {
                           <h2 className="title-font font-medium text-5xl font-abc text-green-400">
                             60%
                           </h2>
-                          <p className="leading-relaxed text-white text-2xl font-abc">
+                          <p className="leading-relaxed text-white text-3xl m-3 font-abc">
                             Win Rate
                           </p>
                         </div>
@@ -121,7 +124,7 @@ const Profile = () => {
           </section>
         </div>
 
-        <div className="h-px w-full bg-gray-400"></div>
+        <div className="flex justify-center h-px w-full bg-gray-400"></div>
         <Trophies />
         <div className="h-px w-full bg-gray-400"></div>
         <GameHistory />

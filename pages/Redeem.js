@@ -142,7 +142,7 @@ const Redeem = () => {
 
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section className="bg-[url('/kn.jpg')] text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap w-full mb-20">
             <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
@@ -150,7 +150,7 @@ const Redeem = () => {
                 Redeem Cade
               </h1>
             </div>
-            <p className="lg:w-1/2 w-full font-abc text-white text-5xl mt-2">
+            <p className="hidden lg:block lg:w-1/2 w-full font-abc text-white text-5xl mt-2">
               Redeem Your Cade for Cool Prizes.
             </p>
           </div>

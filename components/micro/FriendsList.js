@@ -6,23 +6,23 @@ import { AiOutlineSend } from "react-icons/ai";
 const FriendsList = () => {
   const Data = [
     {
-      img: "https://picsum.photos/202",
+      img: "https://gravatar.com/avatar/4eef2f632f445c6d8a1185d8613bc6a3?s=400&d=robohash&r=x",
       name: "User1",
     },
     {
-      img: "https://picsum.photos/202",
+      img: "https://gravatar.com/avatar/bff5b51079602e067f4fcb32fb45faff?s=400&d=robohash&r=x",
       name: "User2",
     },
     {
-      img: "https://picsum.photos/203",
+      img: "https://gravatar.com/avatar/b1b006c4c0bf5fb5edb8c1977b5e9e36?s=400&d=retro&r=x",
       name: "User3",
     },
     {
-      img: "https://picsum.photos/204",
+      img: "https://gravatar.com/avatar/50abd2399b6cb03ceef7df05f2559526?s=400&d=retro&r=x",
       name: "User4",
     },
     {
-      img: "https://picsum.photos/205",
+      img: "https://gravatar.com/avatar/c8e2517a89cf8c58595438af42a2af40?s=400&d=robohash&r=x",
       name: "User5",
     },
   ];
