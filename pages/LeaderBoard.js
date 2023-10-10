@@ -26,6 +26,9 @@ const LeaderBoard = () => {
             </div>
           </div>
           <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col">
+          <div className="flex justify-center">
+              <img height={200} width={200} src="/l2.png" alt="gggg" />
+            </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="font-abc text-white text-6xl title-font font-medium mb-2">
                 Kane
@@ -37,9 +40,7 @@ const LeaderBoard = () => {
                 Win Ratio : 62%
               </h2>
             </div>
-            <div className="flex justify-center">
-              <img height={200} width={200} src="/l2.png" alt="gggg" />
-            </div>
+           
           </div>
           <div className="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
             <div className="flex justify-center">
