@@ -16,6 +16,7 @@ const Games = ({
   playerOne,
   secondPlayer,
   thirdPlayer,
+  timePlayed
 }) => {
   const { createTransaction } = useUSDCPay();
   const { mintCade } = useTicket();
@@ -104,7 +105,7 @@ const Games = ({
                             <BiSolidUpArrow className="text-green-500 text-3xl" />
                             <span className="flex-grow flex flex-col pl-3">
                               <span className="text-4xl font-abc text-white">
-                                +100 XP
+                                +10 XP
                               </span>
                             </span>
                           </a>
@@ -129,31 +130,34 @@ const Games = ({
                       </div>
                       <div className="p-4 sm:w-1/4 w-1/2">
                         <h2 className="font-abc sm:text-4xl text-3xl text-white">
-                          400+
+                          {timePlayed}
                         </h2>
                         <p className="text-white font-abc text-3xl">
                           Times Played
                         </p>
                       </div>
-                      <div className="ml-16 ">
-                        <button
-                          className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
-                          onClick={() => initgame()}
-                        >
-                          Play Now
-                        </button>
-                      </div>
-                      <div className="ml-16 ">
-                        <button
-                          className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
-                          onClick={() => mintCade()}
-                        >
-                          Claim XP and Cade
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </section>
+                <div className="flex justify-center flex-row mt-5">
+                  <div className=" ">
+                    <button
+                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
+                      onClick={() => initgame()}
+                    >
+                      Play Now
+                    </button>
+                  </div>
+                  <div className=" ">
+                    <button
+                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
+                      onClick={() => mintCade()}
+                    >
+                      Claim XP and Cade
+                    </button>
+                  </div>
+
+                </div>
               </>
             ) : (
               <div className="flex justify-center mt-16">
@@ -238,6 +242,7 @@ export async function getServerSideProps(context) {
   let playerOne = "";
   let secondPlayer = "";
   let thirdPlayer = "";
+  let timePlayed = ""
   console.log(`slug is my ${slug}`);
   if (slug == "CoinFlip") {
     (description = "A coinflipgame"), (img = "/gamethu1.jpg");
@@ -245,6 +250,7 @@ export async function getServerSideProps(context) {
       (playerOne = "John"),
       (secondPlayer = "Ben"),
       (thirdPlayer = "Josh");
+    timePlayed = "200+"
   }
   if (slug == "TowerDefence") {
     (description = "A TowerDefence Game"),
@@ -253,6 +259,7 @@ export async function getServerSideProps(context) {
       (playerOne = "TolyMan"),
       (secondPlayer = "OnlySolana"),
       (thirdPlayer = "Elliot");
+    timePlayed = "100+"
   }
   if (slug == "FourInLine") {
     description = "A Four In Line Game";
@@ -261,6 +268,7 @@ export async function getServerSideProps(context) {
     playerOne = "Niunjap#22";
     secondPlayer = "Bhindi";
     thirdPlayer = "Akkobaiii";
+    timePlayed = "500+"
   } else {
     description = "No Such Game Found";
   }
@@ -273,6 +281,7 @@ export async function getServerSideProps(context) {
       playerOne,
       secondPlayer,
       thirdPlayer,
+      timePlayed
     },
   };
 }

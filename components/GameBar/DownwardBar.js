@@ -10,7 +10,7 @@ export const DownwardBar = ({
   return (
     <>
       <>
-        <div className="font-abc text-6xl ml-16 text-white">
+        <div className="font-abc text-6xl ml-16 mt-5 text-white">
           <h1>Top Players of {slug}</h1>
         </div>
         <section className="text-gray-40 body-font overflow-hidden">

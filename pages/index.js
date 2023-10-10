@@ -14,7 +14,8 @@ const Home = () => {
     <>
       <div className="flex flex-col h-screen bg-black">
         <div className="flex flex-1 overflow-hidden">
-          <div className="flex w-16 p-4 text-white bg-gray-800 mb-40 mt-20 ml-2 rounded-2xl">
+          {/* // Its Correct :: dont remove hidden (for now :)  */}
+          <div className="hidden xl:block flex w-16 p-4 text-white bg-gray-800 mb-40 mt-20 ml-2 rounded-2xl">
             <FriendsList />
           </div>
           <div className="flex flex-1 flex-col">
