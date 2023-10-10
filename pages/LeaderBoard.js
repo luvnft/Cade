@@ -15,7 +15,7 @@ const LeaderBoard = () => {
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="font-abc text-white text-6xl title-font font-medium mb-2">
-                User1
+                Ben
               </h2>
               <h2 className="font-abc text-white text-4xl title-font font-medium mb-2">
                 Matched Played : 187
@@ -28,7 +28,7 @@ const LeaderBoard = () => {
           <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-800 sm:flex-row flex-col">
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="font-abc text-white text-6xl title-font font-medium mb-2">
-                User2
+                Kane
               </h2>
               <h2 className="font-abc text-white text-4xl title-font font-medium mb-2">
                 Matched Played : 107
@@ -47,7 +47,7 @@ const LeaderBoard = () => {
             </div>
             <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
               <h2 className="font-abc text-white text-6xl title-font font-medium mb-2">
-                User3
+                Harry
               </h2>
               <h2 className="font-abc text-white text-4xl title-font font-medium mb-2">
                 Matched Played : 92
