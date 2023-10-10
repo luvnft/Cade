@@ -50,9 +50,9 @@ const GameHistory = () => {
         <h1 className="text-6xl font-abc ml-16 mt-16">Game History</h1>
 
         <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4">
-          {Data.map((item) => {
+          {Data.map((item , key) => {
             return (
-              <div className="container px-5 py-24 mx-auto" key={item.name}>
+              <div className="container px-5 py-24 mx-auto" key={key}>
                 <div className="flex flex-wrap -mx-4 -my-8">
                   <div className="flex-grow py-8 px-5 lg:w-1/2 bg-black rounded-2xl">
                     <div className="h-full flex ">

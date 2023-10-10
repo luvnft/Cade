@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="#" className="flex items-center">
             <span className="self-center text-5xl font-abc font-semibold whitespace-nowrap dark:text-white text-white">
-              'Cade
+              Cade
             </span>
           </a>
           <button

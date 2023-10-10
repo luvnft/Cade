@@ -14,21 +14,21 @@ const Profile = ({slug}) => {
                 <div className="flex flex-row">
                   <div className="p-4 lg:w-1/2 md:w-full">
                     <div className="flex rounded-lg  border-opacity-50 p-8 sm:flex-row flex-col">
-                      <div className="ml-3 w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-inherit text-indigo-500 flex-shrink-0">
+                      <div className="ml-6 w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-inherit text-indigo-500 flex-shrink-0">
                         <img
-                          className="w-16 h-16  rounded-full ring-2 ring-yellow-400"
+                          className="w-18 h-18  rounded-full ring-2 ring-yellow-400"
                           src="https://gravatar.com/avatar/de8b837bd975130ff76a7940c6cba552?s=400&d=retro&r=x"
                           alt="Bordered avatar"
                         />
                       </div>
-                      <div className="ml-3 flex-grow">
-                        <h2 className="text-white text-5xl font-abc title-font font-medium mb-3">
+                      <div className="ml-6 flex-grow">
+                        <h2 className="text-white text-6xl font-abc title-font font-medium mb-3">
                           {slug}
                         </h2>
 
                         <div className="flex flex-col">
                         <div>
-                          <img src="/cadenew.png" width={100} height={100} alt="cade_img"/>
+                          <img src="/cadenew.png" width={150} height={150} alt="cade_img"/>
                           </div>
                           <h1 className="ml-3 text-4xl font-extrabold font-abc text-white">
                             100 CADE
