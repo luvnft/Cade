@@ -4,9 +4,10 @@ import { BiSolidUpArrow } from "react-icons/bi";
 import { useTicket } from "../../connector/ticket";
 import { DownwardBar } from "../../components/GameBar/DownwardBar";
 import { useUSDCPay } from "../../hooks/transfer";
-import { PublicKey } from "@solana/web3.js";
+import { useRouter } from "next/router";
 import TowerDefence from "../../components/games/TowerDefence";
 import FourInLine from "../../components/games/FourInLine";
+import Link from "next/link";
 const Games = ({
   slug,
   description,
@@ -19,23 +20,28 @@ const Games = ({
   const { createTransaction } = useUSDCPay();
   const { mintCade } = useTicket();
   const [show, setshow] = useState(true);
+  const router = useRouter()
 
   const Data = [
     {
       name: "Space Invaders",
       img: "/spacenew.webp",
+      link: "/Games/SpaceInvaders"
     },
     {
       name: "Coin Flip",
       img: "/coinflip.jpg",
+      link: "/Games/CoinFlip"
     },
     {
-      name: "Dice Game",
-      img: "/dice.jpg",
+      name: "Tower Defence",
+      img: "/tower.jpg",
+      link: "/Games/TowerDefence"
     },
     {
-      name: "Car Race",
-      img: "/car.jpg",
+      name: "FourInLine Game",
+      img: "/fourinline.png",
+      link: "/Games/FourInLine"
     },
   ];
 
@@ -192,7 +198,7 @@ const Games = ({
                     {Data.map((item) => {
                       return (
                         <div className="mt-10" key={item.name}>
-                          <a
+                          <div
                             href="#"
                             className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
                           >
@@ -204,9 +210,13 @@ const Games = ({
                             <div className="flex flex-col justify-between p-4 leading-normal">
                               <h5 className="font-abc mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 {item.name}
+
                               </h5>
+                              <button className="mt-5 px-3 text-4xl font-abc bg-transparent  hover:bg-blue-500 text-white font-semibold hover:text-white  border border-white hover:border-transparent rounded">
+                                <a href={`${item.link}`}>Play Now</a>
+                              </button>
                             </div>
-                          </a>
+                          </div>
                         </div>
                       );
                     })}

@@ -80,7 +80,7 @@ const FriendsList = () => {
 
                     <div className="flex justify-between mr-3 mt-5">
                       <input
-                        value="fdf"
+                        
                         className="bg-gray-900 p-2 rounded-2xl w-30"
                         onChange={() => {
                           console.log("friendlist");
