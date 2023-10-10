@@ -157,7 +157,7 @@ const FourInLineGame = () => {
                 ) : (
                   <div className="flex justify-center p-16 bg-black mt-16">
                     <h1 className="text-white font-abc text-4xl">
-                      Looks like your game don't exists or the blockchain is
+                      Looks like your game dont exists or the blockchain is
                       still replicating the tx, please try refreshing the page
                     </h1>
                   </div>

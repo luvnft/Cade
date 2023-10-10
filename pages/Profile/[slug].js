@@ -63,7 +63,7 @@ const Profile = ({slug}) => {
                   </div>
                 </div>
 
-                <div className="p-4 lg:w-1/3 md:w-full">
+                <div className="lg:w-1/3 md:w-full">
                   <div className="flex rounded-lg  border-opacity-50 p-8 sm:flex-row flex-col">
                     <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full  flex-shrink-0">
                       {/* <BsTrophyFill className='text-7xl mt-5 text-red-500' /> */}

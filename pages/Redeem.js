@@ -158,9 +158,9 @@ const Redeem = () => {
           {/* CadeGameLife */}
           <h1 className="text-white text-5xl font-abc ml-16">Cade Game Life</h1>
           <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-            {CadeGameLife.map((item) => {
+            {CadeGameLife.map((item , key) => {
               return (
-                <div className="bg-black p-6 rounded-lg" key={item.name}>
+                <div className="bg-black p-6 rounded-lg" key={key}>
                   <img
                     height={100}
                     width={100}
@@ -199,7 +199,7 @@ const Redeem = () => {
           <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
             {GamePass.map((item , key) => {
               return (
-                <div className="bg-black p-6 rounded-lg">
+                <div className="bg-black p-6 rounded-lg" key={key}>
                   <img
                     height={100}
                     width={100}
