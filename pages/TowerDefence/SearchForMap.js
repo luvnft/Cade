@@ -1,7 +1,7 @@
 import * as anchor from "@coral-xyz/anchor";
 import { useEffect, useMemo, useState } from "react";
-import { TOWER_DEFENCE_PROGRAM_ID } from "../constant/index";
-import { IDL } from "../constant/towerdefence";
+import { TOWER_DEFENCE_PROGRAM_ID } from "../../constant/index";
+import { IDL } from "../../constant/towerdefence";
 
 import {
   PublicKey,

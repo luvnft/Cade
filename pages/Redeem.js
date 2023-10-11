@@ -143,20 +143,20 @@ const Redeem = () => {
   return (
     <>
       <section className="bg-[url('/kn.jpg')] text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-10 mx-auto">
           <div className="flex flex-wrap w-full mb-20">
             <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-              <h1 className="font-abc text-7xl font-medium title-font mb-2 text-white ml-16">
+              <h1 className="font-abc text-7xl font-medium mb-2 text-white">
                 Redeem Cade
               </h1>
             </div>
-            <p className="hidden lg:block lg:w-1/2 w-full font-abc text-white text-5xl mt-2">
+            <p className="lg:w-1/2 w-full font-abc text-white text-5xl mt-2">
               Redeem Your Cade for Cool Prizes.
             </p>
-          </div>
+          </div>  
 
           {/* CadeGameLife */}
-          <h1 className="text-white text-5xl font-abc ml-16">Cade Game Life</h1>
+          <h1 className="text-white text-5xl font-abc">Cade Game Life</h1>
           <div className="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
             {CadeGameLife.map((item , key) => {
               return (
