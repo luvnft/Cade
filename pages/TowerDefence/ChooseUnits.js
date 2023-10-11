@@ -1,7 +1,9 @@
-export const ChooseUnits = () => {
+const ChooseUnits = () => {
   return (
     <>
       <div className="flex justify-center p-16 bg-black"></div>
     </>
   );
 };
+
+export default ChooseUnits
