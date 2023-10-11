@@ -36,4 +36,10 @@ export function useFourInLine() {
   };
 }
 
-export const CreateGame = () => {};
+const CreateGame = () => {
+  return (
+    <></>
+  )
+}
+
+export default CreateGame
