@@ -16,7 +16,8 @@ const FourInLine = () => {
   const [mode, setMode] = useState("Solo");
   const router = useRouter();
 
-  const handleClick = async () => {
+  const handleClick = async (e) => {
+    e.preventDefault()
     const [gamePublicKey] = web3.PublicKey.findProgramAddressSync(
       [Buffer.from("game"), Buffer.from(name)],
       program.programId
@@ -81,7 +82,6 @@ const FourInLine = () => {
               </div>
               <button
                 onClick={handleClick}
-                type="submit"
                 className="inline-flex items-center py-2.5 px-5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Create
