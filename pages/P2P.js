@@ -83,7 +83,7 @@ const P2P = () => {
                   onClick={() => setShowSellList(!showSellNowList)}
                   className="font-abc  text-4xl text-yellow-400 bg-gray-900 p-2 rounded-2xl "
                 >
-                  Sellers
+                 Avatars Sellers
                 </h2>
               </div>
 

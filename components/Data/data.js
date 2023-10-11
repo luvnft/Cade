@@ -18,7 +18,7 @@ export const CadeGameLife = [
     name: "Cade Life x1",
     img: "/heartr.png",
     desc: "Play Again If You Loose",
-    price: "9",
+    price: "2",
   },
   {
     name: "Cade Life x2",
@@ -39,7 +39,7 @@ export const BlindChest = [
     name: "Blind Chest x1",
     img: "/treasure.png",
     desc: "Open Chest for Exited Suprizes",
-    price: "9",
+    price: "2",
   },
   {
     name: "Blind Chest x2",
@@ -59,7 +59,7 @@ export const BlindBag = [
     name: "Blind Bag x2",
     img: "/bag.png",
     desc: "Open Bags for Exiting Suprizes",
-    price: "20",
+    price: "2",
   },
   {
     name: "Blind Bag x6",
@@ -79,7 +79,7 @@ export const LotteryTicket = [
     name: "Lottery Ticket x2",
     img: "/lottery1.png",
     desc: "Sol Loaded Lottery Tickets for Periodic Drawings",
-    price: "8",
+    price: "2",
   },
   {
     name: "Lottery Ticket x6",

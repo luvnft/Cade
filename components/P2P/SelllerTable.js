@@ -47,14 +47,14 @@ const SelllerTable = () => {
                     <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                       <img
                         className="rounded-full"
-                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        src="https://gravatar.com/avatar/d91678274429b1035676e5a4471a87f9?s=400&d=robohash&r=x"
                         width="40"
                         height="40"
                         alt="Alex Shatov"
                       />
                     </div>
                     <div className="font-abc text-3xl text-white">
-                      Alex Shatov
+                      Alex
                     </div>
                   </div>
                 </td>
@@ -70,17 +70,17 @@ const SelllerTable = () => {
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    66
+                    30
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    66
+                    12K
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    2 Cade
+                    200 Cade
                   </div>
                 </td>
               </tr>
@@ -91,258 +91,92 @@ const SelllerTable = () => {
                     <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                       <img
                         className="rounded-full"
-                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        src="https://gravatar.com/avatar/dbb41156a46b286c1938e2543e8be560?s=400&d=robohash&r=x"
                         width="40"
                         height="40"
                         alt="Alex Shatov"
                       />
                     </div>
                     <div className="font-abc text-3xl text-white">
-                      Alex Shatov
+                      Shatov
                     </div>
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    1200
+                    1500
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    66
+                    35
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    66
+                    23
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    66
+                    66K
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    2 Cade
+                    120 Cade
                   </div>
                 </td>
               </tr>
+
               <tr>
                 <td className="p-2 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
                       <img
                         className="rounded-full"
-                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
+                        src="https://gravatar.com/avatar/d7a68a116fc11a78dfe7aebcd28a07ed?s=400&d=retro&r=x"
                         width="40"
                         height="40"
                         alt="Alex Shatov"
                       />
                     </div>
                     <div className="font-abc text-3xl text-white">
-                      Alex Shatov
+                      Flix
                     </div>
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    1200
+                    300
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    66
+                    70
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    66
+                    80
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    66
+                    6K
                   </div>
                 </td>
                 <td className="p-2 whitespace-nowrap">
                   <div className="text-left font-abc text-3xl text-white">
-                    2 Cade
+                    80 Cade
                   </div>
+
                 </td>
+
               </tr>
-              <tr>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                      <img
-                        className="rounded-full"
-                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
-                        width="40"
-                        height="40"
-                        alt="Alex Shatov"
-                      />
-                    </div>
-                    <div className="font-abc text-3xl text-white">
-                      Alex Shatov
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    1200
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    2 Cade
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                      <img
-                        className="rounded-full"
-                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
-                        width="40"
-                        height="40"
-                        alt="Alex Shatov"
-                      />
-                    </div>
-                    <div className="font-abc text-3xl text-white">
-                      Alex Shatov
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    1200
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    2 Cade
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                      <img
-                        className="rounded-full"
-                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
-                        width="40"
-                        height="40"
-                        alt="Alex Shatov"
-                      />
-                    </div>
-                    <div className="font-abc text-3xl text-white">
-                      Alex Shatov
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    1200
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    2 Cade
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3">
-                      <img
-                        className="rounded-full"
-                        src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-05.jpg"
-                        width="40"
-                        height="40"
-                        alt="Alex Shatov"
-                      />
-                    </div>
-                    <div className="font-abc text-3xl text-white">
-                      Alex Shatov
-                    </div>
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    1200
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    66
-                  </div>
-                </td>
-                <td className="p-2 whitespace-nowrap">
-                  <div className="text-left font-abc text-3xl text-white">
-                    2 Cade
-                  </div>
-                </td>
-              </tr>
+
+
+
             </tbody>
           </table>
         </div>

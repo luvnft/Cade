@@ -149,7 +149,7 @@ export function useTicket() {
 
     const transaction = new Transaction();
     const mintCade = await program.methods
-      .mintCade(new anchor.BN(mintAmount * 1000000 * metadata.decimals))
+      .mintCade(new anchor.BN(mintAmount * 1000000 * metadata.decimals*2))
       .accounts(context)
       .instruction();
 

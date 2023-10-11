@@ -7,6 +7,8 @@ import { useUSDCPay } from "../../hooks/transfer";
 import { useRouter } from "next/router";
 import TowerDefence from "../../components/games/TowerDefence";
 import FourInLine from "../../components/games/FourInLine";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { PublicKey } from "@solana/web3.js";
 import Link from "next/link";
 const Games = ({
   slug,
@@ -19,6 +21,7 @@ const Games = ({
   timePlayed
 }) => {
   const { createTransaction } = useUSDCPay();
+  const {publicKey} = useWallet()
   const { mintCade } = useTicket();
   const [show, setshow] = useState(true);
   const router = useRouter()
@@ -73,9 +76,9 @@ const Games = ({
 
   const initgame = () => {
     // createTransaction(
-    //     new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+    //     publicKey,
     //     new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-    //     9
+    //     5
     // )
     setTimeout(() => {
       setshow(!show);

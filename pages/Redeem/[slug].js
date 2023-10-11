@@ -12,8 +12,10 @@ import * as bs58 from "bs58";
 import secwallet from "../../wallet/secwallet";
 import { useUSDCPay } from "../../hooks/transfer";
 import { getOrCreateAssociatedTokenAccount, transfer } from "@solana/spl-token";
+import { useWallet } from "@solana/wallet-adapter-react";
 const RedeemBlindChest = ({ name, img }) => {
   const { createTransaction } = useUSDCPay();
+  const {publicKey} = useWallet()
   const [redeem, setRedeem] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -45,7 +47,7 @@ const RedeemBlindChest = ({ name, img }) => {
           connection,
           keypair,
           mint,
-          to
+          publicKey
         );
 
         const txhash = transfer(
@@ -66,11 +68,11 @@ const RedeemBlindChest = ({ name, img }) => {
   };
 
   const finalNewTranactionh = () => {
-    createTransaction(
-      new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
-      new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-      9
-    );
+    // createTransaction(
+    //   new PublicKey("44n5CYX18L6p4VxVECE9ZNYrAGB9GKD477b78kPNq5Su"),
+    //   new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+    //   9
+    // );
     setTimeout(() => {
       newTransferh();
     }, 2000);
@@ -128,7 +130,7 @@ const RedeemBlindChest = ({ name, img }) => {
                         onClick={() => finalNewTranactionh()}
                         className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                       >
-                        Buy for {item.price} Cade
+                        Get it Now
                       </button>
                     </>
                   )}
