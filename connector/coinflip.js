@@ -46,13 +46,13 @@ export function useCoinFlip() {
         coinFlip,
         systemProgram: anchor.web3.SystemProgram.programId,
       },
-      signers: playerTwo instanceof anchor.Wallet ? [] : [playerTwo],
+      // signers: playerTwo instanceof anchor.Wallet ? [] : [playerTwo],
     });
     const gameState = await program.accounts.coinFlip.fetch(coinFlip);
     console.log("playerTwo: ", playerTwo.publicKey.toString());
     console.log("Winner:", gameState.state.finished.winner.toString());
     console.log({ gameState: gameState.players });
-    await provider.connection.confirmTransaction(tx);
+    // await provider.connection.confirmTransaction(tx);
   }
 
   const setup = async () => {
@@ -62,17 +62,17 @@ export function useCoinFlip() {
       const vendor = anchor.web3.Keypair.generate();
       const player = anchor.web3.Keypair.generate();
 
-      let sig = await anchor.connection.requestAirdrop(
-        player.publicKey,
-        1000000000000
-      );
-      await provider.connection.confirmTransaction(sig);
+      // let sig = await anchor.connection.requestAirdrop(
+      //   player.publicKey,
+      //   1000000000000
+      // );
+      // await provider.connection.confirmTransaction(sig);
 
-      let sig2 = await provider.connection.requestAirdrop(
-        vendor.publicKey,
-        1000000000000
-      );
-      await provider.connection.confirmTransaction(sig2);
+      // let sig2 = await provider.connection.requestAirdrop(
+      //   vendor.publicKey,
+      //   1000000000000
+      // );
+      // await provider.connection.confirmTransaction(sig2);
       const vendorProgram = programForUser(vendor);
 
       const [coinFlipPDA, _] =
