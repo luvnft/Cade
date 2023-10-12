@@ -7,7 +7,7 @@ const BoardTubnail = ({map}) => {
             return <img src="/tree.svg" className="h-full w-full" />
         case "bull":
             return <img src="/bull.svg" className="h-full w-full" />
-        case "soldier":
+        case "bear":
             return <img src="/bear.svg" className="h-full w-full" />
         default:
             return ""
