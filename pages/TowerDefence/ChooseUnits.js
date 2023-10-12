@@ -12,6 +12,7 @@ const ChooseUnits = (props) => {
   const wallet = useAnchorWallet();
   const { connection } = useConnection();
   const { program } = useProgram({ connection, wallet });
+  const router = useRouter();
 
   // React UseStates hooks for managing args
   //for createMap
@@ -128,6 +129,8 @@ const ChooseUnits = (props) => {
                     className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
                     //   value={budget_for_createMap}
                     //   onClick={budgethandler_for_createMap}
+                    // just to have a way to get to the results page
+                    onClick={() => router.push("/TowerDefence/BattleResults")}
                   >
                     <div className="flex flex-col items-center">
                       <img
