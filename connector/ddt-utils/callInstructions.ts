@@ -1,14 +1,12 @@
 import { web3 } from "@project-serum/anchor";
 import * as anchor from "@coral-xyz/anchor";
 
-export const createMap = (program, name, board, budget, map, user, systemProgram,) => {
-  console.log(program, name, board, budget, map, user, systemProgram,)
+export const createMap = (program, name, board, budget, user,) => {
   const [mapPDA] = web3.PublicKey.findProgramAddressSync(
     [Buffer.from(name)],
     program.programId,
   )
   if (program) {
-
     (async () => {
       try {
         const tx = await program.methods
@@ -17,7 +15,6 @@ export const createMap = (program, name, board, budget, map, user, systemProgram
             user,
             map: mapPDA,
             systemProgram: web3.SystemProgram.programId,
-
           })
           .rpc();
           
@@ -26,17 +23,23 @@ export const createMap = (program, name, board, budget, map, user, systemProgram
   }
 };
 
-export const createGame = (program, map, game, user, systemProgram,) => {
+export const createGame = (program, map , user,) => {
+  console.log({ map, user })
+  const game =  anchor.web3.Keypair.generate();
+  const [mapPDA] = web3.PublicKey.findProgramAddressSync(
+    [Buffer.from(map)],
+    program.programId,
+  )
   if (program) {
     (async () => {
       try {
         const tx = await program.methods
           .createGame()
           .accounts({
-            map,
+            map:mapPDA,
             game,
             user,
-            systemProgram,
+            systemProgram: web3.SystemProgram.programId,
           })
           .rpc();
       } catch (error) { console.log(error) }

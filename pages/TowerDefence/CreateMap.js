@@ -17,10 +17,12 @@ const CreateMap = (props) => {
 const [name_for_createMap , setname_for_createMap] = useState()
 const [board_for_createMap , setboard_for_createMap] = useState()
 const [budget_for_createMap , setbudget_for_createMap] = useState()
-//for createGame
-//for deployUnits
-const [deploys_for_deployUnits , setdeploys_for_deployUnits] = useState()
-
+const [board , setboard] = useState([{
+  kind: "tree",
+  health: 1,
+  dps: 1,
+  position: 0
+},])
 //handler functions for inputs feilds
 const namehandler_for_createMap = (e) => {
   setname_for_createMap(e.target.value)
@@ -34,11 +36,6 @@ const budgethandler_for_createMap = (e) => {
 const deployshandler_for_deployUnits = (e) => {
   setdeploys_for_deployUnits(e.target.value)
 }
-
-// variables for account 
-const systemProgram = ""
-const map_for_createMap = ""
-
 
   return (
     <>
@@ -125,14 +122,7 @@ const map_for_createMap = ""
                     <button 
                     className="bg-blue-500 flex justify-center items-center w-full text-white px-3 text-xl py-1 rounded-md focus:outline-none"
                     onClick={
-                      ()=>createMap(program , name_for_createMap , [{
-                        kind: "tree",
-                        health: 1,
-                        dps: 1,
-                        position: 0
-                    },
-                    
-                    ] , budget_for_createMap ,  map_for_createMap   , wallet.publicKey   ,   systemProgram ,)
+                      ()=>createMap(program , name_for_createMap , board , budget_for_createMap, wallet.publicKey,)
                     }
                     >
                        Call_createMap_instruction
