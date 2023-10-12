@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
 import Head from "next/head";
 import { useProgram } from "../../connector/ddt-utils/useProgram";
+import BoardTubnail from "../../components/TowerDefence/BoardTubnail";
 
-const ChooseUnits = (props) => {
+const SearchForMap = (props) => {
   const [name, setname] = useState("");
   const [maps, setmaps] = useState([]);
   const wallet = useAnchorWallet();
@@ -35,20 +36,18 @@ const ChooseUnits = (props) => {
           onChange={namehandler}
           placeholder="Search for A MAP"
           value={name}
+          className="mb-5"
         />
+        <div className="grid grid-cols-2 gap-2">
         {maps
           .filter((map) => map?.account?.name?.includes(name))
-          ?.map((map) => {
-            console.log(map)
-            return (
-            <div key={map.publicKey} className="bg-white">
-              <p className="bg-blue-950">{map.account.name}</p>
-              
-            </div>)}
-          )}
+          ?.map((map) => (
+            <BoardTubnail key={map.publicKey} map={map} />
+          ))}
+        </div>
       </main>
     </>
   );
 };
 
-export default ChooseUnits;
+export default SearchForMap;
