@@ -1,20 +1,26 @@
 import { web3 } from "@project-serum/anchor";
+import * as anchor from "@coral-xyz/anchor";
 
 export const createMap = (program, name, board, budget, map, user, systemProgram,) => {
   console.log(program, name, board, budget, map, user, systemProgram,)
+  const [mapPDA] = web3.PublicKey.findProgramAddressSync(
+    [Buffer.from(name)],
+    program.programId,
+  )
   if (program) {
-    console.log("ddd");
 
     (async () => {
       try {
         const tx = await program.methods
-          .createMap( name, board, budget,)
+          .createMap( name, board, new anchor.BN(budget),)
           .accounts({
-            map,
             user,
-            systemProgram,
+            map: mapPDA,
+            systemProgram: web3.SystemProgram.programId,
+
           })
           .rpc();
+          
       } catch (error) { console.log(error) }
     })();
   }
