@@ -3,19 +3,44 @@ import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
 import Head from "next/head";
 import { useProgram } from "../../connector/ddt-utils/useProgram";
 import { useRouter } from "next/router";
+import BoardTubnail from "../../components/TowerDefence/BoardTubnail";
 
 import { createGame } from "../../connector/ddt-utils/callInstructions";
 import { deployUnits } from "../../connector/ddt-utils/callInstructions";
 import { PublicKey } from "@solana/web3.js";
+import * as web3 from "@solana/web3.js";
 
 const ChooseUnits = (props) => {
   const wallet = useAnchorWallet();
   const { connection } = useConnection();
   const { program } = useProgram({ connection, wallet });
   const router = useRouter();
+  const { slug } = router.query;
+  const [gamePublicKey, setGamePublicKey] = useState();
+  const [gameAccount, setGameAccount] = useState();
 
-  // React UseStates hooks for managing args
-  //for createMap
+  useEffect(() => {
+    if (program) {
+      (async () => {
+      const map = await program.account.map.all()
+     // console.log(map)
+      const mapPDA = map.filter((m) => m.account.name === slug)[0]?.publicKey;
+      
+      setGamePublicKey(mapPDA);
+    })();
+    }
+  }, [wallet, program]);
+
+  useEffect(() => {
+    if (gamePublicKey) {
+      (async () => {
+        const gameAccount = await program.account.map.fetch(gamePublicKey);
+        setGameAccount(gameAccount);
+        console.log(gameAccount);
+      })();
+    }
+  }, [gamePublicKey, program?.account?.map]);
+
   const [deploys_for_deployUnits, setdeploys_for_deployUnits] = useState([
     ["plane"],
     [],
@@ -56,14 +81,7 @@ const ChooseUnits = (props) => {
           <div className="flex flex-row items-center">
             <div className="w-60 flex flex-col items-center mr-4">
               <div className="flex flex-col mt-4">
-                <p className="">Type of Board/Grid component goes here</p>
-                {/* <input
-                  type="text"
-                  className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                  placeholder={`Enter board`}
-                  value={board_for_createMap}
-                  onChange={boardhandler_for_createMap}
-                /> */}
+                {gameAccount ? <BoardTubnail map={gameAccount} /> : ""}
               </div>
             </div>
             <div className="items-center">
