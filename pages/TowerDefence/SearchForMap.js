@@ -1,45 +1,54 @@
-import * as anchor from "@coral-xyz/anchor";
-import { useEffect, useMemo, useState } from "react";
-import { TOWER_DEFENCE_PROGRAM_ID } from "../../constant/index";
-import { IDL } from "../../constant/towerdefence";
+import { useEffect, useState } from "react";
+import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
+import Head from "next/head";
+import { useProgram } from "../../connector/ddt-utils/useProgram";
 
-import {
-  PublicKey,
-  SYSVAR_RENT_PUBKEY,
-  SystemProgram,
-  Transaction,
-} from "@solana/web3.js";
-import { utf8 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
-import {
-  useAnchorWallet,
-  useConnection,
-  useWallet,
-} from "@solana/wallet-adapter-react";
-
-export function useFourInLine() {
+const ChooseUnits = (props) => {
+  const [name, setname] = useState("");
+  const [maps, setmaps] = useState([]);
+  const wallet = useAnchorWallet();
   const { connection } = useConnection();
-  const { publicKey } = useWallet();
-  const anchorWallet = useAnchorWallet();
+  const { program } = useProgram({ connection, wallet });
 
-  const program = useMemo(() => {
-    if (anchorWallet) {
-      const provider = new anchor.AnchorProvider(
-        connection,
-        anchorWallet,
-        anchor.AnchorProvider.defaultOptions()
-      );
-      return new anchor.Program(IDL, FOUR_IN_LINE_PROGRAM_ID, provider);
+  useEffect(() => {
+    if (program && maps.length == 0) {
+      (async () => {
+        const maps = await program.account.map.all();
+        setmaps(maps);
+      })();
     }
-  }, [connection, anchorWallet]);
-  return {
-    program,
+  }, [program]);
+
+  const namehandler = (e) => {
+    setname(e.target.value);
   };
-}
 
-const CreateGame = () => {
   return (
-    <></>
-  )
-}
+    <>
+      <Head>
+        <title>dtt</title>
+        <meta name="description" content="dtt" />
+      </Head>
+      <main>
+        <input
+          type="text"
+          onChange={namehandler}
+          placeholder="Search for A MAP"
+          value={name}
+        />
+        {maps
+          .filter((map) => map?.account?.name?.includes(name))
+          ?.map((map) => {
+            console.log(map)
+            return (
+            <div key={map.publicKey} className="bg-white">
+              <p className="bg-blue-950">{map.account.name}</p>
+              
+            </div>)}
+          )}
+      </main>
+    </>
+  );
+};
 
-export default CreateGame
+export default ChooseUnits;
