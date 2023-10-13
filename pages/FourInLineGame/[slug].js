@@ -127,11 +127,7 @@ const FourInLineGame = () => {
                         Times Played
                       </p>
                     </div>
-                    <div className="ml-5">
-                      <button className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl">
-                        Claim XP and Cade
-                      </button>
-                    </div>
+                   
                   </div>
                 </div>
               </section>

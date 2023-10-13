@@ -86,14 +86,14 @@ const Games = ({
   };
 
   const initgame = () => {
-    // createTransaction(
-    //     publicKey,
-    //     new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-    //     5
-    // )
+    createTransaction(
+        publicKey,
+        new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+        5
+    )
     setTimeout(() => {
       setshow(!show);
-    }, 0);
+    }, 5000);
   };
 
   return (

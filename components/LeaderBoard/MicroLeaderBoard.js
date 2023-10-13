@@ -17,7 +17,7 @@ const MicroLeaderBoard = () => {
               </div>
               <div className="md:flex-grow">
                 <h2 className="font-abc text-5xl font-medium text-white title-font mb-2">
-                  User3
+                 John
                 </h2>
                 <h2 className="font-abc text-3xl text-white">
                   Matched Played : 80
@@ -35,7 +35,7 @@ const MicroLeaderBoard = () => {
               </div>
               <div className="md:flex-grow">
                 <h2 className="font-abc text-5xl font-medium text-white title-font mb-2">
-                  User4
+                  Mike
                 </h2>
                 <h2 className="font-abc text-3xl text-white">
                   Matched Played : 70
@@ -53,7 +53,7 @@ const MicroLeaderBoard = () => {
               </div>
               <div className="md:flex-grow">
                 <h2 className="font-abc text-5xl font-medium text-white title-font mb-2">
-                  User5
+                  Jack
                 </h2>
                 <h2 className="font-abc text-3xl text-white">
                   Matched Played : 30
@@ -71,7 +71,7 @@ const MicroLeaderBoard = () => {
               </div>
               <div className="md:flex-grow">
                 <h2 className="font-abc text-5xl font-medium text-white title-font mb-2">
-                  User6
+                  Ben
                 </h2>
                 <h2 className="font-abc text-3xl text-white">
                   Matched Played : 60

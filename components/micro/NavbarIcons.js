@@ -57,6 +57,13 @@ const NavbarIcons = () => {
         <AiOutlinePlusCircle onClick={()=> router.push('/Redeem')} className="text-3xl mt-2 ml-2 cursor-pointer"  />
       </div>
 
+      <img
+          onClick={()=> router.push("/P2P")}
+          className="w-12 h-12 ml-2 rounded-full"
+          src="/p2p.png"
+          alt="Rounded avatar"
+        ></img>
+
 
       <img
         onClick={() => router.push("/Profile/Joeey")}
