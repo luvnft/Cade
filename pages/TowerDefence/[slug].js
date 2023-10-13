@@ -3,7 +3,7 @@ import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
 import Head from "next/head";
 import { useProgram } from "../../connector/ddt-utils/useProgram";
 import { useRouter } from "next/router";
-import Board from "../../components/TowerDefence/Board";
+import { Board, renderDefender } from "../../components/TowerDefence/Board";
 
 import { deployUnits } from "../../connector/ddt-utils/callInstructions";
 import { PublicKey } from "@solana/web3.js";
@@ -63,7 +63,7 @@ const ChooseUnits = (props) => {
   }, [gameAccount, program?.account?.map]);
 
   const [deploys_for_deployUnits, setdeploys_for_deployUnits] = useState([
-    ["plane"],
+    [],
     [],
     [],
     [],
@@ -71,10 +71,17 @@ const ChooseUnits = (props) => {
     [],
   ]);
 
+  const handleAddUnit = (unit, index) => {
+    if (index < 6 && index >= 0) {
+      const newDeploys = [...deploys_for_deployUnits];
+      newDeploys[index].push(unit);
+      setdeploys_for_deployUnits(newDeploys);
+    }
+  };
+
   const handleSlotChange = (slot) => {
-    console.log(slot);
     setSelectedSlot(slot);
-  }
+  };
 
   //handler functions for inputs feilds
   const namehandler_for_createMap = (e) => {
@@ -108,7 +115,7 @@ const ChooseUnits = (props) => {
               <div className="px-2 mt-2 text-gray-200 sm:text-lg sm:leading-2 flex flex-col items-center">
                 <div className="flex flex-row items-center">
                   <div className="w-60 flex flex-col items-center mr-4">
-                    <div className="flex flex-col mt-4 relative">
+                    <div className="flex flex-col mt-4 relative w-[320px]">
                       {mapAccount ? (
                         <Board
                           map={mapAccount}
@@ -116,6 +123,9 @@ const ChooseUnits = (props) => {
                           handleClick={handleSlotChange}
                         />
                       ) : null}
+                      <div className="flex  mt-24 h-[150px] bg-yellow-300 w-full overflow-x-auto overflow-y-hidden items-center">
+                        {deploys_for_deployUnits[selectedSlot]?.map((unit) => renderDefender(unit))}
+                      </div>
                     </div>
                   </div>
                   <div className="items-start flex flex-col h-60 m-2">
@@ -127,8 +137,9 @@ const ChooseUnits = (props) => {
                         <div>
                           <button
                             className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
-                            // value={budget_for_createMap}
-                            // onClick={budgethandler_for_createMap}
+                            onClick={() => {
+                              handleAddUnit("soldier", selectedSlot);
+                            }}
                           >
                             <div className="flex flex-col items-center">
                               <img
@@ -146,14 +157,14 @@ const ChooseUnits = (props) => {
                       <div>
                         <button
                           className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
-                          //   value={budget_for_createMap}
-                          //   onClick={budgethandler_for_createMap}
+                          onClick={() => {
+                            handleAddUnit("tank", selectedSlot);
+                          }}
                         >
                           <div className="flex flex-col items-center">
-                            {/* Tank icon not working, can't find other military icons */}
                             <div className="flex-row flex">
                               <img
-                                src="/war-tank-svgrepo-com.svg"
+                                src="/tank.svg"
                                 alt="Tank Icon"
                                 className="h-10 w-10"
                               />
@@ -167,12 +178,9 @@ const ChooseUnits = (props) => {
                       <div>
                         <button
                           className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
-                          //   value={budget_for_createMap}
-                          //   onClick={budgethandler_for_createMap}
-                          // just to have a way to get to the results page
-                          onClick={() =>
-                            router.push("/TowerDefence/BattleResults")
-                          }
+                          onClick={() => {
+                            handleAddUnit("plane", selectedSlot);
+                          }}
                         >
                           <div className="flex flex-col items-center">
                             <img
@@ -199,7 +207,7 @@ const ChooseUnits = (props) => {
                       deploys_for_deployUnits,
                       new PublicKey(slug),
                       wallet.publicKey,
-                      gameAccount.account.map
+                      mapAccount.name
                     )
                   }
                 >
