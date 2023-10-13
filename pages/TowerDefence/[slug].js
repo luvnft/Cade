@@ -95,114 +95,113 @@ const ChooseUnits = (props) => {
         <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 ">
             <div className="flex justify-center"></div>
-            <>
-              <Head>
-                <title>dtt</title>
-                <meta name="description" content="dtt" />
-              </Head>
-              <div className="p-8 bg-gray-900 text-white">
-                <div className="font-semibold text-xl text-center m-5">
-                  <h2>Choose your units!</h2>
-                </div>
-                <div className="px-2 mt-2 text-gray-200 sm:text-lg sm:leading-2 flex flex-col items-center">
-                  <div className="flex flex-row items-center">
-                    <div className="w-60 flex flex-col items-center mr-4">
-                      <div className="flex flex-col mt-4">
-                        {gameAccount ? <Board map={gameAccount} /> : ""}
-                      </div>
+
+            <Head>
+              <title>dtt</title>
+              <meta name="description" content="dtt" />
+            </Head>
+            <div className="p-8 bg-gray-900 text-white">
+              <div className="font-semibold text-xl text-center m-5">
+                <h2>Choose your units!</h2>
+              </div>
+              <div className="px-2 mt-2 text-gray-200 sm:text-lg sm:leading-2 flex flex-col items-center">
+                <div className="flex flex-row items-center">
+                  <div className="w-60 flex flex-col items-center mr-4">
+                    <div className="flex flex-col mt-4">
+                      {gameAccount ? <Board map={gameAccount} /> : ""}
                     </div>
-                    <div className="items-start flex flex-col h-60 m-2">
-                      <p className="text-left ml-7 m-2 text-xs text-blue-200">
-                        Available Budget: 100
-                      </p>
-                      <div className="flex mx-3 items-center">
-                        <div className="flex flex-row">
-                          <div>
-                            <button
-                              className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
-                              // value={budget_for_createMap}
-                              // onClick={budgethandler_for_createMap}
-                            >
-                              <div className="flex flex-col items-center">
-                                <img
-                                  src="/soldier.svg"
-                                  alt="Soldier Icon"
-                                  className="h-10 w-10"
-                                />
-                                <div>Health 100</div>
-                                <div>DPS 10</div>
-                                <div>Cost 10</div>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
+                  </div>
+                  <div className="items-start flex flex-col h-60 m-2">
+                    <p className="text-left ml-7 m-2 text-xs text-blue-200">
+                      Available Budget: 100
+                    </p>
+                    <div className="flex mx-3 items-center">
+                      <div className="flex flex-row">
                         <div>
                           <button
                             className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
-                            //   value={budget_for_createMap}
-                            //   onClick={budgethandler_for_createMap}
-                          >
-                            <div className="flex flex-col items-center">
-                              {/* Tank icon not working, can't find other military icons */}
-                              <div className="flex-row flex">
-                                <img
-                                  src="/war-tank-svgrepo-com.svg"
-                                  alt="Tank Icon"
-                                  className="h-10 w-10"
-                                />
-                              </div>
-                              <div>Health 200</div>
-                              <div>DPS 25</div>
-                              <div>Cost 25</div>
-                            </div>
-                          </button>
-                        </div>
-                        <div>
-                          <button
-                            className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
-                            //   value={budget_for_createMap}
-                            //   onClick={budgethandler_for_createMap}
-                            // just to have a way to get to the results page
-                            onClick={() =>
-                              router.push("/TowerDefence/BattleResults")
-                            }
+                            // value={budget_for_createMap}
+                            // onClick={budgethandler_for_createMap}
                           >
                             <div className="flex flex-col items-center">
                               <img
-                                src="/plane.svg"
-                                alt="Plane Icon"
+                                src="/soldier.svg"
+                                alt="Soldier Icon"
                                 className="h-10 w-10"
                               />
-                              <div>Health 500</div>
-                              <div>DPS 75</div>
-                              <div>DPS 50</div>
+                              <div>Health 100</div>
+                              <div>DPS 10</div>
+                              <div>Cost 10</div>
                             </div>
                           </button>
                         </div>
+                      </div>
+                      <div>
+                        <button
+                          className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
+                          //   value={budget_for_createMap}
+                          //   onClick={budgethandler_for_createMap}
+                        >
+                          <div className="flex flex-col items-center">
+                            {/* Tank icon not working, can't find other military icons */}
+                            <div className="flex-row flex">
+                              <img
+                                src="/war-tank-svgrepo-com.svg"
+                                alt="Tank Icon"
+                                className="h-10 w-10"
+                              />
+                            </div>
+                            <div>Health 200</div>
+                            <div>DPS 25</div>
+                            <div>Cost 25</div>
+                          </div>
+                        </button>
+                      </div>
+                      <div>
+                        <button
+                          className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
+                          //   value={budget_for_createMap}
+                          //   onClick={budgethandler_for_createMap}
+                          // just to have a way to get to the results page
+                          onClick={() =>
+                            router.push("/TowerDefence/BattleResults")
+                          }
+                        >
+                          <div className="flex flex-col items-center">
+                            <img
+                              src="/plane.svg"
+                              alt="Plane Icon"
+                              className="h-10 w-10"
+                            />
+                            <div>Health 500</div>
+                            <div>DPS 75</div>
+                            <div>DPS 50</div>
+                          </div>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="pt-4 flex items-center justify-center m-5">
-                  <button
-                    className="inline-flex py-2.5 px-5 mx-20 text-sm font-large text-white bg-lime-500 border-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover-bg-lime-600 dark:focus-ring-lime-600 w-60 flex items-center justify-center"
-                    onClick={() =>
-                      deployUnits(
-                        program,
-                        deploys_for_deployUnits,
-                        new PublicKey(
-                          "BeTLVuVggw6J2E6192gRscNULXqoeiSr9nUvP9aXEa7a"
-                        ),
-                        wallet.publicKey,
-                        map_for_deployUnits
-                      )
-                    }
-                  >
-                    DEPLOY UNITS!
-                  </button>
-                </div>
               </div>
-            </>
+              <div className="pt-4 flex items-center justify-center m-5">
+                <button
+                  className="inline-flex py-2.5 px-5 mt-4 mx-20 text-sm font-large text-white bg-lime-500 border-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover-bg-lime-600 dark:focus-ring-lime-600 w-60 flex items-center justify-center"
+                  onClick={() =>
+                    deployUnits(
+                      program,
+                      deploys_for_deployUnits,
+                      new PublicKey(
+                        "BeTLVuVggw6J2E6192gRscNULXqoeiSr9nUvP9aXEa7a"
+                      ),
+                      wallet.publicKey,
+                      map_for_deployUnits
+                    )
+                  }
+                >
+                  DEPLOY UNITS!
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="p-5 lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
