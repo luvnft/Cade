@@ -40,6 +40,7 @@ const ChooseUnits = (props) => {
   const { slug } = router.query;
   const [mapAccount, setMapAccount] = useState();
   const [gameAccount, setGameAccount] = useState();
+  const [selectedSlot, setSelectedSlot] = useState(0);
 
   useEffect(() => {
     if (program) {
@@ -70,6 +71,11 @@ const ChooseUnits = (props) => {
     [],
   ]);
 
+  const handleSlotChange = (slot) => {
+    console.log(slot);
+    setSelectedSlot(slot);
+  }
+
   //handler functions for inputs feilds
   const namehandler_for_createMap = (e) => {
     setname_for_createMap(e.target.value);
@@ -83,9 +89,6 @@ const ChooseUnits = (props) => {
   const deployshandler_for_deployUnits = (e) => {
     setdeploys_for_deployUnits(e.target.value);
   };
-
-  const map_name = "test";
-  const map_for_deployUnits = "test";
 
   return (
     <>
@@ -105,8 +108,14 @@ const ChooseUnits = (props) => {
               <div className="px-2 mt-2 text-gray-200 sm:text-lg sm:leading-2 flex flex-col items-center">
                 <div className="flex flex-row items-center">
                   <div className="w-60 flex flex-col items-center mr-4">
-                    <div className="flex flex-col mt-4">
-                      {mapAccount ? <Board map={mapAccount} /> : ""}
+                    <div className="flex flex-col mt-4 relative">
+                      {mapAccount ? (
+                        <Board
+                          map={mapAccount}
+                          active={selectedSlot}
+                          handleClick={handleSlotChange}
+                        />
+                      ) : null}
                     </div>
                   </div>
                   <div className="items-start flex flex-col h-60 m-2">
@@ -188,11 +197,9 @@ const ChooseUnits = (props) => {
                     deployUnits(
                       program,
                       deploys_for_deployUnits,
-                      new PublicKey(
-                        "BeTLVuVggw6J2E6192gRscNULXqoeiSr9nUvP9aXEa7a"
-                      ),
+                      new PublicKey(slug),
                       wallet.publicKey,
-                      map_for_deployUnits
+                      gameAccount.account.map
                     )
                   }
                 >

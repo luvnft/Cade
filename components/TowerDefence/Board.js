@@ -1,6 +1,6 @@
 import React from "react";
 
-const Board = ({ map }) => {
+const Board = ({ map, active, handleClick }) => {
   const render = (kind) => {
     switch (kind) {
       case "tree":
@@ -44,16 +44,35 @@ const Board = ({ map }) => {
       </div>
       <div className="h-[500px] w-[320px]">
         <div className="grid grid-cols-6">
-          {[...Array(6)?.keys()]?.map((index) => {
+          {[...Array(6)?.keys()]?.map((n, index) => {
             return (
               <div
                 key={index}
-                className={`max-h-[34px] max-w-[53px] ${
-                  index % 2 ? "bg-blue-900" : "bg-blue-600"
+                className={`max-h-[34px] max-w-[53px] relative ${
+                  active == index
+                    ? "bg-yellow-300"
+                    : index % 2
+                    ? "bg-blue-900"
+                    : "bg-blue-600"
                 }`}
-                custom={index}
+                onClick={()=>{handleClick(index)}}
               >
-                <div className={`h-[50px] w-[53px]`}></div>
+                <div className={`h-[50px] w-[53px]`} />
+                {active == index ? (
+                  <svg
+                    className="absolute -bottom-20 left-1/2 transform -translate-x-1/2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="62"
+                    viewBox="0 0 30 62"
+                    fill="none"
+                  >
+                    <path
+                      d="M13.5858 60.569C14.3668 61.35 15.6332 61.35 16.4142 60.569L29.1421 47.841C29.9232 47.06 29.9232 45.7936 29.1421 45.0126C28.3611 44.2316 27.0948 44.2316 26.3137 45.0126L15 56.3263L3.68629 45.0126C2.90524 44.2316 1.63891 44.2316 0.857864 45.0126C0.0768156 45.7936 0.0768156 47.06 0.857864 47.841L13.5858 60.569ZM13 0.845215L13 59.1547H17V0.845215H13Z"
+                      fill="#D9FB08"
+                    />
+                  </svg>
+                ) : null}
               </div>
             );
           })}
