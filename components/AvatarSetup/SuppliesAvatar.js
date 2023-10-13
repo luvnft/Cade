@@ -9,7 +9,7 @@ const SuppliesAvatar = () => {
             <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
               <div className="h-full text-center">
                 <div className="flex justify-center">
-                  <GiTwoCoins className="text-6xl text-yellow-400" />
+                <img src="/cadenew.png" alt="CadeImage"/>
                 </div>
                 <p className="text-white  font-abc text-2xl">20x Cade Coins</p>
               </div>
@@ -20,7 +20,7 @@ const SuppliesAvatar = () => {
             <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
               <div className="h-full text-center">
                 <div className="flex justify-center">
-                  <GiTwoCoins className="text-6xl text-yellow-400" />
+                 <img src="/cadenew.png" alt="CadeImage"/>
                 </div>
                 <p className="text-white  font-abc text-2xl">40x Cade Coins</p>
               </div>
@@ -31,7 +31,7 @@ const SuppliesAvatar = () => {
             <div className="lg:w-1/3 lg:mb-0 p-4">
               <div className="h-full text-center">
                 <div className="flex justify-center">
-                  <GiTwoCoins className="text-6xl text-yellow-400" />
+                 <img src="/cadenew.png" alt="CadeImage"/>
                 </div>
                 <p className="text-white  font-abc text-2xl">60x Cade Coins</p>
               </div>

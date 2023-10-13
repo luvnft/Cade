@@ -9,10 +9,10 @@ const Games = () => {
       desc : "Control a spaceship and defend Earth from waves of alien." 
     },
     {
-      name: "Coin Flip",
-      img: "/coinflip.jpg",
-      link: "/Games/CoinFlip",
-      desc : "A retro coin flip game of digital twist on a classic 50/50 chance."
+      name: "Chess",
+      img: "/chess.avif",
+      link: "/Games/Chess",
+      desc : "Checkmate your way to victory in this classic chess game!"
     },
     {
       name: "Four In Line Game",
@@ -25,6 +25,18 @@ const Games = () => {
       img: "/tower.jpg",
       link: "/Games/TowerDefence",
       desc : "Games where the goal is to defend your base by obstructing enemy."
+    },
+    {
+      name: "Coin Flip",
+      img: "/coinflip.jpg",
+      link: "/Games/Chess",
+      desc : "A retro coin flip game of digital twist on a classic 50/50 chance."
+    },
+    {
+      name: "Car Race",
+      img: "/car.jpg",
+      link: "/Games/Carrace",
+      desc : "Ready to race against the best in this high-speed car game!"
     },
   ];
   return (

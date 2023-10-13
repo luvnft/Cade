@@ -33,9 +33,9 @@ const Games = ({
       link: "/Games/SpaceInvaders"
     },
     {
-      name: "Coin Flip",
-      img: "/coinflip.jpg",
-      link: "/Games/CoinFlip"
+      name: "Chess",
+      img: "/chess.avif",
+      link: "/Games/Chess"
     },
     {
       name: "Tower Defence",
@@ -43,9 +43,20 @@ const Games = ({
       link: "/Games/TowerDefence"
     },
     {
+      name: "Car Race",
+      img: "/car.jpg",
+      link: "/Games/Carrace",
+      desc : "Ready to race against the best in this high-speed car game!"
+    },
+    {
       name: "FourInLine Game",
       img: "/fourinline.png",
       link: "/Games/FourInLine"
+    },
+    {
+      name: "Coin Flip",
+      img: "/coinflip.jpg",
+      link: "/Games/CoinFlip"
     },
   ];
 
