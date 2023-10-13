@@ -5,7 +5,6 @@ import { useProgram } from "../../connector/ddt-utils/useProgram";
 import { useRouter } from "next/router";
 import Board from "../../components/TowerDefence/Board";
 
-import { createGame } from "../../connector/ddt-utils/callInstructions";
 import { deployUnits } from "../../connector/ddt-utils/callInstructions";
 import { PublicKey } from "@solana/web3.js";
 import * as web3 from "@solana/web3.js";
@@ -39,29 +38,28 @@ const ChooseUnits = (props) => {
   const { program } = useProgram({ connection, wallet });
   const router = useRouter();
   const { slug } = router.query;
-  const [gamePublicKey, setGamePublicKey] = useState();
+  const [mapAccount, setMapAccount] = useState();
   const [gameAccount, setGameAccount] = useState();
 
   useEffect(() => {
     if (program) {
       (async () => {
-        const map = await program.account.map.all();
-        const mapPDA = map.filter((m) => m.account.name === slug)[0]?.publicKey;
-
-        setGamePublicKey(mapPDA);
+        const game = await program.account.game.fetch(slug);
+        setGameAccount(game);
+        console.log(game);
       })();
     }
   }, [wallet, program]);
 
   useEffect(() => {
-    if (gamePublicKey) {
+    if (gameAccount) {
       (async () => {
-        const gameAccount = await program.account.map.fetch(gamePublicKey);
-        setGameAccount(gameAccount);
-        console.log(gameAccount);
+        const mapAccount = await program.account.map.fetch(gameAccount.map);
+        setMapAccount(mapAccount);
+        console.log(mapAccount);
       })();
     }
-  }, [gamePublicKey, program?.account?.map]);
+  }, [gameAccount, program?.account?.map]);
 
   const [deploys_for_deployUnits, setdeploys_for_deployUnits] = useState([
     ["plane"],
@@ -108,7 +106,7 @@ const ChooseUnits = (props) => {
                 <div className="flex flex-row items-center">
                   <div className="w-60 flex flex-col items-center mr-4">
                     <div className="flex flex-col mt-4">
-                      {gameAccount ? <Board map={gameAccount} /> : ""}
+                      {mapAccount ? <Board map={mapAccount} /> : ""}
                     </div>
                   </div>
                   <div className="items-start flex flex-col h-60 m-2">
