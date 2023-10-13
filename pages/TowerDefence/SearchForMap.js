@@ -3,9 +3,13 @@ import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
 import Head from "next/head";
 import { useProgram } from "../../connector/ddt-utils/useProgram";
 import BoardTubnail from "../../components/TowerDefence/BoardTubnail";
+import {
+  createGame,
+  createMap,
+} from "../../connector/ddt-utils/callInstructions";
+import { useRouter } from "next/router";
 
 const SearchForMap = (props) => {
-
   const Data = [
     {
       name: "Space Invaders",
@@ -24,9 +28,12 @@ const SearchForMap = (props) => {
       img: "/car.jpg",
     },
   ];
+  const router = useRouter();
 
   const [name, setname] = useState("");
   const [maps, setmaps] = useState([]);
+  const [url, setUrl] = useState("");
+  const [mapName, setMapName] = useState();
   const wallet = useAnchorWallet();
   const { connection } = useConnection();
   const { program } = useProgram({ connection, wallet });
@@ -42,6 +49,16 @@ const SearchForMap = (props) => {
 
   const namehandler = (e) => {
     setname(e.target.value);
+  };
+
+  const create = async (name) => {
+    const gamePubkey = await createGame(
+      program,
+      name,
+      wallet.publicKey
+    );
+    setUrl("/TowerDefence/"+gamePubkey.toString());
+    setMapName(name)
   };
 
   return (
@@ -72,14 +89,14 @@ const SearchForMap = (props) => {
                     ?.map((map) => (
                       <div
                         key={map.publicKey}
-                        className="p-1 m-5 rounded-md bg-gray-100 flex items-center justify-center"
+                        className={`p-1 m-5 rounded-m flex items-center justify-center ${map.account.name==mapName ? "bg-green-600" : "bg-emerald-50"}`}
+                        onClick={()=>{url ? router.push(url):create(map?.account?.name)}}
                       >
                         <BoardTubnail map={map} />
                       </div>
                     ))}
                 </div>
               </main>
-
             </>
           </div>
 
@@ -91,8 +108,7 @@ const SearchForMap = (props) => {
               <div className="flex flex-col">
                 <div className="p-2">
                   <div className="flex flex-col">
-                    {Data.map((item) => {
-                      return (
+                    {Data.map((item) => (
                         <div className="mt-10" key={item.name}>
                           <a
                             href="#"
@@ -110,8 +126,8 @@ const SearchForMap = (props) => {
                             </div>
                           </a>
                         </div>
-                      );
-                    })}
+                      )
+                    )}
                   </div>
                 </div>
               </div>
@@ -122,4 +138,5 @@ const SearchForMap = (props) => {
     </>
   );
 };
+
 export default SearchForMap;
