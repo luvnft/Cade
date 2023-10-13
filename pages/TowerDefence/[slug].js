@@ -113,11 +113,11 @@ const ChooseUnits = (props) => {
                         {gameAccount ? <BoardTubnail map={gameAccount} /> : ""}
                       </div>
                     </div>
-                    <div className="items-center">
+                    <div className="items-center flex flex-col h-60">
                       <p className="text-left m-2 text-xs text-blue-200">
                         Available Budget: 100
                       </p>
-                      <div className="flex mx-5 items-center">
+                      <div className="flex mx-3 items-center">
                         <div className="flex flex-row">
                           {/* <input
                 type="text"

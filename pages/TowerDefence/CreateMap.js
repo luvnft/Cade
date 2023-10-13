@@ -6,27 +6,26 @@ import Image from "next/image";
 import { createMap } from "../../connector/ddt-utils/callInstructions";
 
 const CreateMap = (props) => {
-
   const Data = [
     {
       name: "Space Invaders",
       img: "/spacenew.webp",
-      link: "/Games/SpaceInvaders"
+      link: "/Games/SpaceInvaders",
     },
     {
       name: "Coin Flip",
       img: "/coinflip.jpg",
-      link: "/Games/CoinFlip"
+      link: "/Games/CoinFlip",
     },
     {
       name: "Tower Defence",
       img: "/tower.jpg",
-      link: "/Games/TowerDefence"
+      link: "/Games/TowerDefence",
     },
     {
       name: "FourInLine Game",
       img: "/fourinline.png",
-      link: "/Games/FourInLine"
+      link: "/Games/FourInLine",
     },
   ];
 
@@ -74,7 +73,7 @@ const CreateMap = (props) => {
                 <meta name="description" content="dtt" />
               </Head>
               <div className="p-8 bg-gray-900 text-white">
-                <div className="font-semibold text-xl text-center">
+                <div className="font-semibold text-xl text-center m-5">
                   <h2>Choose your defenders!</h2>
                 </div>
                 <div className="px-2 mt-2 text-gray-200 sm:text-lg sm:leading-2 flex flex-col items-center">
@@ -90,7 +89,9 @@ const CreateMap = (props) => {
                         />
                       </div>
                       <div className="flex flex-col mt-4">
-                        <p className="">Type of Board/Grid component goes here</p>
+                        <p className="">
+                          Type of Board/Grid component goes here
+                        </p>
                         {/* <input
                   type="text"
                   className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
@@ -164,7 +165,7 @@ const CreateMap = (props) => {
                     </div>
                   </div>
                 </div>
-                <div className="pt-4 flex items-center justify-center">
+                <div className="pt-4 flex items-center justify-center m-5">
                   <button
                     className="inline-flex py-2.5 px-5 mx-20 text-sm font-large text-white bg-lime-500 border-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover-bg-lime-600 dark:focus-ring-lime-600 w-60 flex items-center justify-center"
                     onClick={() =>
@@ -181,7 +182,6 @@ const CreateMap = (props) => {
                   </button>
                 </div>
               </div>
-
             </>
           </div>
 

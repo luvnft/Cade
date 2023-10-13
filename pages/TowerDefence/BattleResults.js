@@ -24,8 +24,8 @@ const BattleResults = () => {
           <div className="lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 ">
             <div className="flex justify-center"></div>
 
-            <div className="flex justify-center p-16 bg-black mt-16">
-              <div className="flex justify-center p-16 bg-black mt-16">
+            <div className="justify-center p-16 bg-black mt-16">
+              <div className="flex justify-center p-8 bg-black mt-2">
                 <div className="font-semibold text-xl text-center m-2">
                   <h2>Battle Results</h2>
                 </div>
