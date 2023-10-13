@@ -1,8 +1,8 @@
 import React from "react";
-import Link from "next/link";
 
 const Board = ({ map }) => {
   const render = (kind) => {
+    console.log(kind);
     switch (kind) {
       case "tree":
         return <img src="/tree.svg" className="h-full w-full" />;
@@ -15,16 +15,12 @@ const Board = ({ map }) => {
     }
   };
   return (
-    <Link href={`/TowerDefence/${map?.account?.name}`}>
       <>
         {
           <div className="h-[500px] w-[320px] mb-5">
-            <div className="text-black text-center m-2">
-              <p className="">{map?.account?.name}</p>
-            </div>
             <div className="grid grid-cols-6 gap-1">
               {[...Array(60)?.keys()]?.map((index) => {
-                const kind = map?.account?.board?.find(
+                const kind = map?.board?.find(
                   (e) => e?.position === index
                 )?.kind;
                 return (
@@ -46,7 +42,6 @@ const Board = ({ map }) => {
           </div>
         }
       </>
-    </Link>
   );
 };
 
