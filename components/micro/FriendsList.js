@@ -7,23 +7,33 @@ const FriendsList = () => {
   const Data = [
     {
       img: "https://gravatar.com/avatar/4eef2f632f445c6d8a1185d8613bc6a3?s=400&d=robohash&r=x",
-      name: "User1",
+      name: "UserOlivia",
+      follower: "20",
+      following: "45"
     },
     {
       img: "https://gravatar.com/avatar/bff5b51079602e067f4fcb32fb45faff?s=400&d=robohash&r=x",
-      name: "User2",
+      name: "Mason",
+      follower: "50",
+      following: "15"
     },
     {
       img: "https://gravatar.com/avatar/b1b006c4c0bf5fb5edb8c1977b5e9e36?s=400&d=retro&r=x",
-      name: "User3",
+      name: "Sophia",
+      follower: "22",
+      following: "12"
     },
     {
       img: "https://gravatar.com/avatar/50abd2399b6cb03ceef7df05f2559526?s=400&d=retro&r=x",
-      name: "User4",
+      name: "Jackson",
+      follower: "62",
+      following: "16"
     },
     {
       img: "https://gravatar.com/avatar/c8e2517a89cf8c58595438af42a2af40?s=400&d=robohash&r=x",
-      name: "User5",
+      name: "Amelia",
+      follower: "90",
+      following: "32"
     },
   ];
 
@@ -64,10 +74,10 @@ const FriendsList = () => {
 
                   <div className="flex flex-row mt-5">
                     <h1 className="font-abc text-2xl text-white">
-                      79 Following
+                     Following {item.following}
                     </h1>
                     <h1 className="font-abc text-2xl text-white ml-5">
-                      10 Followers
+                      Followers {item.follower}
                     </h1>
                   </div>
                   <div>
@@ -80,7 +90,7 @@ const FriendsList = () => {
 
                     <div className="flex justify-between mr-3 mt-5">
                       <input
-                        
+                        placeholder="Message"
                         className="bg-gray-900 p-2 rounded-2xl w-30"
                         onChange={() => {
                           console.log("friendlist");

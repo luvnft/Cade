@@ -156,20 +156,13 @@ const Games = ({
                 <div className="flex justify-center flex-row mt-5">
                   <div className=" ">
                     <button
-                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
+                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-4xl"
                       onClick={() => initgame()}
                     >
                       Play Now
                     </button>
                   </div>
-                  <div className=" ">
-                    <button
-                      className="py-3 text-black font-abc bg-white border-0  px-6 m-2 focus:outline-none rounded text-2xl"
-                      onClick={() => mintCade()}
-                    >
-                      Claim XP and Cade
-                    </button>
-                  </div>
+                  
 
                 </div>
               </>

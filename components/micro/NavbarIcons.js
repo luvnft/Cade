@@ -61,7 +61,7 @@ const NavbarIcons = () => {
       <img
         onClick={() => router.push("/Profile/Joeey")}
         className="w-10 h-10 ml-2 rounded-full cursor-pointer"
-        src="https://gravatar.com/avatar/de8b837bd975130ff76a7940c6cba552?s=400&d=retro&r=x"
+        src="https://gravatar.com/avatar/638960e628fe9c4f77c140715cd7c513?s=400&d=retro&r=x"
         alt="Rounded avatar"
       >
 

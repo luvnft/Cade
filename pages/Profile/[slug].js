@@ -2,8 +2,10 @@ import React from "react";
 import { GiTwoCoins } from "react-icons/gi";
 import { BsTrophyFill } from "react-icons/bs";
 import Trophies from "../../components/ProfileComponent/Trophies";
+import { useTicket } from "../../connector/ticket";
 import GameHistory from "../../components/ProfileComponent/GameHistory";
-const Profile = ({slug}) => {
+const Profile = ({ slug }) => {
+  const { mintCade } = useTicket()
   return (
     <>
       <div className="bg-[url('/kn.jpg')]">
@@ -17,7 +19,7 @@ const Profile = ({slug}) => {
                       <div className="ml-6 w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-inherit text-indigo-500 flex-shrink-0">
                         <img
                           className="w-18 h-18  rounded-full ring-2 ring-yellow-400"
-                          src="https://gravatar.com/avatar/de8b837bd975130ff76a7940c6cba552?s=400&d=retro&r=x"
+                          src="https://gravatar.com/avatar/638960e628fe9c4f77c140715cd7c513?s=400&d=retro&r=x"
                           alt="Bordered avatar"
                         />
                       </div>
@@ -27,19 +29,15 @@ const Profile = ({slug}) => {
                         </h2>
 
                         <div className="flex flex-col">
-                        <div>
-                          <img src="/cadenew.png" width={150} height={150} alt="cade_img"/>
-                          </div>
-                          <h1 className="ml-3 text-4xl font-extrabold font-abc text-white">
-                            100 CADE
-                          </h1>
+
                         </div>
-                       
+
                         <button
+                          onClick={() => mintCade()}
                           type="button"
-                          className="font-abc text-2xl focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-5 py-2.5 mr-2 mb-2"
+                          className="w-full font-abc text-2xl focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-2 py-2.5 mr-2 mb-2"
                         >
-                          Buy CADE
+                          Redeem Cade and Prizes
                         </button>
                       </div>
                     </div>
@@ -48,7 +46,7 @@ const Profile = ({slug}) => {
                     <input
                       type="search"
                       id="default-search"
-                      value={"https://cade.com/Profile/newuser"}
+                      value={" https://gg-cade.vercel.app/Profile/Joey"}
                       className="font-abc text-2xl block  p-4 pl-10 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Search Mockups, Logos..."
                       required
