@@ -43,8 +43,7 @@ const Rank = () => {
               1,093,531
             </h2>
             <p className="leading-relaxed text-4xl font-abc text-white">
-              Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-              taxidermy.
+            Climb the ranks in cae and prove you're the ultimate gaming champion. 
             </p>
           </div>
           <div className="flex flex-col">
