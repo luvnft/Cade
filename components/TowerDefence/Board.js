@@ -1,24 +1,28 @@
 import React from "react";
 
-const Board = ({ map, active, handleClick }) => {
-  const render = (kind) => {
-    switch (kind) {
-      case "tree":
-        return <img src="/tree.svg" className="h-full w-full" />;
-      case "bull":
-        return <img src="/bull.svg" className="h-full w-full" />;
-      case "bear":
-        return <img src="/bear.svg" className="h-full w-full" />;
-      default:
-        return "";
-    }
-  };
+export const renderDefender = (kind) => {
+  switch (kind) {
+    case "tree":
+      return <img src="/tree.svg" className="h-full w-full" />;
+    case "bull":
+      return <img src="/bull.svg" className="h-full w-full" />;
+    case "bear":
+      return <img src="/bear.svg" className="h-full w-full" />;
+    case "soldier":
+      return <img src="/soldier.svg" className="h-16 w-16" />;
+    case "tank":
+      return <img src="/tank.svg" className="h-16 w-16" />;
+    case "plane":
+      return <img src="/plane.svg" className="h-16 w-16" />;
+    default:
+      return "";
+  }
+};
 
-  return (
+export const Board = ({ map, active, handleClick }) =>  (
     <>
       <div className="h-[34px] w-[320px] bg-red-600 text-center align-middle items-center">
-        {" "}
-        BASE{" "}
+        BASE
       </div>
       <div className="h-[500px] w-[320px]">
         <div className="grid grid-cols-6">
@@ -35,14 +39,14 @@ const Board = ({ map, active, handleClick }) => {
                 custom={index}
               >
                 <div className={`h-[50px] w-[53px]`}>
-                  {kind ? render(kind) : ""}
+                  {kind ? renderDefender(kind) : ""}
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-      <div className="h-[500px] w-[320px]">
+      <div className="h-[34px] w-[320px]">
         <div className="grid grid-cols-6">
           {[...Array(6)?.keys()]?.map((n, index) => {
             return (
@@ -80,6 +84,4 @@ const Board = ({ map, active, handleClick }) => {
       </div>
     </>
   );
-};
 
-export default Board;
