@@ -3,7 +3,7 @@ import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
 import Head from "next/head";
 import { useProgram } from "../../connector/ddt-utils/useProgram";
 import { useRouter } from "next/router";
-import BoardTubnail from "../../components/TowerDefence/BoardTubnail";
+import Board from "../../components/TowerDefence/Board";
 
 import { createGame } from "../../connector/ddt-utils/callInstructions";
 import { deployUnits } from "../../connector/ddt-utils/callInstructions";
@@ -46,7 +46,6 @@ const ChooseUnits = (props) => {
     if (program) {
       (async () => {
         const map = await program.account.map.all();
-        // console.log(map)
         const mapPDA = map.filter((m) => m.account.name === slug)[0]?.publicKey;
 
         setGamePublicKey(mapPDA);
@@ -96,7 +95,6 @@ const ChooseUnits = (props) => {
         <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 ">
             <div className="flex justify-center"></div>
-
             <>
               <Head>
                 <title>dtt</title>
@@ -110,7 +108,7 @@ const ChooseUnits = (props) => {
                   <div className="flex flex-row items-center">
                     <div className="w-60 flex flex-col items-center mr-4">
                       <div className="flex flex-col mt-4">
-                        {gameAccount ? <BoardTubnail map={gameAccount} /> : ""}
+                        {gameAccount ? <Board map={gameAccount} /> : ""}
                       </div>
                     </div>
                     <div className="items-start flex flex-col h-60 m-2">
@@ -119,13 +117,6 @@ const ChooseUnits = (props) => {
                       </p>
                       <div className="flex mx-3 items-center">
                         <div className="flex flex-row">
-                          {/* <input
-                type="text"
-                className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
-                placeholder={`Enter budget`}
-                value={budget_for_createMap}
-                onChange={budgethandler_for_createMap}
-              /> */}
                           <div>
                             <button
                               className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
