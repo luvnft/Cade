@@ -9,7 +9,7 @@ import {
   PublicKey,
 } from "@solana/web3.js";
 import * as bs58 from "bs58";
-import secwallet from "../../wallet/secwallet";
+//import secwallet from "../../wallet/secwallet";
 import { useUSDCPay } from "../../hooks/transfer";
 import { getOrCreateAssociatedTokenAccount, transfer } from "@solana/spl-token";
 import { useWallet } from "@solana/wallet-adapter-react";

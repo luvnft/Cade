@@ -1,6 +1,6 @@
 import { useState } from "react";
-import wallet from "../wallet/wallet";
-import secwallet from "../wallet/secwallet";
+//import wallet from "../wallet/wallet";
+//import secwallet from "../wallet/secwallet";
 import {
   clusterApiUrl,
   Keypair,
