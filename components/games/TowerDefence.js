@@ -10,12 +10,12 @@ const TowerDefence = () => {
       <>
         <div className=" p-4 bg-gray-900">
           <div className="flex flex-col items-center">
-            <h1 className="text-white font-abc text-3xl mt-5 text-center">
+            <h1 className="text-white font-abc text-3xl m-3 mt-5 text-center">
               Solana Royale
             </h1>
           </div>
           <div className="mt-4">
-            <div className="flex flex-col items-center sm:flex-row sm:items-center">
+            <div className="flex flex-col items-center sm:flex-row sm:items-center m-3">
               <div className="mt-4 items-start sm:mt-0 mx-20">
                 <Link href="/TowerDefence/CreateMap">
                   <button
@@ -27,13 +27,13 @@ const TowerDefence = () => {
                 </Link>
               </div>
               <div className="mt-4 sm:mt-0 mx-20">
-              <Link href="/TowerDefence/SearchForMap">
-                <button
-                  type="submit"
-                  class="inline-flex py-2.5 px-5 mx-20 text-sm font-large text-white bg-lime-500 border-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover:bg-lime-600 dark:focus:ring-lime-600"
-                >
-                  Select a Map
-                </button>
+                <Link href="/TowerDefence/SearchForMap">
+                  <button
+                    type="submit"
+                    class="inline-flex py-2.5 px-5 mx-20 text-sm font-large text-white bg-lime-500 border-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover:bg-lime-600 dark:focus:ring-lime-600"
+                  >
+                    Select a Map
+                  </button>
                 </Link>
               </div>
             </div>

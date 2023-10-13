@@ -11,27 +11,26 @@ import { PublicKey } from "@solana/web3.js";
 import * as web3 from "@solana/web3.js";
 
 const ChooseUnits = (props) => {
-
   const Data = [
     {
       name: "Space Invaders",
       img: "/spacenew.webp",
-      link: "/Games/SpaceInvaders"
+      link: "/Games/SpaceInvaders",
     },
     {
       name: "Coin Flip",
       img: "/coinflip.jpg",
-      link: "/Games/CoinFlip"
+      link: "/Games/CoinFlip",
     },
     {
       name: "Tower Defence",
       img: "/tower.jpg",
-      link: "/Games/TowerDefence"
+      link: "/Games/TowerDefence",
     },
     {
       name: "FourInLine Game",
       img: "/fourinline.png",
-      link: "/Games/FourInLine"
+      link: "/Games/FourInLine",
     },
   ];
 
@@ -46,7 +45,7 @@ const ChooseUnits = (props) => {
   useEffect(() => {
     if (program) {
       (async () => {
-        const map = await program.account.map.all()
+        const map = await program.account.map.all();
         // console.log(map)
         const mapPDA = map.filter((m) => m.account.name === slug)[0]?.publicKey;
 
@@ -114,11 +113,11 @@ const ChooseUnits = (props) => {
                         {gameAccount ? <BoardTubnail map={gameAccount} /> : ""}
                       </div>
                     </div>
-                    <div className="items-center">
-                      <p className="text-left m-3 text-xs text-blue-200">
+                    <div className="items-start flex flex-col h-60 m-2">
+                      <p className="text-left ml-7 m-2 text-xs text-blue-200">
                         Available Budget: 100
                       </p>
-                      <div className="flex mx-5 items-center">
+                      <div className="flex mx-3 items-center">
                         <div className="flex flex-row">
                           {/* <input
                 type="text"
@@ -130,8 +129,8 @@ const ChooseUnits = (props) => {
                           <div>
                             <button
                               className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
-                            // value={budget_for_createMap}
-                            // onClick={budgethandler_for_createMap}
+                              // value={budget_for_createMap}
+                              // onClick={budgethandler_for_createMap}
                             >
                               <div className="flex flex-col items-center">
                                 <img
@@ -149,20 +148,15 @@ const ChooseUnits = (props) => {
                         <div>
                           <button
                             className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
-                          //   value={budget_for_createMap}
-                          //   onClick={budgethandler_for_createMap}
+                            //   value={budget_for_createMap}
+                            //   onClick={budgethandler_for_createMap}
                           >
                             <div className="flex flex-col items-center">
                               {/* Tank icon not working, can't find other military icons */}
                               <div className="flex-row flex">
                                 <img
-                                  src="/soldier.svg"
+                                  src="/war-tank-svgrepo-com.svg"
                                   alt="Tank Icon"
-                                  className="h-10 w-10"
-                                />
-                                <img
-                                  src="/soldier.svg"
-                                  alt="Soldier Duo Icon"
                                   className="h-10 w-10"
                                 />
                               </div>
@@ -178,7 +172,9 @@ const ChooseUnits = (props) => {
                             //   value={budget_for_createMap}
                             //   onClick={budgethandler_for_createMap}
                             // just to have a way to get to the results page
-                            onClick={() => router.push("/TowerDefence/BattleResults")}
+                            onClick={() =>
+                              router.push("/TowerDefence/BattleResults")
+                            }
                           >
                             <div className="flex flex-col items-center">
                               <img
@@ -203,7 +199,9 @@ const ChooseUnits = (props) => {
                       deployUnits(
                         program,
                         deploys_for_deployUnits,
-                        new PublicKey("BeTLVuVggw6J2E6192gRscNULXqoeiSr9nUvP9aXEa7a"),
+                        new PublicKey(
+                          "BeTLVuVggw6J2E6192gRscNULXqoeiSr9nUvP9aXEa7a"
+                        ),
                         wallet.publicKey,
                         map_for_deployUnits
                       )
@@ -213,7 +211,6 @@ const ChooseUnits = (props) => {
                   </button>
                 </div>
               </div>
-
             </>
           </div>
 
