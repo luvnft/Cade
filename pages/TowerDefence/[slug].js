@@ -113,8 +113,8 @@ const ChooseUnits = (props) => {
                         {gameAccount ? <BoardTubnail map={gameAccount} /> : ""}
                       </div>
                     </div>
-                    <div className="items-center flex flex-col h-60">
-                      <p className="text-left m-2 text-xs text-blue-200">
+                    <div className="items-start flex flex-col h-60 m-2">
+                      <p className="text-left ml-7 m-2 text-xs text-blue-200">
                         Available Budget: 100
                       </p>
                       <div className="flex mx-3 items-center">
