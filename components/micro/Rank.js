@@ -42,8 +42,8 @@ const Rank = () => {
             <h2 className="text-white font-abc text-3xl font-medium mb-3 mt-5">
               1,093,531
             </h2>
-            <p className="leading-relaxed text-4xl font-abc text-white">
-            Climb the ranks in cae and prove you're the ultimate gaming champion. 
+            <p className="leading-relaxed text-4xl font-abc text-white mt-2">
+            Climb the ranks in cade and prove you are the gaming champion. 
             </p>
           </div>
           <div className="flex flex-col">
