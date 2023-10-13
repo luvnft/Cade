@@ -2,7 +2,6 @@ import React from "react";
 
 const Board = ({ map }) => {
   const render = (kind) => {
-    console.log(kind);
     switch (kind) {
       case "tree":
         return <img src="/tree.svg" className="h-full w-full" />;
@@ -14,6 +13,7 @@ const Board = ({ map }) => {
         return "";
     }
   };
+
   return (
     <>
       <div className="h-[34px] w-[320px] bg-red-600 text-center align-middle items-center">
@@ -49,15 +49,11 @@ const Board = ({ map }) => {
               <div
                 key={index}
                 className={`max-h-[34px] max-w-[53px] ${
-                  index % 2
-                    ? "bg-blue-900"
-                    : "bg-blue-600"
+                  index % 2 ? "bg-blue-900" : "bg-blue-600"
                 }`}
                 custom={index}
               >
-                <div className={`h-[50px] w-[53px]`}>
-                  
-                </div>
+                <div className={`h-[50px] w-[53px]`}></div>
               </div>
             );
           })}
