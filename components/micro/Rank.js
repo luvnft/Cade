@@ -33,7 +33,6 @@ const Rank = () => {
                 # 94
               </h2>
               <button
-                onClick={() => mintCade()}
                 className="text-4xl font-abc bg-transparent ml-5 hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
               >
                  <a href={`LeaderBoard`}>LeaderBoard</a>
