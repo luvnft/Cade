@@ -187,7 +187,7 @@ const Redeem = () => {
                         // onClick={() => execute("https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4")}
                         className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                       >
-                        Buy for {item.price} Cade
+                        Buy for {item.price} Tickets
                       </button>
                     </>
                   )}
@@ -221,7 +221,7 @@ const Redeem = () => {
                     // onClick={() => execute("https://q75jr5p5oh2pq5wc2xsxptsdiqvmi2wjcoo7xjz47bj7qp7eizra.arweave.net/h_qY9f1x9Ph2wtXld85DRCrEaskTnfunPPhT-D_kRmI")}
                     className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                   >
-                    Buy for {item.price} Cade
+                    Buy for {item.price} Tickets
                   </button>
                 </div>
               );
@@ -259,7 +259,7 @@ const Redeem = () => {
                         onClick={() => finalNewTransfer()}
                         className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                       >
-                        Buy for {item.price} Cade
+                        Buy for {item.price} Tickets
                       </button>
                     </>
                   )}
@@ -293,7 +293,7 @@ const Redeem = () => {
                     // onClick={() => execute()}
                     className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                   >
-                    Buy for {item.price} Cade
+                    Buy for {item.price} Tickets
                   </button>
                 </div>
               );
@@ -328,7 +328,7 @@ const Redeem = () => {
                       // )}
                       className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                     >
-                      Buy for {item.price} Cade
+                      Buy for {item.price} Tickets
                     </button>
                   </div>
                 </>

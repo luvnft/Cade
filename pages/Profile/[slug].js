@@ -37,7 +37,7 @@ const Profile = ({ slug }) => {
                           type="button"
                           className="w-full font-abc text-2xl focus:outline-none mt-5 text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg px-2 py-2.5 mr-2 mb-2"
                         >
-                          Redeem Cade and Prizes
+                          Redeem Tickets
                         </button>
                       </div>
                     </div>
