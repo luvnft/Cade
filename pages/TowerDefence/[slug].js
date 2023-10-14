@@ -113,7 +113,7 @@ const ChooseUnits = (props) => {
                 <h2>Choose your units!</h2>
               </div>
               <div className="px-2 mt-2 text-gray-200 sm:text-lg sm:leading-2 flex flex-col items-center">
-                <div className="flex flex-row items-center">
+                <div className="flex flex-row">
                   <div className="w-60 flex flex-col items-center mr-4">
                     <div className="flex flex-col mt-4 relative w-[320px]">
                       {mapAccount ? (
@@ -124,19 +124,23 @@ const ChooseUnits = (props) => {
                         />
                       ) : null}
                       <div className="flex  mt-24 h-[150px] bg-yellow-300 w-full overflow-x-auto overflow-y-hidden items-center">
-                        {deploys_for_deployUnits[selectedSlot]?.map((unit) => renderDefender(unit))}
+                        {deploys_for_deployUnits[selectedSlot]?.map((unit) =>
+                          renderDefender(unit)
+                        )}
                       </div>
                     </div>
                   </div>
-                  <div className="items-start flex flex-col h-60 m-2">
-                    <p className="text-left ml-7 m-2 text-xs text-blue-200">
-                      Available Budget: 100
-                    </p>
-                    <div className="flex mx-3 items-center">
+                  <div className="container px-5 py-5 ml-20">
+                    <div className="items-start flex flew-col m-2">
+                      <p className="text-left ml-7 m-2 text-m text-blue-200">
+                        Available Budget: 100
+                      </p>
+                    </div>
+                    <div className="flex flex-col mx-2 items-center">
                       <div className="flex flex-row">
                         <div>
                           <button
-                            className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
+                            className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none m-4"
                             onClick={() => {
                               handleAddUnit("soldier", selectedSlot);
                             }}
@@ -156,7 +160,7 @@ const ChooseUnits = (props) => {
                       </div>
                       <div>
                         <button
-                          className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
+                          className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none m-4"
                           onClick={() => {
                             handleAddUnit("tank", selectedSlot);
                           }}
@@ -177,7 +181,7 @@ const ChooseUnits = (props) => {
                       </div>
                       <div>
                         <button
-                          className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none mx-5"
+                          className="bg-blue-500 text-white py-2.5 px-5 text-sm rounded-md focus:outline-none m-4"
                           onClick={() => {
                             handleAddUnit("plane", selectedSlot);
                           }}
