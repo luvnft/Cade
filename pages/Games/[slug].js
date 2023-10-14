@@ -38,9 +38,9 @@ const Games = ({
       link: "/Games/Chess"
     },
     {
-      name: "Tower Defence",
-      img: "/tower.jpg",
-      link: "/Games/TowerDefence"
+      name: "FourInLine Game",
+      img: "/fourinline.png",
+      link: "/Games/FourInLine"
     },
     {
       name: "Car Race",
@@ -49,9 +49,9 @@ const Games = ({
       desc : "Ready to race against the best in this high-speed car game!"
     },
     {
-      name: "FourInLine Game",
-      img: "/fourinline.png",
-      link: "/Games/FourInLine"
+      name: "Tower Defence",
+      img: "/tower.jpg",
+      link: "/Games/TowerDefence"
     },
     {
       name: "Coin Flip",
@@ -93,7 +93,7 @@ const Games = ({
     )
     setTimeout(() => {
       setshow(!show);
-    }, 5000);
+    }, 7000);
   };
 
   return (
