@@ -45,9 +45,8 @@ const ChooseUnits = (props) => {
   useEffect(() => {
     if (program) {
       (async () => {
-        const game = await program.account.game.fetch(slug);
+        const game = await program?.account?.game?.fetch(slug);
         setGameAccount(game);
-        console.log(game);
       })();
     }
   }, [wallet, program]);
@@ -57,7 +56,6 @@ const ChooseUnits = (props) => {
       (async () => {
         const mapAccount = await program.account.map.fetch(gameAccount.map);
         setMapAccount(mapAccount);
-        console.log(mapAccount);
       })();
     }
   }, [gameAccount, program?.account?.map]);
@@ -96,7 +94,7 @@ const ChooseUnits = (props) => {
   const deployshandler_for_deployUnits = (e) => {
     setdeploys_for_deployUnits(e.target.value);
   };
-
+  const isFinished = !(gameAccount?.points?.toString()==0);
   return (
     <>
       <section className="text-gray-600 body-font relative bg-[url('/kn.jpg')]">
@@ -110,7 +108,7 @@ const ChooseUnits = (props) => {
             </Head>
             <div className="p-8 bg-gray-900 text-white">
               <div className="font-semibold text-xl text-center m-5">
-                <h2>Choose your units!</h2>
+                <h2>{isFinished?"Game Finished!":"Choose your units!"}</h2>
               </div>
               <div className="px-2 mt-2 text-gray-200 sm:text-lg sm:leading-2 flex flex-col items-center">
                 <div className="flex flex-row">
@@ -119,21 +117,31 @@ const ChooseUnits = (props) => {
                       {mapAccount ? (
                         <Board
                           map={mapAccount}
-                          active={selectedSlot}
-                          handleClick={handleSlotChange}
+                          active={isFinished? -1 : selectedSlot}
+                          handleClick={isFinished?()=>{}:handleSlotChange}
                         />
                       ) : null}
-                      <div className="flex  mt-24 h-[150px] bg-yellow-300 w-full overflow-x-auto overflow-y-hidden items-center">
+                      {isFinished?null:<div className="flex px-2 mt-24 h-[150px] bg-yellow-300 w-full overflow-x-auto overflow-y-hidden items-center">
                         {deploys_for_deployUnits[selectedSlot]?.map((unit) =>
                           renderDefender(unit)
                         )}
-                      </div>
+                      </div>}
                     </div>
                   </div>
                   <div className="container px-5 py-5 ml-20">
-                    <div className="items-start flex flew-col m-2">
+                    {isFinished?(
+                      <div className="items-center">
+                      {<p className="text-left m-3 text-l text-lime-400 font-bold">
+                        Game Finished!
+                      </p>}
+                      <div className="flex items-center">
+                        <p className="text-left m-3 text-l text-lime-400 font-bold">
+                          POINTS {gameAccount?.points?.toString() ?? 0}
+                        </p>
+                      </div></div>
+                    ):(<><div className="items-start flex flew-col m-2">
                       <p className="text-left ml-7 m-2 text-m text-blue-200">
-                        Available Budget: 100
+                        Maps Budget: {mapAccount?.budget?.toString() ?? 0}
                       </p>
                     </div>
                     <div className="flex flex-col mx-2 items-center">
@@ -194,15 +202,17 @@ const ChooseUnits = (props) => {
                             />
                             <div>Health 500</div>
                             <div>DPS 75</div>
-                            <div>DPS 50</div>
+                            <div>cost 50</div>
                           </div>
                         </button>
                       </div>
-                    </div>
+                      </div>
+                      </>)}
+        
                   </div>
                 </div>
               </div>
-              <div className="pt-4 flex items-center justify-center m-5">
+              {isFinished?null:<div className="pt-4 flex items-center justify-center m-5">
                 <button
                   className="inline-flex py-2.5 px-5 mt-4 mx-20 text-sm font-large text-white bg-lime-500 border-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover-bg-lime-600 dark:focus-ring-lime-600 w-60 flex items-center justify-center"
                   onClick={() =>
@@ -217,7 +227,7 @@ const ChooseUnits = (props) => {
                 >
                   DEPLOY UNITS!
                 </button>
-              </div>
+              </div>}
             </div>
           </div>
 
