@@ -15,12 +15,12 @@ const TowerDefence = () => {
             </h1>
           </div>
           <div className="mt-4">
-            <div className="flex flex-col items-center sm:flex-row sm:items-center m-3">
-              <div className="mt-4 items-start sm:mt-0 mx-20">
+            <div className="flex flex-col items-center sm:flex-row sm:items-center m-8">
+              <div className="mt-4 items-start sm:mt-0">
                 <Link href="/TowerDefence/CreateMap">
                   <button
                     type="submit"
-                    className="inline-flex items-center py-2.5 px-5 mx-20 text-sm font-large text-white bg-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover:bg-lime-600 dark:focus:ring-lime-600"
+                    className="inline-flex justify-center py-2.5 px-5 mx-20 text-sm font-large text-white bg-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover:bg-lime-600 dark:focus:ring-lime-600 w-2/3"
                   >
                     Create a New Map
                   </button>
@@ -30,7 +30,7 @@ const TowerDefence = () => {
                 <Link href="/TowerDefence/SearchForMap">
                   <button
                     type="submit"
-                    class="inline-flex py-2.5 px-5 mx-20 text-sm font-large text-white bg-lime-500 border-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover:bg-lime-600 dark:focus:ring-lime-600"
+                    class="inline-flex justify-center py-2.5 px-5 mx-20 text-sm font-large text-white bg-lime-500 border-lime-500 outline outline-lime-500 border-lime-600 hover:bg-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-600 dark:bg-lime-600 dark:hover:bg-lime-600 dark:focus:ring-lime-600 w-2/3"
                   >
                     Select a Map
                   </button>
