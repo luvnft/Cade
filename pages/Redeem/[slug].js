@@ -127,7 +127,7 @@ const RedeemBlindChest = ({ name, img }) => {
                   ) : (
                     <>
                       <button
-                        onClick={() => finalNewTranactionh()}
+                        // onClick={() => finalNewTranactionh()}
                         className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                       >
                         Get it Now

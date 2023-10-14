@@ -183,7 +183,7 @@ const Redeem = () => {
                   ) : (
                     <>
                       <button
-                        onClick={() => finalNewTransferh()}
+                        // onClick={() => finalNewTransferh()}
                         // onClick={() => execute("https://wd76k5vv2aka7kcyewzori53k65knga2yncczccn2xxleyurucha.arweave.net/sP_ldrXQFA-oWCWy6KO7V7qmmBrDRCyITdXusmKRoI4")}
                         className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                       >
@@ -256,7 +256,7 @@ const Redeem = () => {
                   ) : (
                     <>
                       <button
-                        onClick={() => finalNewTransfer()}
+                        // onClick={() => finalNewTransfer()}
                         className="mt-5 text-black font-abc bg-white border-0 py-2 px-6 focus:outline-none rounded text-2xl"
                       >
                         Buy for {item.price} Tickets
