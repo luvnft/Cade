@@ -85,7 +85,7 @@ const SearchForMap = (props) => {
                 </div>
                 <div className="grid grid-cols-4 gap-2">
                   {maps
-                    .filter((map) => map?.account?.name?.includes(name))
+                    .filter((map) => map?.account?.name?.includes(name) && map?.account?.budget.toString() != "0")
                     ?.map((map) => (
                       <div
                         key={map.publicKey}
