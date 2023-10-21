@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useProgram } from "../../connector/ddt-utils/useProgram";
 import Image from "next/image";
 import { createMap } from "../../connector/ddt-utils/callInstructions";
+import { BN } from "@project-serum/anchor";
 
 const CreateMap = (props) => {
   const Data = [
@@ -48,13 +49,19 @@ const CreateMap = (props) => {
   //for createMap
   const [name_for_createMap, setname_for_createMap] = useState();
   const [board_for_createMap, setboard_for_createMap] = useState();
-  const [budget_for_createMap, setbudget_for_createMap] = useState();
+  const [budget_for_createMap, setbudget_for_createMap] = useState(new BN(1000));
   const [board, setboard] = useState([
     {
       kind: "tree",
       health: 1,
       dps: 1,
       position: 0,
+    },
+    {
+      kind: "bull",
+      health: 100,
+      dps: 100,
+      position: 2,
     },
   ]);
   //handler functions for inputs feilds
