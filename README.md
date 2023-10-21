@@ -10,9 +10,8 @@
   <div align="center">
     <a href="#">Website</a>
     •
-    <a href="#">Twitter</a>
-    •
-    <a href="#">Blog</a>
+    <a href="https://twitter.com/gg_cade">Twitter</a>
+
   </div>
 </div>
  
