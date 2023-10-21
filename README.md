@@ -40,8 +40,8 @@ Github - https://github.com/Web3-Builders-Alliance/cade-programs
 
 # PitchDeck And DemoVideo
 <ul>
-<li>Pith Deck - <a href="https://docs.google.com/presentation/d/1ywg0dvkAf_Dhk9IUoVil0YdqrFN0M5Ny-MujCt0wzpU/edit?usp=sharing"></a></li>
-<li>Demo Video - <a href="https://www.youtube.com/watch?v=msKD14lSPtg"></a></li>
+<li><a href="https://docs.google.com/presentation/d/1ywg0dvkAf_Dhk9IUoVil0YdqrFN0M5Ny-MujCt0wzpU/edit?usp=sharing">Pitch Deck</a></li>
+<li><a href="https://www.youtube.com/watch?v=msKD14lSPtg">Demo Video</a></li>
 
 
 
