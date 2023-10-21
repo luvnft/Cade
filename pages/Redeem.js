@@ -1,6 +1,5 @@
 import { useState } from "react";
-import wallet from "../components/micro/wallet/wallet";
-import secwallet from "../components/micro/wallet/secwallet";
+import sw from "../components/micro/utils/sw";
 import {
   clusterApiUrl,
   Keypair,
@@ -29,7 +28,7 @@ const Redeem = () => {
     (async () => {
       try {
         setLoading(true);
-        const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
+        const keypair = Keypair.fromSecretKey(bs58.decode(sw));
         const connection = new Connection(
           "https://api.devnet.solana.com",
           "finalized"
@@ -87,7 +86,7 @@ const Redeem = () => {
     (async () => {
       try {
         setLoading(true);
-        const keypair = Keypair.fromSecretKey(bs58.decode(secwallet));
+        const keypair = Keypair.fromSecretKey(bs58.decode(sw));
         const connection = new Connection(
           "https://api.devnet.solana.com",
           "finalized"
