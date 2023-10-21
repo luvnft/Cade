@@ -34,7 +34,7 @@ Github - https://github.com/Web3-Builders-Alliance/cade-programs
 <li>SDK for Game Devs</li>
 <li>P2P Market for Gamers</li>
 <li>Variety of Games</li>
-<li>Points , Prizes and Rewards</li>
+<li>Points ,Prizes and Rewards</li>
 </ul>
 
 # PitchDeck And DemoVideo
