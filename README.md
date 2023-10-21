@@ -33,7 +33,7 @@ Github - https://github.com/Web3-Builders-Alliance/cade-programs
 <li>Fun Centric Gamer Enonomy</li>
 <li>SDK for Game Devs</li>
 <li>P2P Market for Gamers</li>
-<li>Variety of Games</li>
+<li>Variety of Games to Play</li>
 <li>Points ,Prizes and Rewards</li>
 </ul>
 
