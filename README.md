@@ -28,7 +28,13 @@ Social gaming platform on @Solana providing a FUN GamEx, prizes, leaderboards, p
  
 # Features
 <ul>
-<li>Games</li>
+<li>Social Profiles and Avatars</li>
+<li>Platfrom Wide LeaderBoards</li>
+<li>Fun Centric Gamer Enonomy</li>
+<li>SDK for Game Devs</li>
+<li>P2P Market for Gamers</li>
+<li>Variety of Games</li>
+<li>Points , Prizes and Rewards</li>
 </ul>
 <br>
 
