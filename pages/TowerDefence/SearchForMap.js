@@ -47,7 +47,7 @@ const SearchForMap = (props) => {
 
   const [name, setname] = useState("");
   const [maps, setmaps] = useState([]);
-  const [url, setUrl] = useState("");
+  const [gamePubkey, setGamePubkey] = useState("");
   const [mapName, setMapName] = useState();
   const wallet = useAnchorWallet();
   const { connection } = useConnection();
@@ -72,9 +72,25 @@ const SearchForMap = (props) => {
       name,
       wallet.publicKey
     );
-    setUrl("/TowerDefence/"+gamePubkey.toString());
+    setGamePubkey(gamePubkey.toString());
     setMapName(name)
   };
+
+  useEffect(() => {
+    if (!program) return;
+    const listener = program.addEventListener(
+      "GameCreated",
+      async (event, _slot, _sig) => {
+        if (event.player.toString() == wallet.publicKey.toString()) {
+          router.push("/TowerDefence/" + event.pubkey.toString());
+        }
+      }
+    );
+
+    return () => {
+      program.removeEventListener(listener);
+    };
+  }, [program]);
 
   return (
     <>
@@ -105,7 +121,7 @@ const SearchForMap = (props) => {
                       <div
                         key={map.publicKey}
                         className={`p-1 m-5 rounded-m flex items-center justify-center ${map.account.name==mapName ? "bg-green-600" : "bg-emerald-50"}`}
-                        onClick={()=>{url ? router.push(url):create(map?.account?.name)}}
+                        onClick={()=>{gamePubkey ? router.push("/TowerDefence/" + gamePubkey):create(map?.account?.name)}}
                       >
                         <BoardTubnail map={map} />
                       </div>
