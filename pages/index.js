@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Season from "../components/micro/Season";
 import Games from "../components/micro/Games";
 import FriendsList from "../components/micro/FriendsList";
