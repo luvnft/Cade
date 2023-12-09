@@ -38,13 +38,13 @@ const Herop = ({
 
   const Data = [
     {
-      name: "Space Invaders",
+      name: "Space Invaders Game",
       img: "fourinline.png",
       link: "/Games/SpaceInvaders",
       desc: "Ready to race against the best in this high-speed car game!"
     },
     {
-      name: "Chess",
+      name: "Chess Game",
       img: "/chess.avif",
       link: "/Games/Chess",
       desc: "Ready to race against the best in this high-speed car game! "
@@ -56,19 +56,19 @@ const Herop = ({
       desc: "Ready to race against the best in this high-speed car game!"
     },
     {
-      name: "Car Race",
+      name: "Car Race Game",
       img: "/carnew.jpg",
       link: "/Games/Carrace",
       desc: "Ready to race against the best in this high-speed car game!"
     },
     {
-      name: "Tower Defence",
+      name: "Tower Defence Game",
       img: "/tower.jpg",
       link: "/Games/TowerDefence",
       desc: "Ready to race against the best in this high-speed car game!"
     },
     {
-      name: "Coin Flip",
+      name: "Coin Flip Game",
       img: "/coinflip.jpg",
       link: "/Games/CoinFlip",
       desc: "Ready to race against the best in this high-speed car game!"
