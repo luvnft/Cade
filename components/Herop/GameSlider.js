@@ -80,6 +80,7 @@ export default function GameSlider({ images }) {
                     );
                 })}
             </div>
+            <div class="mt-2 border-t-2 border-gray-700"></div>
         </div>
     );
 }
