@@ -30,14 +30,6 @@ const CadeSocial = () => {
             desc: "Ready to race against the best in this high-speed car game!",
             no: "4"
         },
-
-        {
-            name: "Coin Flip",
-            img: "/coinflip.jpg",
-            link: "/Games/CoinFlip",
-            desc: "Rdvdveady to race against the best in this high-speed car game!",
-            no: "6"
-        },
     ];
     return (
         <>
