@@ -1,52 +1,36 @@
-import React from "react";
-import Image from "next/image";
-const Games = () => {
-  const Data = [
-    {
-      name: "Space Invaders",
-      img: "/spacenew.webp",
-      link: "/Games/SpaceInvaders",
-      desc : "Control a spaceship and defend Earth from waves of alien." 
-    },
-    {
-      name: "Chess",
-      img: "/chess.avif",
-      link: "/Games/Chess",
-      desc : "Checkmate your way to victory in this classic chess game!"
-    },
-    {
-      name: "Four In Line Game",
-      img: "/fourinline.png",
-      link: "/Games/FourInLine",
-      desc : "A classic strategy game of aligning four tokens in a row."
-    },
-    {
-      name: "Tower Defence",
-      img: "/tower.jpg",
-      link: "/Games/TowerDefence",
-      desc : "Games where the goal is to defend your base by obstructing enemy."
-    },
-    {
-      name: "Coin Flip",
-      img: "/coinflip.jpg",
-      link: "/Games/Chess",
-      desc : "A retro coin flip game of digital twist on a classic 50/50 chance."
-    },
-    {
-      name: "Car Race",
-      img: "/car.jpg",
-      link: "/Games/Carrace",
-      desc : "Ready to race against the best in this high-speed car game!"
-    },
-  ];
+import React from 'react'
+
+const UpcomingGames = () => {
+    const Data = [
+        {
+          name: "Space Invaders",
+          img: "/spacenew.webp",
+          link: "/Games/SpaceInvaders",
+          desc : "Control a spaceship and defend Earth from waves of alien." 
+        },
+        {
+          name: "Chess",
+          img: "/chess.avif",
+          link: "/Games/Chess",
+          desc : "Checkmate your way to victory in this classic chess game!"
+        },
+        
+        
+        {
+          name: "Car Race",
+          img: "/car.jpg",
+          link: "/Games/Carrace",
+          desc : "Ready to race against the best in this high-speed car game!"
+        },
+      ];
   return (
     <>
-      <h1 className="flex justify-center text-6xl font-abc text-white ml-10 mt-12 m-4 ">
-        Top Games🔥
+          <h1 className="flex justify-center text-6xl font-abc text-white ml-10 m-4 font-bold">
+        Upcoming Games🤘
       </h1>
 
       <div>
-        <div className="p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+        <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-3 gap-5">
           {Data.map((item) => {
             return (
               <div className="flex flex-col" key={item.name}>
@@ -83,7 +67,7 @@ const Games = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Games;
+export default UpcomingGames

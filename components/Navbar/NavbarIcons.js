@@ -13,7 +13,7 @@ export const NavbarIcons = () => {
             <>
                 <div className='flex flex-col'>
                     <div className='flex justify-center'>
-                        <IoTrophyOutline className='text-2xl mt-1' />
+                        <IoTrophyOutline className='text-2xl text-yellow-400 mt-1' />
                     </div>
                     <li>
                         <a href="#" class="font-abc text-xl mt-3 block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Leaderboard</a>
@@ -28,7 +28,7 @@ export const NavbarIcons = () => {
             <>
                 <div className='flex flex-col'>
                     <div className='flex justify-center'>
-                        <IoGameControllerOutline className='text-2xl mt-1' />
+                        <IoGameControllerOutline className='text-2xl text-green-400 mt-1' />
                     </div>
                     <li>
                         <a href="#" class="block font-abc text-xl mt-3 py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Games</a>
@@ -43,7 +43,7 @@ export const NavbarIcons = () => {
             <>
                 <div className='flex flex-col'>
                     <div className='flex justify-center'>
-                        <IoGiftOutline className='text-2xl mt-1' />
+                        <IoGiftOutline className='text-2xl text-red-500 mt-1' />
                     </div>
                     <li>
                         <a href="#" class="block font-abc text-xl mt-3 py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Prizes</a>
@@ -58,7 +58,7 @@ export const NavbarIcons = () => {
             <>
                 <div className='flex flex-col'>
                     <div className='flex justify-center'>
-                        <TbBrandDiscord className='text-3xl mt-3' />
+                        <TbBrandDiscord className='text-3xl text-purple-700 mt-3' />
                     </div>
                     {/* <li>
                         <a href="#" class="block font-abc text-xl mt-3 py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Discord</a>
@@ -74,7 +74,7 @@ export const NavbarIcons = () => {
             <>
                 <div className='flex flex-col'>
                     <div className='flex justify-center'>
-                        <PiHandshakeLight className='text-2xl mt-1' />
+                        <PiHandshakeLight className='text-2xl text-yellow-400  mt-1' />
                     </div>
                     <li>
                         <a href="#" class="block font-abc text-xl mt-3 py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">P2P</a>
@@ -89,7 +89,7 @@ export const NavbarIcons = () => {
             <>
                 <div className='flex flex-col'>
                     <div className='flex justify-center'>
-                        <IoIosNotificationsOutline className='text-3xl mt-3' />
+                        <IoIosNotificationsOutline className='text-3xl text-yellow-400 mt-3' />
                     </div>
                    
                 </div>
@@ -102,7 +102,7 @@ export const NavbarIcons = () => {
             <>
                 <div className='flex flex-col'>
                     <div className='flex justify-center'>
-                        <PiTelegramLogo className='text-3xl mt-3' />
+                        <PiTelegramLogo className='text-3xl text-blue-600 mt-3' />
                     </div>
                    
                 </div>

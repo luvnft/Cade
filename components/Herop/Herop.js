@@ -17,6 +17,10 @@ import Badges from "./Badges";
 import MiniLeaderBoard from "./MiniLeaderBoard";
 import Announcement from "./Announcement";
 import Upcoming from "./Upcoming";
+import Games from "../micro/Games";
+import UpcomingGames from "./UpcomingGames";
+import Footer from "../Footer/Footer";
+import CadeStore from "./CadeStore";
 const Herop = ({
   slug,
   description,
@@ -123,9 +127,12 @@ const Herop = ({
             <GameSlider images={Data} />
             <section className="text-gray-400 rounded-xl body-font mt-5 ">
               <div className="container px-5 py-5">
-                <div className="flex flex-wrap -m-5 lg:gap-20 ">
+                <div className="flex flex-wrap -m-5 lg:gap-10 ">
                  <Badges/>
                  <MiniLeaderBoard/>
+                 <Games/>
+                 <CadeStore/>
+                 <UpcomingGames/>
                 </div>
               </div>
             </section>
@@ -137,6 +144,7 @@ const Herop = ({
           </div>
         </div>
       </section>
+          <Footer/>
     </>
   );
 };

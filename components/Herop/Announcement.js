@@ -5,8 +5,8 @@ const Announcement = () => {
         <>
 
             <div className='mt-10 gap-2 flex flex-row justify-center'>
-                <h1 className='text-5xl font-abc text-white'>Accountments</h1>
-                <IoNotifications className='mt-2 text-yellow-300 text-4xl' />
+                <h1 className='sm:text-5xl text-6xl font-abc text-white'>Accountments</h1>
+                <IoNotifications className='mt-3 text-yellow-300 text-4xl' />
             </div>
 
             <div class="p-2 mt-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700">
