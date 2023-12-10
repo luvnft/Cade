@@ -13,6 +13,8 @@ import Link from "next/link";
 import GameSlider from "./GameSlider";
 import { data } from "browserslist";
 import CadeSocial from "./CadeSocial";
+import Badges from "./Badges";
+import MiniLeaderBoard from "./MiniLeaderBoard";
 const Herop = ({
   slug,
   description,
@@ -115,8 +117,18 @@ const Herop = ({
     <>
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-          <GameSlider images={Data} />
-          <div className="p-1 lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full">
+          <div className="mt-2">
+            <GameSlider images={Data} />
+            <section className="text-gray-400 rounded-xl body-font mt-5 ">
+              <div className="container px-5 py-5">
+                <div className="flex flex-wrap -m-5 lg:gap-20 ">
+                 <Badges/>
+                 <MiniLeaderBoard/>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div className="p-2 lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full">
             <CadeSocial />
           </div>
         </div>

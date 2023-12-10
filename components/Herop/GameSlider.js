@@ -3,6 +3,8 @@ import { useState } from "react";
 import Swipe from "react-easy-swipe";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { truncateHeadline, truncateSublie } from "../../hooks/Truncate";
+import AfterHero from "./AfterHero";
+import CadeSocial from "./CadeSocial";
 
 export default function GameSlider({ images }) {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,7 +20,8 @@ export default function GameSlider({ images }) {
     };
 
     return (
-        <div className="">
+        <>
+        <div className="mt-2">
             {/* <AiOutlineLeft
         onClick={handlePrevSlide}
         className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
@@ -81,6 +84,11 @@ export default function GameSlider({ images }) {
                 })}
             </div>
             <div class="mt-2 border-t-2 border-gray-700"></div>
+           
         </div>
+
+        
+       
+        </>
     );
 }

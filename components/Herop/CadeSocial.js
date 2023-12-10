@@ -29,13 +29,7 @@ const CadeSocial = () => {
             desc: "Ready to race against the best in this high-speed car game!",
             no : "4"
         },
-        {
-            name: "Tower Defence",
-            img: "/tower.jpg",
-            link: "/Games/TowerDefence",
-            desc: "Ready to race against the best in this high-speed car game!",
-            no : "5"
-        },
+        
         {
             name: "Coin Flip",
             img: "/coinflip.jpg",
@@ -47,11 +41,11 @@ const CadeSocial = () => {
     return (
         <>
             <section class="text-gray-600 body-font mx-5">
-                <div className="flex justify-center">
+                <div className="flex justify-start">
 
                 </div>
                 <div className="container  ">
-                    <div class="flex justify-center mt-1 flex-wrap -m-5  sm:px-2 ">
+                    <div class="flex justify-start mt-1 flex-wrap -m-5  sm:px-2 ">
                         <>
                             <div class="mt-2 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow p-8 dark:bg-gray-950 dark:border-gray-700">
                                 <div class="flex items-center justify-between mb-4">
