@@ -11,7 +11,7 @@ const Badges = () => {
                     <img src='/trophy 2.png' height={100} width={100} alt='badges' />
                 </div>
                 <h1 className='font-abc text-white text-5xl'>Upcoming Badges</h1>
-                <div className='flex flex-row gap-x-4 gap-y-2 mt-2'>
+                <div className='flex flex-row gap-x-2 gap-y-2 mt-2'>
                 <img src='/trophy.png' height={100} width={100} alt='badges' />
                 <img src='/trophy 3.png' height={100} width={100} alt='badges' />
                 <img src='/trophy 4.png' height={100} width={100} alt='badges' />
