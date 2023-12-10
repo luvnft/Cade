@@ -37,7 +37,7 @@ const UpcomingGames = () => {
                 <div>
                   <a
                     href="#"
-                    className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                    className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-950 dark:hover:bg-gray-700"
                   >
                     <img
                       className="object-cover w-full rounded-t-lg h- md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
@@ -52,7 +52,7 @@ const UpcomingGames = () => {
                   </a>
                 </div>
                 <div className="mt-5">
-                  <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                  <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-950 dark:border-gray-700 dark:hover:bg-gray-700">
                     <p className="font-normal text-3xl font-abc text-gray-700 dark:text-gray-400">
                      {item.desc}
                     </p>
