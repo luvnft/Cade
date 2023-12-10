@@ -1,5 +1,6 @@
 import React from 'react'
-
+import { BiSolidUpArrow, BiSolidDownArrow } from "react-icons/bi";
+import { FaUserCircle } from "react-icons/fa";
 const MiniLeaderBoard = () => {
     return (
         <>
@@ -27,8 +28,9 @@ const MiniLeaderBoard = () => {
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                    $320 XP
+                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
+                                    <BiSolidUpArrow className="text-green-400 text-2xl" />
+                                    320 XP
                                 </div>
                             </div>
                         </li>
@@ -45,8 +47,9 @@ const MiniLeaderBoard = () => {
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                    $3467 XP
+                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
+                                    <BiSolidUpArrow className="text-green-400 text-2xl" />
+                                    280 XP
                                 </div>
                             </div>
                         </li>
@@ -63,17 +66,16 @@ const MiniLeaderBoard = () => {
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                    $67 XP
+                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
+                                    <BiSolidUpArrow className="text-green-400 text-2xl" />
+                                    180 XP
                                 </div>
                             </div>
                         </li>
 
                         <li class="pt-3 pb-0 sm:pt-4">
                             <div class="flex items-center ">
-                                <div class="flex-shrink-0">
-                                    <img class="w-12 h-12 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="Thomas image" />
-                                </div>
+                                <FaUserCircle className='text-3xl text-yellow-300'/>
                                 <div class="flex-1 min-w-0 ms-4">
                                     <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
                                         Thomes Lean
@@ -82,8 +84,9 @@ const MiniLeaderBoard = () => {
                                         email@windster.com
                                     </p>
                                 </div>
-                                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                                    $2367 XP
+                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
+                                    <BiSolidDownArrow className="text-red-400 text-2xl" />
+                                    90 XP
                                 </div>
                             </div>
                         </li>

@@ -15,6 +15,8 @@ import { data } from "browserslist";
 import CadeSocial from "./CadeSocial";
 import Badges from "./Badges";
 import MiniLeaderBoard from "./MiniLeaderBoard";
+import Announcement from "./Announcement";
+import Upcoming from "./Upcoming";
 const Herop = ({
   slug,
   description,
@@ -130,6 +132,8 @@ const Herop = ({
           </div>
           <div className="p-2 lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full">
             <CadeSocial />
+            <Announcement/>
+            <Upcoming/>
           </div>
         </div>
       </section>
