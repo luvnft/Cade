@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { IoNotifications } from "react-icons/io5";
 const Announcement = () => {
@@ -43,7 +44,7 @@ const Announcement = () => {
                         <h5 class="mb-2 text-4xl font-abc tracking-tight text-gray-900 dark:text-white">Cade Devnet faucet Release🔥</h5>
                     </a>
 
-                    <button type="button" class="mt-5 font-abc text-2xl bg-gray-950 text-white border-2 border-yellow-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2 "><a href='/Cadefaucet'>More Details</a></button>
+                    <button type="button" class="mt-5 font-abc text-2xl bg-gray-950 text-white border-2 border-yellow-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2 "><Link href='/Cadefaucet'>More Details</Link></button>
                 </div>
             </div>
         </>
