@@ -6,37 +6,37 @@ const Games = () => {
       name: "Space Invaders",
       img: "/spacenew.webp",
       link: "/Games/SpaceInvaders",
-      desc : "Control a spaceship and defend Earth from waves of alien." 
+      desc: "Control a spaceship and defend Earth from waves of alien.",
     },
     {
       name: "Chess",
       img: "/chess.avif",
       link: "/Games/Chess",
-      desc : "Checkmate your way to victory in this classic chess game!"
+      desc: "Checkmate your way to victory in this classic chess game!",
     },
     {
       name: "Four In Line Game",
       img: "/fourinline.png",
       link: "/Games/FourInLine",
-      desc : "A classic strategy game of aligning four tokens in a row."
+      desc: "A classic strategy game of aligning four tokens in a row.",
     },
     {
       name: "Tower Defence",
       img: "/tower.jpg",
       link: "/Games/TowerDefence",
-      desc : "Games where the goal is to defend your base by obstructing enemy."
+      desc: "Games where the goal is to defend your base by obstructing enemy.",
     },
     {
       name: "Coin Flip",
       img: "/coinflip.jpg",
-      link: "/Games/Chess",
-      desc : "A retro coin flip game of digital twist on a classic 50/50 chance."
+      link: "/Games/CoinFlip",
+      desc: "A retro coin flip game of digital twist on a classic 50/50 chance.",
     },
     {
       name: "Car Race",
       img: "/car.jpg",
       link: "/Games/Carrace",
-      desc : "Ready to race against the best in this high-speed car game!"
+      desc: "Ready to race against the best in this high-speed car game!",
     },
   ];
   return (
@@ -70,7 +70,7 @@ const Games = () => {
                 <div className="mt-5">
                   <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-950 dark:border-gray-700 dark:hover:bg-gray-700">
                     <p className="font-normal text-3xl font-abc text-gray-700 dark:text-gray-400">
-                     {item.desc}
+                      {item.desc}
                     </p>
                     <button className="mt-5 px-3 text-4xl font-abc bg-transparent  hover:bg-blue-500 text-white font-semibold hover:text-white  border border-white hover:border-transparent rounded">
                       <a href={item.link}>Play Now</a>

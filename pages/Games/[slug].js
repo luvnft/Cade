@@ -18,45 +18,45 @@ const Games = ({
   playerOne,
   secondPlayer,
   thirdPlayer,
-  timePlayed
+  timePlayed,
 }) => {
   const { createTransaction } = useUSDCPay();
-  const {publicKey} = useWallet()
+  const { publicKey } = useWallet();
   const { mintCade } = useTicket();
   const [show, setshow] = useState(true);
-  const router = useRouter()
+  const router = useRouter();
 
   const Data = [
     {
       name: "Space Invaders",
       img: "/spacenew.webp",
-      link: "/Games/SpaceInvaders"
+      link: "/Games/SpaceInvaders",
     },
     {
       name: "Chess",
       img: "/chess.avif",
-      link: "/Games/Chess"
+      link: "/Games/Chess",
     },
     {
       name: "FourInLine Game",
       img: "/fourinline.png",
-      link: "/Games/FourInLine"
+      link: "/Games/FourInLine",
     },
     {
       name: "Car Race",
       img: "/car.jpg",
       link: "/Games/Carrace",
-      desc : "Ready to race against the best in this high-speed car game!"
+      desc: "Ready to race against the best in this high-speed car game!",
     },
     {
       name: "Tower Defence",
       img: "/tower.jpg",
-      link: "/Games/TowerDefence"
+      link: "/Games/TowerDefence",
     },
     {
       name: "Coin Flip",
       img: "/coinflip.jpg",
-      link: "/Games/CoinFlip"
+      link: "/Games/CoinFlip",
     },
   ];
 
@@ -87,10 +87,10 @@ const Games = ({
 
   const initgame = () => {
     createTransaction(
-        publicKey,
-        new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-        5
-    )
+      publicKey,
+      new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+      5
+    );
     setTimeout(() => {
       setshow(!show);
     }, 7000);
@@ -162,14 +162,12 @@ const Games = ({
                       Play Now
                     </button>
                   </div>
-                  
-
                 </div>
               </>
             ) : (
               <div className="flex justify-center mt-16">
                 <h1 className="font-abc text-5xl text-white">
-                  {slug} Game Comming Soon
+                  {slug} Game Coming Soon
                 </h1>
               </div>
             )}
@@ -179,7 +177,12 @@ const Games = ({
                 <div className="">
                   {show ? (
                     <div className="flex justify-center p-10 rounded-xl mt-10 bg-gray-950">
-                      <img width={800} className="rounded-xl" src={img} alt="gggg" />
+                      <img
+                        width={800}
+                        className="rounded-xl"
+                        src={img}
+                        alt="gggg"
+                      />
                     </div>
                   ) : (
                     renderGame()
@@ -221,7 +224,6 @@ const Games = ({
                             <div className="flex flex-col justify-between p-4 leading-normal">
                               <h5 className="font-abc mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 {item.name}
-
                               </h5>
                               <button className="mt-5 px-3 text-4xl font-abc bg-transparent  hover:bg-blue-500 text-white font-semibold hover:text-white  border border-white hover:border-transparent rounded">
                                 <a href={`${item.link}`}>Play Now</a>
@@ -249,7 +251,7 @@ export async function getServerSideProps(context) {
   let playerOne = "";
   let secondPlayer = "";
   let thirdPlayer = "";
-  let timePlayed = ""
+  let timePlayed = "";
   console.log(`slug is my ${slug}`);
   if (slug == "CoinFlip") {
     (description = "A coinflipgame"), (img = "/gamethu1.jpg");
@@ -257,7 +259,7 @@ export async function getServerSideProps(context) {
       (playerOne = "John"),
       (secondPlayer = "Ben"),
       (thirdPlayer = "Josh");
-    timePlayed = "200+"
+    timePlayed = "200+";
   }
   if (slug == "TowerDefence") {
     (description = "A TowerDefence Game"),
@@ -266,7 +268,7 @@ export async function getServerSideProps(context) {
       (playerOne = "TolyMan"),
       (secondPlayer = "OnlySolana"),
       (thirdPlayer = "Elliot");
-    timePlayed = "100+"
+    timePlayed = "100+";
   }
   if (slug == "FourInLine") {
     description = "A Four In Line Game";
@@ -275,7 +277,7 @@ export async function getServerSideProps(context) {
     playerOne = "Niunjap#22";
     secondPlayer = "Bhindi";
     thirdPlayer = "Akkobaiii";
-    timePlayed = "500+"
+    timePlayed = "500+";
   } else {
     description = "No Such Game Found";
   }
@@ -288,7 +290,7 @@ export async function getServerSideProps(context) {
       playerOne,
       secondPlayer,
       thirdPlayer,
-      timePlayed
+      timePlayed,
     },
   };
 }
