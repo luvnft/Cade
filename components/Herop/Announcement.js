@@ -35,6 +35,17 @@ const Announcement = () => {
                     <button type="button" class="mt-5 font-abc text-2xl bg-gray-950 text-white border-2 border-yellow-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2 ">More Details</button>
                 </div>
             </div>
+
+            <div class="p-2 mt-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700">
+
+                <div class="p-2">
+                    <a href="#">
+                        <h5 class="mb-2 text-4xl font-abc tracking-tight text-gray-900 dark:text-white">Cade Devnet faucet Release🔥</h5>
+                    </a>
+
+                    <button type="button" class="mt-5 font-abc text-2xl bg-gray-950 text-white border-2 border-yellow-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2 "><a href='/Cadefaucet'>More Details</a></button>
+                </div>
+            </div>
         </>
     )
 }
