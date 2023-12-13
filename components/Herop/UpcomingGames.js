@@ -30,7 +30,7 @@ const UpcomingGames = () => {
       </h1>
 
       <div>
-        <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+        <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
           {Data.map((item) => {
             return (
               <div className="flex flex-col" key={item.name}>
@@ -40,7 +40,7 @@ const UpcomingGames = () => {
                     className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-950 dark:hover:bg-gray-700"
                   >
                     <img
-                      className="object-cover w-full rounded-t-lg h- md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                      className="object-cover w-full rounded-t-lg h- md:h-auto md:w-40 md:rounded-none md:rounded-l-lg"
                       src={item.img}
                       alt="Gamne Image"
                     />

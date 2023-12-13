@@ -122,7 +122,7 @@ const Herop = ({
   return (
     <>
       <section className="text-gray-600 body-font relative">
-        <div className="gap-x-5 container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div className="gap-x-5 container px-2 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="mt-2">
             <GameSlider images={Data} />
             <section className="text-gray-400 rounded-xl body-font mt-5 ">

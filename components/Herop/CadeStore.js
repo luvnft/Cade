@@ -6,7 +6,7 @@ const CadeStore = () => {
             <h1 className="text-white text-6xl font-abc ml-8 mt-5">
                 Cade Store🔥
             </h1>
-            <div className="p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+            <div className="p-5 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
                 {CadeStoreData.map((item) => {
                     return (
                         <div className="border-2 border-gray-700  bg-gray-950 p-6 rounded-lg" key={item.name}>

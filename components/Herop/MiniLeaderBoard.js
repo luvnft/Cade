@@ -22,9 +22,7 @@ const MiniLeaderBoard = () => {
                                     <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
                                         Neil Sims
                                     </p>
-                                    <p class="font-abc text-xl text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
+                                    
                                 </div>
                                 <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
                                     <BiSolidUpArrow className="text-green-400 text-2xl" />
@@ -41,9 +39,7 @@ const MiniLeaderBoard = () => {
                                     <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
                                         Bonnie Green
                                     </p>
-                                    <p class="font-abc text-xl text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
+                                   
                                 </div>
                                 <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
                                     <BiSolidUpArrow className="text-green-400 text-2xl" />
@@ -60,9 +56,7 @@ const MiniLeaderBoard = () => {
                                     <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
                                         Michael Gough
                                     </p>
-                                    <p class="font-abc text-xl text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
-                                    </p>
+                                    
                                 </div>
                                 <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
                                     <BiSolidUpArrow className="text-green-400 text-2xl" />
@@ -72,19 +66,20 @@ const MiniLeaderBoard = () => {
                         </li>
 
                         <li class="pt-3 pb-0 sm:pt-4">
-                            <div class="flex items-center ">
+                        <h1 className='text-3xl text-white font-abc'>Your Ranking</h1>
+                            <div class="flex items-center mt-2">
                                 <FaUserCircle className='text-3xl text-yellow-300' />
                                 <div class="flex-1 min-w-0 ms-4">
                                     <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
                                         Thomes Lean
                                     </p>
                                     <p class="font-abc text-xl text-gray-500 truncate dark:text-gray-400">
-                                        email@windster.com
+                                      Position - 23
                                     </p>
                                 </div>
                                 <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
                                     <BiSolidDownArrow className="text-red-400 text-2xl" />
-                                    90 XP
+                                    9 XP
                                 </div>
                             </div>
                                 <a href="#" class="text-2xl font-abc mt-10 inline-flex items-center text-yellow-300 hover:underline">

@@ -3,10 +3,16 @@ import Image from "next/image";
 const Games = () => {
   const Data = [
     {
-      name: "Space Invaders",
-      img: "/spacenew.webp",
-      link: "/Games/SpaceInvaders",
-      desc: "Control a spaceship and defend Earth from waves of alien.",
+      name: "Tower Defence",
+      img: "/tower.jpg",
+      link: "/Games/TowerDefence",
+      desc: "Games where the goal is to defend your base by obstructing enemy.",
+    },
+    {
+      name: "Four In Line",
+      img: "/fourinline.png",
+      link: "/Games/FourInLine",
+      desc: "A classic strategy game of aligning four tokens in a row.",
     },
     {
       name: "Chess",
@@ -15,16 +21,10 @@ const Games = () => {
       desc: "Checkmate your way to victory in this classic chess game!",
     },
     {
-      name: "Four In Line Game",
-      img: "/fourinline.png",
-      link: "/Games/FourInLine",
-      desc: "A classic strategy game of aligning four tokens in a row.",
-    },
-    {
-      name: "Tower Defence",
-      img: "/tower.jpg",
-      link: "/Games/TowerDefence",
-      desc: "Games where the goal is to defend your base by obstructing enemy.",
+      name: "Space Invaders",
+      img: "/spacenew.webp",
+      link: "/Games/SpaceInvaders",
+      desc: "Control a spaceship and defend Earth from waves of alien.",
     },
     {
       name: "Coin Flip",
@@ -46,7 +46,7 @@ const Games = () => {
       </h1>
 
       <div>
-        <div className="p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+        <div className="p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
           {Data.map((item) => {
             return (
               <div className="flex flex-col" key={item.name}>
@@ -56,7 +56,7 @@ const Games = () => {
                     className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-950 dark:hover:bg-gray-700"
                   >
                     <img
-                      className="object-cover w-full rounded-t-lg h- md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                      className="object-cover w-full rounded-t-lg h- md:h-auto md:w-40 md:rounded-none md:rounded-l-lg"
                       src={item.img}
                       alt="Gamne Image"
                     />
