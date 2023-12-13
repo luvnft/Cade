@@ -8,13 +8,13 @@ const Badges = () => {
             <div class="mt-5  p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700">
                 <h1 className='font-abc text-white text-5xl mt-5'>Your Badges</h1>
                 <div className='mt-2'>
-                    <img src='/trophy 2.png' height={100} width={100} alt='badges' />
+                    <img src='/trophy 2.png' height={60} width={60} alt='badges' />
                 </div>
                 <h1 className='font-abc text-white text-5xl'>Upcoming Badges</h1>
                 <div className='flex flex-row gap-x-2 gap-y-2 mt-2'>
-                <img src='/trophy.png' height={100} width={100} alt='badges' />
-                <img src='/trophy 3.png' height={100} width={100} alt='badges' />
-                <img src='/trophy 4.png' height={100} width={100} alt='badges' />
+                <img src='/trophy.png' height={60} width={60} alt='badges' />
+                <img src='/trophy 3.png' height={60} width={60} alt='badges' />
+                <img src='/trophy 4.png' height={60} width={60} alt='badges' />
                 </div>
                 <a href="#" class="text-2xl font-abc mt-10 inline-flex items-center text-yellow-300 hover:underline">
                     View More 

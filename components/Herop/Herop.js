@@ -122,29 +122,29 @@ const Herop = ({
   return (
     <>
       <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div className="gap-x-5 container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="mt-2">
             <GameSlider images={Data} />
             <section className="text-gray-400 rounded-xl body-font mt-5 ">
               <div className="container px-5 py-5">
                 <div className="flex flex-wrap -m-5 lg:gap-10 ">
-                 <Badges/>
-                 <MiniLeaderBoard/>
-                 <Games/>
-                 <CadeStore/>
-                 <UpcomingGames/>
+                  <Games />
+                  <CadeStore />
+                  <UpcomingGames />
                 </div>
               </div>
             </section>
           </div>
           <div className="p-2 lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full">
+            <MiniLeaderBoard />
+            <Badges />
             <CadeSocial />
-            <Announcement/>
-            <Upcoming/>
+            <Announcement />
+            <Upcoming />
           </div>
         </div>
       </section>
-          <Footer/>
+      <Footer />
     </>
   );
 };
