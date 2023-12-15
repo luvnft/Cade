@@ -25,7 +25,7 @@ const RedeemBlindChest = ({ name, img }) => {
         setLoading(true);
         const keypair = Keypair.fromSecretKey(bs58.decode(sw));
         const connection = new Connection(
-          "https://api.localhost.solana.com",
+          "https://api.devnet.solana.com",
           "finalized"
         );
 
