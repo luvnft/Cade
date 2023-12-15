@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { AiOutlinePlusCircle } from 'react-icons/ai'
+import { FaTrophy } from "react-icons/fa6";
 const NavbarIcons = () => {
   const router = useRouter()
   return (

@@ -115,3 +115,26 @@ export const GamePass = [
     price: "6",
   },
 ];
+
+export const CadeStoreData = [
+
+  {
+    name: "Cade Life x1",
+    img: "/heartr.png",
+    desc: "Play Again If You Loose",
+    price: "2",
+  },
+  {
+    name: "Blind Chest x1",
+    img: "/treasure.png",
+    desc: "Open Chest for Exited Suprizes",
+    price: "2",
+  },
+  {
+    name: "Lottery Ticket x2",
+    img: "/lottery1.png",
+    desc: "Sol Loaded Lottery Tickets for Periodic Drawings",
+    price: "2",
+  }
+
+]

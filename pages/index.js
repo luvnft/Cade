@@ -1,20 +1,22 @@
 import Hero from "../components/Hero";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Season from "../components/micro/Season";
 import Games from "../components/micro/Games";
 import FriendsList from "../components/micro/FriendsList";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import LeaderBoard from "./LeaderBoard";
+import Herop from "../components/Herop/Herop";
 const Home = () => {
   const router = useRouter();
   const [checking, setChecking] = useState(true);
 
   return (
     <>
-      <div className="flex flex-col h-screen bg-black">
+    <Herop/>
+      {/* <div className="flex flex-col h-screen bg-black">
         <div className="flex flex-1 overflow-hidden">
-          {/* // Its Correct :: dont remove hidden (for now :)  */}
+       
           <div className="hidden xl:block flex w-16 p-4 text-white bg-gray-800 mb-40 mt-20 ml-2 rounded-2xl">
             <FriendsList />
           </div>
@@ -51,7 +53,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

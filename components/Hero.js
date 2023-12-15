@@ -1,6 +1,6 @@
 import Image from "next/image";
 import NavbarIcons from "./micro/NavbarIcons";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import Season from "./micro/Season";
 import FriendsList from "./micro/FriendsList";
 import Games from "./micro/Games";
