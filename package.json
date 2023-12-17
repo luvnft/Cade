@@ -25,9 +25,11 @@
     "react-easy-swipe": "^0.0.23",
     "react-icons": "^4.7.1",
     "react-scroll": "^1.8.9",
-    "react-toastify": "^9.1.1"
+    "react-toastify": "^9.1.1",
+    "sass": "^1.69.5"
   },
   "devDependencies": {
+    "@types/react": "18.2.45",
     "autoprefixer": "^10.4.15",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
