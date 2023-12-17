@@ -16,10 +16,12 @@ const placeBet = async (program, seed, player) => {
     bet,
     systemProgram:SystemProgram.programId 
   })
-  .rpc()
+  .rpc().then(async (signature) => {
 
   const pdas = await program.account.bet.all()
   console.log({pdas})
+  console.log({signature})
+  })
 }
 
 export default placeBet;
