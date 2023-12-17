@@ -9,6 +9,7 @@ import placeBet from "../../connector/bonk-or-death/place_bet";
 import resolveBet from "../../connector/bonk-or-death/resolve_bet";
 import { BN } from "@coral-xyz/anchor";
 import { randomBytes } from "crypto"
+import Dice from "../../components/Dice";
 
 const ChooseUnits = (props) => {
   const wallet = useAnchorWallet();
@@ -27,9 +28,12 @@ const ChooseUnits = (props) => {
         <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 ">
             <div className="flex justify-center">
-              <button onClick={() => placeBet(program, seed, wallet)}>place</button>
-              <button onClick={() => resolveBet(program, seed, wallet)}>resolve</button>
-
+              {/*<button onClick={() => placeBet(program, seed, wallet)}>place</button>
+              <button onClick={() => resolveBet(program, seed, wallet)}>resolve</button>*/}
+              <Dice
+                onRoll={(value) => console.log(value)}
+                faces={["bonk.jpg", "death.jpeg", "death.jpeg", "death.jpeg", "death.jpeg", "death.jpeg"]}
+              />
             </div>
           </div>
         </div>
