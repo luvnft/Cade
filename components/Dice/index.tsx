@@ -31,6 +31,7 @@ type TDiceRef = {
     rollDice: (value: TValue) => void;
 };
 
+// eslint-disable-next-line react/display-name
 const Dice = forwardRef((props: TProps, ref: React.MutableRefObject<TDiceRef>) => {
     const { rollingTime = 1000, onRoll, defaultValue = 6, size = 250, faceBg, faces = [], disabled, cheatValue, placement, sound, triggers = ['click'], ...rest } = props;
     const [value, setValue] = useState<TValue>(defaultValue);
