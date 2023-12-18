@@ -19,7 +19,7 @@ const Leaderboard = (props) => {
       console.log("leaderboard: ", leaderboard[0].account.leaderboard);
       setLeaderboard(leaderboard[0].account.leaderboard);
     }})();
-  }, [wallet]);
+  }, [program, wallet]);
 
  
 
