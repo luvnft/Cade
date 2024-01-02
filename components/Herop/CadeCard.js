@@ -5,15 +5,13 @@ import {
 } from "@solana/wallet-adapter-react";
 const CadeCard = () => {
     const { publicKey } = useWallet();
-    const [userpublicKey, setUserPublicKey] = useState("-")
+    const [userpublicKey, setUserPublicKey] = useState("")
 
     useEffect(() => {
         if (publicKey) {
             setUserPublicKey(publicKey.toBase58().toString())
         }
-        else {
-            setUserPublicKey("-")
-        }
+    
     })
 
     return (
