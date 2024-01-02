@@ -41,9 +41,8 @@ export default function GameSlider({ images }) {
                                             src="/carnew.jpg"
                                             alt="ff"
                                             layout="fill"
-                                            width={1000}
                                             objectFit="contain"
-                                            className="animate-fadeIn rounded-3xl p-3"
+                                            className="animate-fadeIn rounded-3xl p-3 w-100 h-100"
                                         />
                                         <div className="border-white mr-4 ml-4 p-2 rounded-2xl bg-gray-950">
                                             <div className="flex">
@@ -70,8 +69,8 @@ export default function GameSlider({ images }) {
                             <div
                                 className={
                                     index === currentSlide
-                                        ? "h-4 w-4 bg-gray-700 rounded-full mx-2 mb-2 cursor-pointer"
-                                        : "h-4 w-4 bg-gray-300 rounded-full mx-2 mb-2 cursor-pointer"
+                                        ? "h-2 w-2 bg-gray-700 rounded-full mx-2 mb-2 cursor-pointer"
+                                        : "h-2 w-2 bg-gray-300 rounded-full mx-2 mb-2 cursor-pointer"
                                 }
                                 key={index}
                                 onClick={() => {
@@ -81,7 +80,7 @@ export default function GameSlider({ images }) {
                         );
                     })}
                 </div>
-                <div class="mt-2 border-t-2 border-gray-700"></div>
+               
 
             </div>
 
