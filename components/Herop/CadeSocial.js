@@ -42,7 +42,7 @@ const CadeSocial = () => {
                         <>
                             <div class="mt-2 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow p-8 dark:bg-gray-950 dark:border-gray-700">
                                 <div class="flex items-center justify-between mb-4">
-                                    <h5 class="font-abc sm:text-5xl text-6xl font-bold leading-none text-gray-900 dark:text-white">Cade Feed🤝</h5>
+                                    <h5 class="font-abc text-4xl font-bold leading-none text-gray-900 dark:text-white">Cade Feed🤝</h5>
 
                                 </div>
                                 <div class="flow-root">

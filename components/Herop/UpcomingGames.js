@@ -25,7 +25,7 @@ const UpcomingGames = () => {
       ];
   return (
     <>
-          <h1 className="flex justify-center text-6xl font-abc text-white ml-10 m-4 font-bold">
+          <h1 className="flex justify-center text-5xl font-abc text-white ml-10 m-4 font-bold">
         Upcoming Games🤘
       </h1>
 
@@ -40,20 +40,20 @@ const UpcomingGames = () => {
                     className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-950 dark:hover:bg-gray-700"
                   >
                     <img
-                      className="object-cover w-full rounded-t-lg h- md:h-auto md:w-40 md:rounded-none md:rounded-l-lg"
+                      className="object-cover w-64 h-64 rounded-t-lg md:h-auto md:w-40 md:rounded-none md:rounded-l-lg"
                       src={item.img}
                       alt="Gamne Image"
                     />
-                    <div className="flex flex-col justify-between p-4 leading-normal">
+                    <div className="flex flex-col justify-between p-4">
                       <h5 className="mb-2 text-4xl font-abc font-bold tracking-tight text-gray-900 dark:text-white">
                         {item.name}
                       </h5>
                     </div>
                   </a>
                 </div>
-                <div className="mt-5">
+                <div className="hidden lg:block mt-5">
                   <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-950 dark:border-gray-700 dark:hover:bg-gray-700">
-                    <p className="font-normal text-3xl font-abc text-gray-700 dark:text-gray-400">
+                    <p className="text-3xl font-abc text-gray-700 dark:text-gray-400">
                      {item.desc}
                     </p>
                     <button className="mt-5 px-3 text-4xl font-abc bg-transparent  hover:bg-blue-500 text-white font-semibold hover:text-white  border border-white hover:border-transparent rounded">

@@ -46,7 +46,7 @@ export default function GameSlider({ images }) {
                                         />
                                         <div className="border-white mr-4 ml-4 p-2 rounded-2xl bg-gray-950">
                                             <div className="flex">
-                                                <h1 className="font-abc text-4xl text-white">{indexx.name}</h1>
+                                                <h1 className="font-abc font-bold text-5xl text-white">{indexx.name}</h1>
                                             </div>
                                             <span className="font-abc text-2xl text-gray-400">{truncateSublie(indexx.desc)}</span>
                                         </div>
