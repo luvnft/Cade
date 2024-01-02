@@ -21,7 +21,7 @@ const CadeStore = () => {
                             <h2 className="text-white text-4xl font-abc font-bold mb-4">
                                 {item.name}
                             </h2>
-                            <p className="text-gray-700 dark:text-gray-400 font-abc text-3xl">{item.desc}</p>
+                            <p className="hidden lg:block text-gray-700 dark:text-gray-400 font-abc text-3xl">{item.desc}</p>
                             {/* needs onClick execute function  */}
                             <button
                                 // onClick={() => finalNewTransfer()}
