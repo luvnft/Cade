@@ -12,7 +12,7 @@ const CadeCard = () => {
             setUserPublicKey(publicKey.toBase58().toString())
         }
     
-    })
+    },[publicKey])
 
     return (
         <>
