@@ -81,12 +81,12 @@ const Games = ({
                   {show ? (
                     <>
                       <div className="flex flex-col border rounded-xl border-gray-700">
-                      <GameDetails />
+                        <GameDetails />
                         <div className="bg-gray-950 p-6 flex rounded-b-xl  flex-row h-max">
                           <div className="w-2/5">
-                            <div className="flex items-center m-4">
+                            <div className="flex items-center m-4 h-full">
                               <img
-                                className="justify-center w-64 rounded-xl"
+                                className="flex justify-center w-64 rounded-xl"
                                 src={img}
                                 alt="gggg"
                               />
@@ -98,7 +98,7 @@ const Games = ({
                                 Game Name
                               </h1>
                               <h6 className="mt-5 flex justify-start text-3xl font-abc text-white">
-                                Lorem Ipsum is simply dummy text.Lorem Ipsum is s.
+                                Lorem Ipsum is simply dummy text.Lorem Ipsum is.
                               </h6>
                             </div>
 
@@ -115,7 +115,7 @@ const Games = ({
                             </div>
                           </div>
                         </div>
-                        
+
                       </div>
                       {/* //ss */}
                       <div className="bg-gray-950 p-6 flex flex-col rounded-xl mt-5 h-max border border-gray-700">

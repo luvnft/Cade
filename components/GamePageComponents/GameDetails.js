@@ -52,19 +52,19 @@ const GameDetails = () => {
 
                 <div className='flex flex-row'>
                   <div className='justify-center p-4 flex flex-row w-1/4'>
-                  <h1 className='text-3xl font-abc text-white'>Ben</h1>
+                  <h1 className='text-3xl font-abc text-yellow-400'>Marche</h1>
                   {/* <BiSolidUpArrow className='text-4xl text-green-400 p-2'/> */}
                   </div>
                   <div className='p-4 flex flex-row justify-center w-1/4'>
-                  <h1 className='text-3xl font-abc text-white'>+10</h1>
+                  <h1 className='text-3xl font-abc text-green-400'>+10</h1>
                   <BiSolidUpArrow className='hidden lg:block text-4xl text-green-400 p-2'/>
                   </div>
                   <div className='p-4 flex flex-row justify-center w-1/4'>
-                  <h1 className='text-3xl font-abc text-white'>+1</h1>
+                  <h1 className='text-3xl font-abc text-green-400'>+1</h1>
                   <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
                   </div>
                   <div className='p-4 flex flex-row  justify-center w-1/4'>
-                  <h1 className='text-3xl font-abc text-white'>50+</h1>
+                  <h1 className='text-3xl font-abc text-green-400'>50+</h1>
                   <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
                   </div>
                 </div>
