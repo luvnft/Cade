@@ -3,11 +3,10 @@ import { PublicKey, LAMPORTS_PER_SOL, SystemProgram } from "@solana/web3.js";
 
 const resolveBet = async (program, seed, player) => {
 
-  let house = new PublicKey("64t8Q5PcFN6eeN8EvnhpsojUQdraFedMSj3XjpHv9jmH")
+  let house = new PublicKey("F4KkpqfJJTfqn8sZhCkaXA7pS2KikQcN1CLnP2UFGfV8")
   let vault = PublicKey.findProgramAddressSync([Buffer.from("vault"), house.toBuffer()], program.programId)[0];
   let bet = PublicKey.findProgramAddressSync([Buffer.from("bet"), vault.toBuffer(), seed.toArrayLike(Buffer,"le", 16)], program.programId)[0];
-  console.log(PublicKey.findProgramAddressSync([Buffer.from("bet"), vault.toBuffer(), seed.toArrayLike(Buffer,"le", 16)], program.programId)[0].toString())
-const result = program.methods.placeBet(seed, 50, new BN(LAMPORTS_PER_SOL/100))
+const result = program.methods.placeBet(seed, 15, new BN(LAMPORTS_PER_SOL/100))
     .accounts({
       player: player.publicKey,
       house: house,
