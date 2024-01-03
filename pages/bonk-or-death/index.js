@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
 import Head from "next/head";
-//import { useProgram } from "../../connector/bonk-or-death/useProgram";
+import { useProgram as diceProgram } from "../../connector/bonk-or-death/useProgram";
 import { useProgram } from "../../connector/cumulative_leaderboard.ts/useProgram";
 import { useRouter } from "next/router";
 import { Keypair, PublicKey } from "@solana/web3.js";
@@ -16,6 +16,7 @@ const ChooseUnits = (props) => {
   const wallet = useAnchorWallet();
   const { connection } = useConnection();
   const { program } = useProgram({ connection, wallet });
+  const { program: dice } = diceProgram({ connection, wallet });
 
   let seed = new BN(randomBytes(16));
   
@@ -25,15 +26,25 @@ const ChooseUnits = (props) => {
         <title>{`'Cade BONK or DEATH`}</title>
         <meta name="description" content="BONK or DEATH" />
       </Head>
-      <section className="text-gßray-600 body-font relative bg-[url('/kn.jpg')] min-h-screen">
+      <section className="body-font relative bg-[url('/kn.jpg')] min-h-screen">
         <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
         <h1 className="text-center w-full">DETH is temporary, Solana is inevitable</h1>
         </div>
         <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-          <div className=" w-full rounded-lg overflow-hidden ">
-            <div className="flex justify-center items-center min-h-[400]px">
-              {/*<button onClick={() => placeBet(program, seed, wallet)}>place</button>
-              <button onClick={() => resolveBet(program, seed, wallet)}>resolve</button>*/}
+          <div className=" w-full rounded-lg overflow-hidden">
+            <div className="flex justify-center items-center min-h-[400]px space-x-8">
+              {/*<button
+                onClick={() => {placeBet(dice, seed, wallet)}}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                place
+              </button>
+              <button
+                onClick={() => resolveBet(dice, seed, wallet)}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                resolve
+  </button>*/}
               <Dice
                 onRoll={(value) => {
                   (async()=>{ if (program) {
