@@ -1,6 +1,6 @@
 import React from 'react'
 import CadeInput from '../CadeInput/CadeInput';
-const CadeSocial = () => {
+const GameForum = () => {
     const Data = [
         {
             name: "Space Invaders",
@@ -42,7 +42,7 @@ const CadeSocial = () => {
                         <>
                             <div class="mt-2 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow p-8 dark:bg-gray-950 dark:border-gray-700">
                                 <div class="flex items-center justify-between mb-4">
-                                    <h5 class="font-abc text-4xl font-bold leading-none text-gray-900 dark:text-white">Cade Feed🤝</h5>
+                                    <h5 class="font-abc text-4xl font-bold leading-none text-gray-900 dark:text-white">GameForum</h5>
 
                                 </div>
                                 <div class="flow-root">
@@ -74,13 +74,8 @@ const CadeSocial = () => {
 
                                     </ul>
                                 </div>
-                            <a href="#" class="text-2xl font-abc mt-5 mb-5 inline-flex items-center text-yellow-300 hover:underline">
-                                View More
-                                <svg class="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
-                                </svg>
-                            </a>
-                            <CadeInput/>
+                               
+                                <CadeInput />
 
                             </div>
                         </>
@@ -91,4 +86,4 @@ const CadeSocial = () => {
     )
 }
 
-export default CadeSocial
+export default GameForum

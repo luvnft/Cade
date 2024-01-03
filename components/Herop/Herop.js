@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Coinflip from "../games/Coinflip";
 import { BiSolidUpArrow } from "react-icons/bi";
 import { useTicket } from "../../connector/ticket";
-import { DownwardBar } from "../GameBar/DownwardBar";
+import { DownwardBar } from "../GamePageComponents/DownwardBar";
 import { useUSDCPay } from "../../hooks/transfer";
 import { useRouter } from "next/router";
 import TowerDefence from "../games/TowerDefence";
@@ -21,6 +21,9 @@ import Games from "../micro/Games";
 import UpcomingGames from "./UpcomingGames";
 import Footer from "../Footer/Footer";
 import CadeStore from "./CadeStore";
+import { useConnection } from "@solana/wallet-adapter-react";
+import CadeCard from "./CadeCard";
+import CardFotter from "./CardFotter";
 const Herop = ({
   slug,
   description,
@@ -31,6 +34,7 @@ const Herop = ({
   thirdPlayer,
   timePlayed
 }) => {
+  const conn = useConnection()
   const { createTransaction } = useUSDCPay();
   const { publicKey } = useWallet()
   const { mintCade } = useTicket();
@@ -119,15 +123,27 @@ const Herop = ({
     }, 7000);
   };
 
+
   return (
     <>
-      <section className="text-gray-600 body-font relative">
+      <section className="text-gray-600 body-font relative bg-[url('/kn8.png')]">
         <div className="gap-x-5 container px-2 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="mt-2">
-            <GameSlider images={Data} />
+            <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5">
+              <div>
+                <GameSlider images={Data} />
+              </div>
+              <div className="bg-gray-950 p-4 rounded-2xl">
+
+                <CadeCard />
+                <CardFotter />
+              </div>
+            </div>
+
+            <div class="mt-2 border-t-2 border-gray-700"></div>
             <section className="text-gray-400 rounded-xl body-font mt-5 ">
               <div className="container px-5 py-5">
-                <div className="flex flex-wrap -m-5 lg:gap-10 ">
+                <div className="flex flex-wrap justify-center -m-5 lg:gap-10 ">
                   <Games />
                   <CadeStore />
                   <UpcomingGames />
@@ -135,7 +151,10 @@ const Herop = ({
               </div>
             </section>
           </div>
-          <div className="p-2 lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full">
+          <div className="p-8 lg:w-1/3 md:w-1/2 bg-gray-950 flex flex-col md:ml-auto w-full rounded-2xl mr-2">
+            <h1 className="flex justify-center text-5xl font-abc text-white ml-10 m-4 font-bold">
+              Cade Social🔥
+            </h1>
             <MiniLeaderBoard />
             <Badges />
             <CadeSocial />

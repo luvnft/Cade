@@ -6,7 +6,6 @@ import * as web3 from "@solana/web3.js";
 import { useRouter } from "next/router";
 import { useConnection } from "@solana/wallet-adapter-react";
 import { Board, useFourInLine } from "../../connector/useFourInLine";
-import { DownwardBar } from "../../components/GameBar/DownwardBar";
 import { BiSolidUpArrow } from "react-icons/bi";
 import Link from "next/link";
 

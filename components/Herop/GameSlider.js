@@ -26,7 +26,7 @@ export default function GameSlider({ images }) {
         onClick={handlePrevSlide}
         className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
       /> */}
-                <div className="border-2 border-gray-700 rounded-xl w-full flex overflow-hidden">
+                <div className="border-2 border-gray-700 rounded-xl w-full flex overflow-hidden bg-gray-950">
                     <Swipe
                         onSwipeLeft={handleNextSlide}
                         onSwipeRight={handlePrevSlide}
@@ -41,13 +41,12 @@ export default function GameSlider({ images }) {
                                             src="/carnew.jpg"
                                             alt="ff"
                                             layout="fill"
-                                            width={1000}
                                             objectFit="contain"
-                                            className="animate-fadeIn rounded-3xl p-3"
+                                            className="animate-fadeIn rounded-3xl p-3 w-100 h-100"
                                         />
                                         <div className="border-white mr-4 ml-4 p-2 rounded-2xl bg-gray-950">
                                             <div className="flex">
-                                                <h1 className="font-abc text-4xl text-white">{indexx.name}</h1>
+                                                <h1 className="font-abc font-bold text-5xl text-white">{indexx.name}</h1>
                                             </div>
                                             <span className="font-abc text-2xl text-gray-400">{truncateSublie(indexx.desc)}</span>
                                         </div>
@@ -70,8 +69,8 @@ export default function GameSlider({ images }) {
                             <div
                                 className={
                                     index === currentSlide
-                                        ? "h-4 w-4 bg-gray-700 rounded-full mx-2 mb-2 cursor-pointer"
-                                        : "h-4 w-4 bg-gray-300 rounded-full mx-2 mb-2 cursor-pointer"
+                                        ? "h-2 w-2 bg-gray-700 rounded-full mx-2 mb-2 cursor-pointer"
+                                        : "h-2 w-2 bg-gray-300 rounded-full mx-2 mb-2 cursor-pointer"
                                 }
                                 key={index}
                                 onClick={() => {
@@ -81,7 +80,7 @@ export default function GameSlider({ images }) {
                         );
                     })}
                 </div>
-                <div class="mt-2 border-t-2 border-gray-700"></div>
+               
 
             </div>
 
