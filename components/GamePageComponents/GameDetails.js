@@ -1,56 +1,75 @@
 import React from 'react'
 import { BiSolidUpArrow } from "react-icons/bi";
+import { FaXTwitter } from "react-icons/fa6";
 const GameDetails = () => {
     return (
         <>
-            <section className="text-gray-400 bg-gray-950 body-font rounded-xl border border-gray-700">
-                <div className="container px-5 py-10 mx-auto">
-                    <div className="flex flex-wrap -m-4 text-center">
-                        <div className="p-4 sm:w-1/4 w-1/2">
-                            <h2 className="font-abc title-font font-medium sm:text-4xl text-3xl text-white">
-                                {/* {slug} */}GameName
+         
+            <section class="text-gray-600 body-font rounded-t-xl bg-gray-950">
+                {/* <div class="container px-5 py-24 mx-auto">
+                    <div class="flex flex-wrap -m-4 text-center">
+                    <div className="p-4 sm:w-1/4 w-1/2">
+                            <h2 className="font-abc sm:text-4xl text-3xl text-white">
+                                Maker
                             </h2>
-                            <p className="text-white font-abc text-3xl">Game</p>
-                        </div>
-                        <div className="p-4 sm:w-1/4 w-1/2">
-                            <div className="flex">
-                                <a className="inline-flex items-center">
-                                    <BiSolidUpArrow className="text-green-500 text-3xl" />
-                                    <span className="flex-grow flex flex-col pl-3">
-                                        <span className="text-4xl font-abc text-white">
-                                            +10 XP
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div className="p-4 sm:w-1/4 w-1/2">
-                            <div className="flex">
-                                <a className="inline-flex items-center">
-                                    <img
-                                        src="/cade.png"
-                                        height={50}
-                                        width={50}
-                                        alt="cade"
-                                    />
-                                    <span className="flex-grow flex flex-col pl-3">
-                                        <span className="text-4xl font-abc text-white">
-                                            Cade +0.1
-                                        </span>
-                                    </span>
-                                </a>
-                            </div>
+                            <p className="text-white font-abc text-3xl">Ben</p>
                         </div>
                         <div className="p-4 sm:w-1/4 w-1/2">
                             <h2 className="font-abc sm:text-4xl text-3xl text-white">
-                                500+
+                                XP
                             </h2>
-                            <p className="text-white font-abc text-3xl">
-                                Times Played
-                            </p>
+                            <p className="text-white font-abc text-3xl">50+</p>
+                        </div>
+                        <div className="p-4 sm:w-1/4 w-1/2">
+                            <h2 className="font-abc sm:text-4xl text-3xl text-white">
+                                Cade
+                            </h2>
+                            <p className="text-white font-abc text-3xl">+0.1</p>
+                        </div>
+                        <div className="p-4 sm:w-1/4 w-1/2">
+                            <h2 className="font-abc sm:text-4xl text-3xl text-white">
+                                Played
+                            </h2>
+                            <p className="text-white font-abc text-3xl">500+</p>
                         </div>
                     </div>
+                </div> */}
+                <div className='flex flex-col'>
+                <div className='flex flex-row'>
+                <div className='flex justify-center p-4 w-1/4'>
+                <h1 className='text-3xl font-abc text-white'>Maker</h1>  
                 </div>
+                <div className='flex justify-center p-4 w-1/4'>
+                <h1 className='text-3xl font-abc text-white'>XP</h1>  
+                </div>
+                <div className='flex justify-center p-4 w-1/4'>
+                <h1 className='text-3xl font-abc text-white'>Tickets</h1>  
+                </div>
+                <div className='flex justify-center p-4 w-1/4'>
+                <h1 className='text-3xl font-abc text-white'>Play</h1>  
+                </div>
+                </div>
+
+                <div className='flex flex-row'>
+                  <div className='justify-center p-4 flex flex-row w-1/4'>
+                  <h1 className='text-3xl font-abc text-white'>Ben</h1>
+                  {/* <BiSolidUpArrow className='text-4xl text-green-400 p-2'/> */}
+                  </div>
+                  <div className='p-4 flex flex-row justify-center w-1/4'>
+                  <h1 className='text-3xl font-abc text-white'>+10</h1>
+                  <BiSolidUpArrow className='hidden lg:block text-4xl text-green-400 p-2'/>
+                  </div>
+                  <div className='p-4 flex flex-row justify-center w-1/4'>
+                  <h1 className='text-3xl font-abc text-white'>+1</h1>
+                  <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
+                  </div>
+                  <div className='p-4 flex flex-row  justify-center w-1/4'>
+                  <h1 className='text-3xl font-abc text-white'>50+</h1>
+                  <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
+                  </div>
+                </div>
+                </div>
+                <div class="border-t-2 border-gray-700"></div>
             </section>
         </>
     )

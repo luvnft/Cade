@@ -37,7 +37,7 @@ const PlayMore = () => {
     return (
         <>
             <div className="p-5 lg:w-1/3 md:w-1/2 bg-gray-950 rounded-2xl flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 border border-gray-700">
-                <h1 className="text-white font-abc text-5xl mt-5 ml-5">
+                <h1 className="text-white font-abc text-4xl font-bold mt-5 ml-5">
                     Play More
                 </h1>
                 <div className="container px-5 py-5 mx-auto">
@@ -56,7 +56,7 @@ const PlayMore = () => {
                                                     src={item.img}
                                                     alt="d"
                                                 />
-                                                <div className="flex flex-col justify-between p-4 leading-normal">
+                                                <div className="flex flex-col justify-between p-4 leading-normal overflow-x-auto overflow-y-hidden">
                                                     <h5 className="font-abc mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                                                         {item.name}
                                                     </h5>
