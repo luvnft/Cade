@@ -23,7 +23,7 @@ const CadeCard = () => {
                     <div className='w-4/5'>
                         <img class="w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/200" alt="Bordered avatar" />
                     </div>
-                    <div className='w-2/5'>
+                    <div className='flex justify-end w-2/5'>
                         <h1 className='text-white text-2xl font-abc'>{truncateWalletAddress(userpublicKey)}</h1>
                     </div>
                 </div>

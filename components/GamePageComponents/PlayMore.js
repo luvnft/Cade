@@ -60,7 +60,7 @@ const PlayMore = () => {
                                                     <h5 className="font-abc mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                                                         {item.name}
                                                     </h5>
-                                                  
+
                                                 </div>
                                             </div>
                                         </div>
