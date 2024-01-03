@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Coinflip from "../games/Coinflip";
 import { BiSolidUpArrow } from "react-icons/bi";
 import { useTicket } from "../../connector/ticket";
-import { DownwardBar } from "../GameBar/DownwardBar";
+import { DownwardBar } from "../GamePageComponents/DownwardBar";
 import { useUSDCPay } from "../../hooks/transfer";
 import { useRouter } from "next/router";
 import TowerDefence from "../games/TowerDefence";
@@ -126,7 +126,7 @@ const Herop = ({
 
   return (
     <>
-      <section className="text-gray-600 body-font relative">
+      <section className="text-gray-600 body-font relative ">
         <div className="gap-x-5 container px-2 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="mt-2">
             <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5">
