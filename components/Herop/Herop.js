@@ -126,14 +126,14 @@ const Herop = ({
 
   return (
     <>
-      <section className="text-gray-600 body-font relative ">
+      <section className="text-gray-600 body-font relative bg-[url('/kn8.png')]">
         <div className="gap-x-5 container px-2 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="mt-2">
             <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5">
               <div>
                 <GameSlider images={Data} />
               </div>
-              <div className="">
+              <div className="bg-gray-950 p-4 rounded-2xl">
 
                 <CadeCard />
                 <CardFotter />
@@ -151,7 +151,7 @@ const Herop = ({
               </div>
             </section>
           </div>
-          <div className="p-8 lg:w-1/3 md:w-1/2 bg-black flex flex-col md:ml-auto w-full">
+          <div className="p-8 lg:w-1/3 md:w-1/2 bg-gray-950 flex flex-col md:ml-auto w-full rounded-2xl mr-2">
             <h1 className="flex justify-center text-5xl font-abc text-white ml-10 m-4 font-bold">
               Cade Social🔥
             </h1>

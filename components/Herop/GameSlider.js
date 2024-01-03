@@ -26,7 +26,7 @@ export default function GameSlider({ images }) {
         onClick={handlePrevSlide}
         className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
       /> */}
-                <div className="border-2 border-gray-700 rounded-xl w-full flex overflow-hidden">
+                <div className="border-2 border-gray-700 rounded-xl w-full flex overflow-hidden bg-gray-950">
                     <Swipe
                         onSwipeLeft={handleNextSlide}
                         onSwipeRight={handlePrevSlide}

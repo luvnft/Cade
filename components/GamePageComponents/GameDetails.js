@@ -3,7 +3,7 @@ import { BiSolidUpArrow } from "react-icons/bi";
 const GameDetails = () => {
     return (
         <>
-            <section className="text-gray-400 bg-black body-font rounded-xl">
+            <section className="text-gray-400 bg-gray-950 body-font rounded-xl border border-gray-700">
                 <div className="container px-5 py-10 mx-auto">
                     <div className="flex flex-wrap -m-4 text-center">
                         <div className="p-4 sm:w-1/4 w-1/2">
