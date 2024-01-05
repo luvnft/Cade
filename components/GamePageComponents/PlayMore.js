@@ -36,7 +36,7 @@ const PlayMore = () => {
     ];
     return (
         <>
-            <div className="p-5 lg:w-1/3 md:w-1/2 bg-gray-950 rounded-2xl flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 border border-gray-700">
+            <div className="p-5  bg-gray-950 rounded-2xl flex flex-col w-max md:py-8 mt-8 md:mt-0 border border-gray-700">
                 <h1 className="text-white font-abc text-4xl font-bold mt-5 ml-5">
                     Play More
                 </h1>

@@ -21,12 +21,36 @@ export default function GameSlider({ images }) {
 
     return (
         <>
-            <div className="mt-2">
+            <div className="">
                 {/* <AiOutlineLeft
         onClick={handlePrevSlide}
         className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
       /> */}
-                <div className="border-2 border-gray-700 rounded-xl w-full flex overflow-hidden bg-gray-950">
+      <h1 className="flex justify-center text-5xl font-bold font-abc text-yellow-300">`Cade Machine</h1>
+                <div className="relative ">
+                    <div className='flex justify-center'>
+
+                        <img
+                            src="/a2.png"
+                            alt="Image 1"
+                            className="w-50 h-50 object-cover"
+                        />
+                    </div>
+                    <div className=''>
+                    {/* <img
+                            src="/display.png"
+                            alt="Image 3"
+                            className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-32 object-cover z-30"
+                        /> */}
+                        <img
+                            src="/sft.png"
+                            alt="Image 2"
+                            className="mt-12 lg:mt-20  rounded-2xl absolute top-1/3 left-1/2 transform -translate-x-1/2 w-24 h-24 lg:w-32 lg:h-32 -translate-y-1/2 object-cover z-20"
+                        />
+
+                    </div>
+                </div>
+                {/* <div className="border-2 border-gray-700 rounded-xl w-full flex overflow-hidden bg-gray-950">
                     <Swipe
                         onSwipeLeft={handleNextSlide}
                         onSwipeRight={handlePrevSlide}
@@ -57,7 +81,7 @@ export default function GameSlider({ images }) {
                             }
                         })}
                     </Swipe>
-                </div>
+                </div> */}
                 {/* <AiOutlineRight
         onClick={handleNextSlide}
         className="absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
@@ -80,7 +104,7 @@ export default function GameSlider({ images }) {
                         );
                     })}
                 </div>
-               
+
 
             </div>
 

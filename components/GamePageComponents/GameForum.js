@@ -16,20 +16,7 @@ const GameForum = () => {
             desc: "Ready to race against the best in this high-speed car game! ",
             no: "2"
         },
-        {
-            name: "FourInLine Game",
-            img: "/fourinline.png",
-            link: "/Games/FourInLine",
-            desc: "Ready to race against the best in this high-speed car game!",
-            no: "3"
-        },
-        {
-            name: "Car Race",
-            img: "/carnew.jpg",
-            link: "/Games/Carrace",
-            desc: "Ready to race against the best in this high-speed car game!",
-            no: "4"
-        },
+       
     ];
     return (
         <>
@@ -40,7 +27,7 @@ const GameForum = () => {
                 <div className="container  ">
                     <div class="flex justify-start mt-1 flex-wrap -m-5  sm:px-2 ">
                         <>
-                            <div class="mt-2 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow p-8 dark:bg-gray-950 dark:border-gray-700">
+                            <div class="mt-2 w-full max-w-lg bg-white border border-gray-200 rounded-lg shadow p-8 dark:bg-gray-950 dark:border-gray-700">
                                 <div class="flex items-center justify-between mb-4">
                                     <h5 class="font-abc text-4xl font-bold leading-none text-gray-900 dark:text-white">GameForum</h5>
 
