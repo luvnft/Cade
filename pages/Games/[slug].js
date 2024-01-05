@@ -163,7 +163,7 @@ const Games = ({
                                 className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
                                 onClick={() => playGameForLargeScreen()}
                               >
-                                Play NowL
+                                Play Now
                               </button>
 
                             </div>
@@ -172,7 +172,7 @@ const Games = ({
                                 className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
                                 onClick={() => playGameForMobile()}
                               >
-                                Play NowS
+                                Play Now
                               </button>
 
                             </div>
