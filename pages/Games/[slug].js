@@ -76,7 +76,7 @@ const Games = ({
 
   //choose the screen size 
   const handleResize = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 835) {
       setIsMobile(true)
       console.log("Mobile")
     } else {
@@ -112,7 +112,7 @@ const Games = ({
 
   return (
     <>
-      <section className="text-gray-600 body-font relative lg:px-32 px-5 py-10 mx-auto bg-black">
+      <section className="text-gray-600 body-font relative lg:px-32 px-5 py-10 mx-auto bg-gray-950">
 
         {isGameExist ? (
           <>
