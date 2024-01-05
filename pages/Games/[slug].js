@@ -79,6 +79,7 @@ const Games = ({
     if (window.innerWidth < 835) {
       setIsMobile(true)
       console.log("Mobile")
+      console.log(window.innerWidth)
     } else {
       setIsMobile(false)
       console.log("Not Mobile")
@@ -90,6 +91,17 @@ const Games = ({
     window.addEventListener("resize", handleResize)
   },[])
 
+  const playGameForMobile = () => {
+    setshow(!show)
+    setTimeout(()=>{
+      handleFullScreenClick()
+    },100)
+  }
+
+  const playGameForLargeScreen=() => {
+    setshow(!show)
+  }
+
   const initgame = () => {
     // createTransaction(
     //   publicKey,
@@ -98,12 +110,10 @@ const Games = ({
     // );
     setTimeout(() => {
       if (isMobile == false) {
-        console.log("FF")
         setshow(!show);
       } if (isMobile == true) {
         setshow(!show);
         setTimeout(() => {
-          console.log("DD")
           handleFullScreenClick()
         }, 200)
       }
@@ -148,12 +158,21 @@ const Games = ({
                           </div>
 
                           <div className="mt-5 h-2/5">
-                            <div className="flex flex-row">
+                          <div className="hidden lg:block xl:block">
                               <button
                                 className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
-                                onClick={() => initgame()}
+                                onClick={() => playGameForLargeScreen()}
                               >
-                                Play Now
+                                Play NowL
+                              </button>
+
+                            </div>
+                            <div className="block lg:hidden xl:hidden">
+                              <button
+                                className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
+                                onClick={() => playGameForMobile()}
+                              >
+                                Play NowS
                               </button>
 
                             </div>
