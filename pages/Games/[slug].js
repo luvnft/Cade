@@ -76,7 +76,7 @@ const Games = ({
 
   //choose the screen size 
   const handleResize = () => {
-    if (window.innerWidth < 720) {
+    if (window.innerWidth < 768) {
       setIsMobile(true)
       console.log("Mobile")
     } else {
@@ -88,7 +88,7 @@ const Games = ({
   // create an event listener
   useEffect(() => {
     window.addEventListener("resize", handleResize)
-  })
+  },[])
 
   const initgame = () => {
     // createTransaction(
@@ -97,22 +97,22 @@ const Games = ({
     //   5
     // );
     setTimeout(() => {
-      if (isMobile==false) {
+      if (isMobile == false) {
         console.log("FF")
         setshow(!show);
-      } if(isMobile == true) {
+      } if (isMobile == true) {
         setshow(!show);
         setTimeout(() => {
           console.log("DD")
           handleFullScreenClick()
-        },200)
+        }, 200)
       }
     });
   };
 
   return (
     <>
-      <section className="text-gray-600 body-font relative bg-[url('/kn8.png')] lg:px-32 px-5 py-10 mx-auto">
+      <section className="text-gray-600 body-font relative lg:px-32 px-5 py-10 mx-auto bg-black">
 
         {isGameExist ? (
           <>
@@ -137,13 +137,13 @@ const Games = ({
 
                           <div className="h-1/5">
                             <h1 className="flex justify-start text-4xl font-abc text-white">
-                              Lorem Ipsum 
+                              Lorem Ipsum
                             </h1>
                           </div>
-                          
+
                           <div className="mt-3 h-2/5 overflow-y-auto overflow-x-hidden">
                             <h6 className="flex justify-start text-2xl font-abc text-gray-500">
-                              Description : Lorem Ipsum is simply dummy 
+                              Description : Lorem Ipsum is simply dummy
                             </h6>
                           </div>
 
@@ -217,7 +217,7 @@ const Games = ({
                         <div className="">
                           <GameForum />
                         </div>
-                        <div className="md:mt-5">
+                        <div className="md:mt-5 flex justify-center">
                           <PlayMore />
                         </div>
                       </div>

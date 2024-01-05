@@ -33,14 +33,14 @@ const CadeSocial = () => {
     ];
     return (
         <>
-            <section class="text-gray-600 body-font mx-5">
+            <section class="text-gray-600 body-font ">
                 <div className="flex justify-start">
 
                 </div>
                 <div className="container  ">
-                    <div class="flex justify-start mt-1 flex-wrap -m-5  sm:px-2 ">
+                    <div class="flex justify-start mt-1 flex-wrap -m-5 p-5 sm:px-2 ">
                         <>
-                            <div class="mt-2 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow p-8 dark:bg-gray-950 dark:border-gray-700">
+                            <div class="mt-5 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-950 dark:border-gray-700">
                                 <div class="flex items-center justify-between mb-4">
                                     <h5 class="font-abc text-4xl font-bold leading-none text-gray-900 dark:text-white">Cade Feed🤝</h5>
 
