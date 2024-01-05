@@ -11,14 +11,28 @@ import resolveBet from "../../connector/bonk-or-death/resolve_bet";
 import { BN } from "@coral-xyz/anchor";
 import { randomBytes } from "crypto"
 import Dice from "../../components/Dice";
+import Leaderboard from "../../components/Dice/leaderboard";
+import ConfettiExplosion from 'react-confetti-explosion';
 
 const ChooseUnits = (props) => {
+  const [winning, setWinning] = useState(false);
+
   const wallet = useAnchorWallet();
   const { connection } = useConnection();
   const { program } = useProgram({ connection, wallet });
   const { program: dice } = diceProgram({ connection, wallet });
-
   let seed = new BN(randomBytes(16));
+
+  useEffect(() => {
+    if(winning){
+    const interval = setInterval(() => {
+      setWinning(false)
+    }, 3000);
+
+    //Clearing the interval
+    return () => clearInterval(interval);
+    }
+}, [winning]);
   
   return (
     <>
@@ -46,6 +60,7 @@ const ChooseUnits = (props) => {
                 resolve
   </button>*/}
               <Dice
+
                 onRoll={(value) => {
                   (async()=>{ if (program) {
                     try {
@@ -69,11 +84,16 @@ const ChooseUnits = (props) => {
                         console.log(e);
                       }
                   }})()
-                  console.log(value)
+                  if (value < 2) {
+                    setWinning(true);
+                  }
                 }}
-                faces={["bonk.jpg", "death.jpeg", "death.jpeg", "death.jpeg", "death.jpeg", "death.jpeg"]}
+                faces={["bonk.jpg", "bonk.jpeg", "death.jpeg", "death.jpeg", "death.jpeg", "death.jpeg"]}
               />
+
+             {winning ? <ConfettiExplosion /> : null}
             </div>
+            <Leaderboard/>
           </div>
         </div>
       </section>
