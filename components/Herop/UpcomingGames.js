@@ -33,9 +33,9 @@ const UpcomingGames = () => {
 
       <div>
         <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
-          {Data.map((item) => {
+          {Data.map((item, key) => {
             return (
-              <div className="relative ">
+              <div className="relative " key={key}>
                 <div className="flex justify-center">
                   <div className="relative h-28 w-72 mb-3 bg-transparent flex items-center justify-center">
                     {/* Rectangle */}
