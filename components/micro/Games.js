@@ -52,8 +52,8 @@ const Games = () => {
             return (
               <div className="flex flex-col justify-center" key={item.name}>
                 <div>
-                  <a
-                    href="#"
+                  <Link
+                    href={item.link}
                     className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-950 dark:hover:bg-gray-700"
                   >
                     <img
@@ -66,7 +66,7 @@ const Games = () => {
                         {item.name}
                       </h5>
                     </div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="hidden lg:block mt-5">
                   <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-950 dark:border-gray-700 dark:hover:bg-gray-700">
