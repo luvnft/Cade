@@ -184,8 +184,8 @@ const Games = ({
                             </h6>
                           </div>
 
-                          <div className="mt-5 h-2/5">
-                            <div className="hidden lg:block xl:block">
+                          <div className="h-2/5">
+                            <div className="mb-5 hidden lg:block xl:block">
                               <button
                                 className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
                                 onClick={() => playGameForLargeScreen()}
@@ -194,7 +194,7 @@ const Games = ({
                               </button>
 
                             </div>
-                            <div className="block lg:hidden xl:hidden">
+                            <div className="mb-5 block lg:hidden xl:hidden">
                               <button
                                 className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
                                 onClick={() => playGameForMobile()}
@@ -345,7 +345,7 @@ export async function getServerSideProps(context) {
     secondPlayer = "Bhindi";
     thirdPlayer = "Akkobaiii";
     timePlayed = "6+";
-    maker = "@marchedev"
+    maker = "@benzonak"
     isUnity = true
   }
   if (slug == "SkylineSkaddle") {
@@ -356,18 +356,18 @@ export async function getServerSideProps(context) {
     secondPlayer = "Bhindi";
     thirdPlayer = "Akkobaiii";
     timePlayed = "15+";
-    maker = "@marchedev"
+    maker = "@benzonak"
     isUnity = true
   }
   if (slug == "TileSurvive") {
     description = "A TileSurvive Game";
-    img = "/sample4.jpg";
+    img = "/tile.jpg";
     isGameExist = true;
     playerOne = "Niunjap#22";
     secondPlayer = "Bhindi";
     thirdPlayer = "Akkobaiii";
     timePlayed = "6+";
-    maker = "@marchedev"
+    maker = "@benzonak"
     isUnity = true
   }
 

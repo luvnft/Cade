@@ -36,34 +36,34 @@ const GameDetails = ({maker , timePlayed}) => {
                 </div> */}
                 <div className='flex flex-col'>
                 <div className='flex flex-row'>
-                <div className='flex justify-center p-4 w-1/4'>
+                <div className='flex justify-center p-4 w-2/5'>
                 <h1 className='text-3xl font-abc text-white'>Maker</h1>  
                 </div>
-                <div className='flex justify-center p-4 w-1/4'>
+                <div className='flex justify-center p-4 w-1/5'>
                 <h1 className='text-3xl font-abc text-white'>XP</h1>  
                 </div>
-                <div className='flex justify-center p-4 w-1/4'>
-                <h1 className='text-3xl font-abc text-white'>Tickets</h1>  
+                <div className='flex justify-center p-4 w-1/5'>
+                <h1 className='text-3xl font-abc text-white'>Ticket</h1>  
                 </div>
-                <div className='flex justify-center p-4 w-1/4'>
+                <div className='flex justify-center p-4 w-1/5'>
                 <h1 className='text-3xl font-abc text-white'>Play</h1>  
                 </div>
                 </div>
 
-                <div className='flex flex-row'>
-                  <div className='justify-center p-4 flex flex-row w-1/4'>
+                <div className='flex flex-row justify-center'>
+                  <div className='justify-center p-4  flex flex-row w-2/5 overflow-x-auto'>
                   <h1 className='text-3xl font-abc text-yellow-400'>{maker}</h1>
                   {/* <BiSolidUpArrow className='text-4xl text-green-400 p-2'/> */}
                   </div>
-                  <div className='p-4 flex flex-row justify-center w-1/4'>
+                  <div className='p-4 flex flex-row justify-center w-1/5'>
                   <h1 className='text-3xl font-abc text-green-400'>+10</h1>
                   <BiSolidUpArrow className='hidden lg:block text-4xl text-green-400 p-2'/>
                   </div>
-                  <div className='p-4 flex flex-row justify-center w-1/4'>
+                  <div className='p-4 flex flex-row justify-center w-1/5'>
                   <h1 className='text-3xl font-abc text-green-400'>+1</h1>
                   <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
                   </div>
-                  <div className='p-4 flex flex-row  justify-center w-1/4'>
+                  <div className='p-4 flex flex-row  justify-center w-1/5'>
                   <h1 className='text-3xl font-abc text-green-400'>{timePlayed}</h1>
                   <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
                   </div>

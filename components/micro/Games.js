@@ -34,7 +34,7 @@ const Games = () => {
     },
     {
       name: "Tile Survive",
-      img: "/tile2.jpg",
+      img: "/tile.jpg",
       link: "/Games/TileSurvive",
       desc: "Checkmate your way to victory in this classic chess game!",
       arcadeMachineImage : "/a5.png"
@@ -95,6 +95,8 @@ const Games = () => {
             </div>
             </div>
             </div>
+            <div>
+            <Link href={item.link}>
                     <div className='flex justify-center'>
 
                         <img
@@ -116,14 +118,18 @@ const Games = () => {
                         />
 
                     </div>
+                    </Link>
+                    </div>
                     <div className="hidden lg:block mt-5">
                   <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-950 dark:border-gray-700 dark:hover:bg-gray-700">
                     <p className="text-3xl font-abc text-gray-700 dark:text-gray-400">
                      {item.desc}
                     </p>
+                    <Link href={item.link}>
                     <button className="mt-5 px-3 text-4xl font-abc bg-transparent  hover:bg-blue-500 text-white font-semibold hover:text-white  border border-white hover:border-transparent rounded">
-                      <a href={item.link}>Play Now</a>
+                      Play Now
                     </button>
+                    </Link>
                   </div>
                 </div>
                 </div>
