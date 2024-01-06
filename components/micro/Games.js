@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const Games = () => {
   const Data = [
     {
@@ -9,34 +10,34 @@ const Games = () => {
       desc: "Games where the goal is to defend your base by obstructing enemy.",
     },
     {
+      name: "Mole Smash",
+      img: "/molegame.jpeg",
+      link: "/Games/MoleSmash",
+      desc: "Control a spaceship and defend Earth from waves of alien.",
+    },
+    {
+      name: "Skyline Skaddle",
+      img: "/skygame.jpg",
+      link: "/Games/SkylineSkaddle",
+      desc: "Ready to race against the best in this high-speed car game!",
+    },
+    {
       name: "Four In Line",
       img: "/fourinline.png",
       link: "/Games/FourInLine",
       desc: "A classic strategy game of aligning four tokens in a row.",
     },
     {
-      name: "Chess",
-      img: "/chess.avif",
-      link: "/Games/Chess",
+      name: "Tile Survive",
+      img: "/sample4.jpg",
+      link: "/Games/TileSurvive",
       desc: "Checkmate your way to victory in this classic chess game!",
-    },
-    {
-      name: "Space Invaders",
-      img: "/spacenew.webp",
-      link: "/Games/SpaceInvaders",
-      desc: "Control a spaceship and defend Earth from waves of alien.",
     },
     {
       name: "Coin Flip",
       img: "/coinflip.jpg",
       link: "/Games/CoinFlip",
       desc: "A retro coin flip game of digital twist on a classic 50/50 chance.",
-    },
-    {
-      name: "Car Race",
-      img: "/car.jpg",
-      link: "/Games/Carrace",
-      desc: "Ready to race against the best in this high-speed car game!",
     },
   ];
   return (
@@ -72,9 +73,13 @@ const Games = () => {
                     <p className="font-normal text-3xl font-abc text-gray-700 dark:text-gray-400">
                       {item.desc}
                     </p>
+                    
                     <button className="mt-5 px-3 text-4xl font-abc bg-transparent  hover:bg-blue-500 text-white font-semibold hover:text-white  border border-white hover:border-transparent rounded">
-                      <a href={item.link}>Play Now</a>
+                      <Link href={item.link}>
+                        PLay Now
+                      </Link>
                     </button>
+                    
                   </div>
                 </div>
               </div>

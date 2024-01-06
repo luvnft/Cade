@@ -11,14 +11,12 @@ const CadeCard = () => {
         if (publicKey) {
             setUserPublicKey(publicKey.toBase58().toString())
         }
-    
-    },[publicKey])
+
+    }, [publicKey])
 
     return (
         <>
-            <div class="border-2 border-gray-200 relative bg-center bg-[url('/ig.png')] object-center bg-no-repeat lg:h-1/2 p-6 mt-5 from-gray-300 to-purple-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-
+            <div class="max-h-60 border-2 border-gray-200 relative bg-center bg-[url('/ig.png')] object-center bg-no-repeat lg:h-1/2 p-6 mt-5 from-gray-300 to-purple-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div className='flex flex-row'>
                     <div className='w-4/5'>
                         <img class="w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/200" alt="Bordered avatar" />

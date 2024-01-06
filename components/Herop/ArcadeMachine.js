@@ -5,8 +5,9 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { truncateHeadline, truncateSublie } from "../../hooks/Truncate";
 import AfterHero from "./AfterHero";
 import CadeSocial from "./CadeSocial";
+import ArcadeBoard from "./ArcadeBoard";
 
-export default function GameSlider({ images }) {
+export default function ArcadeMachine({ images }) {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const handleNextSlide = () => {
@@ -26,18 +27,20 @@ export default function GameSlider({ images }) {
         onClick={handlePrevSlide}
         className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
       /> */}
-      <h1 className="flex justify-center text-5xl font-bold font-abc text-yellow-300">`Cade Machine</h1>
+                <div className="flex justify-center">
+                    <ArcadeBoard />
+                </div>
                 <div className="relative ">
                     <div className='flex justify-center'>
 
                         <img
-                            src="/a2.png"
+                            src="/a1.png"
                             alt="Image 1"
                             className="w-50 h-50 object-cover"
                         />
                     </div>
                     <div className=''>
-                    {/* <img
+                        {/* <img
                             src="/display.png"
                             alt="Image 3"
                             className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-32 object-cover z-30"

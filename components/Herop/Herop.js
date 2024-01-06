@@ -10,7 +10,7 @@ import FourInLine from "../games/FourInLine";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
 import Link from "next/link";
-import GameSlider from "./GameSlider";
+import ArcadeMachine from "./ArcadeMachine";
 import { data } from "browserslist";
 import CadeSocial from "./CadeSocial";
 import Badges from "./Badges";
@@ -129,12 +129,11 @@ const Herop = ({
       <section className="text-gray-600 body-font relative bg-gray-950">
         <div className="gap-x-5 container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="mt-2">
-            <div className="rounded-xl p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5 ">
+            <div className="rounded-xl p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5 bg-transparent">
               <div>
-                <GameSlider images={Data} />
+                <ArcadeMachine images={Data} />
               </div>
               <div className="bg-transparent p-4 rounded-2xl">
-
                 <CadeCard />
                 <CardFotter />
               </div>

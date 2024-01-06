@@ -1,7 +1,7 @@
 import React from 'react'
 import { BiSolidUpArrow } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
-const GameDetails = () => {
+const GameDetails = ({maker , timePlayed}) => {
     return (
         <>
          
@@ -52,7 +52,7 @@ const GameDetails = () => {
 
                 <div className='flex flex-row'>
                   <div className='justify-center p-4 flex flex-row w-1/4'>
-                  <h1 className='text-3xl font-abc text-yellow-400'>Marche</h1>
+                  <h1 className='text-3xl font-abc text-yellow-400'>{maker}</h1>
                   {/* <BiSolidUpArrow className='text-4xl text-green-400 p-2'/> */}
                   </div>
                   <div className='p-4 flex flex-row justify-center w-1/4'>
@@ -64,7 +64,7 @@ const GameDetails = () => {
                   <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
                   </div>
                   <div className='p-4 flex flex-row  justify-center w-1/4'>
-                  <h1 className='text-3xl font-abc text-green-400'>50+</h1>
+                  <h1 className='text-3xl font-abc text-green-400'>{timePlayed}</h1>
                   <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
                   </div>
                 </div>

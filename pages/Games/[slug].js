@@ -18,6 +18,9 @@ import CadeSocial from "../../components/Herop/CadeSocial";
 import GameLeaderBoard from "../../components/GamePageComponents/GameLeaderBoard";
 import GameForum from "../../components/GamePageComponents/GameForum";
 import UpcomingGames from "../../components/Herop/UpcomingGames";
+import MoleSmash from "../../components/games/MoleSmash";
+import TileSurive from "../../components/games/TileSurive";
+import SkylineSkaddle from "../../components/games/SkylineSkaddle";
 const Games = ({
   slug,
   description,
@@ -27,6 +30,8 @@ const Games = ({
   secondPlayer,
   thirdPlayer,
   timePlayed,
+  maker,
+  isUnity
 }) => {
   const [isMobile, setIsMobile] = useState(false)
   const { createTransaction } = useUSDCPay();
@@ -57,6 +62,28 @@ const Games = ({
         </div>
       );
     }
+    if (slug == "MoleSmash") {
+      return (
+        <div className="mt-10">
+          <MoleSmash />
+        </div>
+      );
+    }
+    if (slug == "TileSurvive") {
+      return (
+        <div className="mt-10">
+          <TileSurive />
+        </div>
+      );
+    }
+    if (slug == "SkylineSkaddle") {
+      return (
+        <div className="mt-10">
+          <SkylineSkaddle />
+        </div>
+      );
+    }
+
   };
 
   const handleFullScreenClick = () => {
@@ -89,40 +116,40 @@ const Games = ({
   // create an event listener
   useEffect(() => {
     window.addEventListener("resize", handleResize)
-  },[])
+  }, [])
 
   const playGameForMobile = () => {
     setshow(!show)
-    setTimeout(()=>{
+    setTimeout(() => {
       handleFullScreenClick()
-    },100)
+    }, 100)
   }
 
-  const playGameForLargeScreen=() => {
+  const playGameForLargeScreen = () => {
     setshow(!show)
   }
 
-  const initgame = () => {
-    // createTransaction(
-    //   publicKey,
-    //   new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-    //   5
-    // );
-    setTimeout(() => {
-      if (isMobile == false) {
-        setshow(!show);
-      } if (isMobile == true) {
-        setshow(!show);
-        setTimeout(() => {
-          handleFullScreenClick()
-        }, 200)
-      }
-    });
-  };
+  // const initgame = () => {
+  //   // createTransaction(
+  //   //   publicKey,
+  //   //   new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+  //   //   5
+  //   // );
+  //   setTimeout(() => {
+  //     if (isMobile == false) {
+  //       setshow(!show);
+  //     } if (isMobile == true) {
+  //       setshow(!show);
+  //       setTimeout(() => {
+  //         handleFullScreenClick()
+  //       }, 200)
+  //     }
+  //   });
+  // };
 
   return (
     <>
-      <section className="text-gray-600 body-font relative lg:px-32 px-5 py-10 mx-auto bg-gray-950">
+      <section className="text-gray-600 body-font relative lg:px-32 px-5 py-10 mx-auto bg-gray-900">
 
         {isGameExist ? (
           <>
@@ -130,7 +157,7 @@ const Games = ({
 
               <>
                 <div className="flex flex-col border rounded-xl border-gray-700">
-                  <GameDetails />
+                  <GameDetails maker={maker} timePlayed={timePlayed} />
                   {show ? (
                     <>
                       <div className="bg-gray-950 p-6 flex rounded-b-xl  flex-row h-max">
@@ -147,18 +174,18 @@ const Games = ({
 
                           <div className="h-1/5">
                             <h1 className="flex justify-start text-4xl font-abc text-white">
-                              Lorem Ipsum
+                              {slug}
                             </h1>
                           </div>
 
                           <div className="mt-3 h-2/5 overflow-y-auto overflow-x-hidden">
                             <h6 className="flex justify-start text-2xl font-abc text-gray-500">
-                              Description : Lorem Ipsum is simply dummy
+                              {description}
                             </h6>
                           </div>
 
                           <div className="mt-5 h-2/5">
-                          <div className="hidden lg:block xl:block">
+                            <div className="hidden lg:block xl:block">
                               <button
                                 className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
                                 onClick={() => playGameForLargeScreen()}
@@ -183,9 +210,7 @@ const Games = ({
                     </>
                   ) : (
                     <>
-                      <div className="flex justify-center bg-gray-950 p-6 rounded-b-xl flex-row h-1/2">
-                        <iframe id="myIframe" src="https://659823a39ed589203e611bf2--super-rabanadas-6274f7.netlify.app/" allowFullScreen='true' scrolling="no" style={{ width: '74%', height: '500px', overflow: "hidden", backgroundColor: "black", borderRadius: '10px' }} title="Iframe Example"></iframe>
-                      </div>
+                      {renderGame()}
                       {/* <button
                         className="block lg:hidden xl:hidden py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
                         onClick={handleFullScreenClick}
@@ -255,22 +280,15 @@ const Games = ({
                     /> */}
             </div>
           </>
+          //
         ) : (
-          <></>
-        )}
-
-        {isGameExist ? (
           <>
-            <div className="flex justify-center flex-row mt-5">
+            <div className="flex justify-center">
+              <h1 className="text-5xl font-abc text-white">Comming Soon</h1>
             </div>
           </>
-        ) : (
-          <div className="flex justify-center mt-16">
-            <h1 className="font-abc text-5xl text-white">
-              {slug} Game Coming Soon
-            </h1>
-          </div>
         )}
+
 
       </section>
     </>
@@ -281,10 +299,12 @@ export async function getServerSideProps(context) {
   let description = "";
   let img = "";
   let isGameExist = false;
+  let isUnity = false;
   let playerOne = "";
   let secondPlayer = "";
   let thirdPlayer = "";
   let timePlayed = "";
+  let maker = ""
   console.log(`slug is my ${slug}`);
   if (slug == "CoinFlip") {
     (description = "A coinflipgame"), (img = "/gamethu1.jpg");
@@ -292,7 +312,9 @@ export async function getServerSideProps(context) {
       (playerOne = "John"),
       (secondPlayer = "Ben"),
       (thirdPlayer = "Josh");
-    timePlayed = "200+";
+    timePlayed = "20+";
+    maker = "@marchedev"
+    isUnity = false
   }
   if (slug == "TowerDefence") {
     (description = "A TowerDefence Game"),
@@ -301,7 +323,9 @@ export async function getServerSideProps(context) {
       (playerOne = "TolyMan"),
       (secondPlayer = "OnlySolana"),
       (thirdPlayer = "Elliot");
-    timePlayed = "100+";
+    timePlayed = "10+";
+    maker = "@marchedev"
+    isUnity = false
   }
   if (slug == "FourInLine") {
     description = "A Four In Line Game";
@@ -310,10 +334,43 @@ export async function getServerSideProps(context) {
     playerOne = "Niunjap#22";
     secondPlayer = "Bhindi";
     thirdPlayer = "Akkobaiii";
-    timePlayed = "500+";
-  } else {
-    description = "No Such Game Found";
+    timePlayed = "5+";
+    maker = "@marchedev"
+    isUnity = false
+  } if (slug == "MoleSmash") {
+    description = "A MoleSmash Game";
+    img = "/molegame.jpeg";
+    isGameExist = true;
+    playerOne = "Niunjap#22";
+    secondPlayer = "Bhindi";
+    thirdPlayer = "Akkobaiii";
+    timePlayed = "6+";
+    maker = "@marchedev"
+    isUnity = true
   }
+  if (slug == "SkylineSkaddle") {
+    description = "A SkylineSkaddle Game";
+    img = "/skygame.jpg";
+    isGameExist = true;
+    playerOne = "Niunjap#22";
+    secondPlayer = "Bhindi";
+    thirdPlayer = "Akkobaiii";
+    timePlayed = "15+";
+    maker = "@marchedev"
+    isUnity = true
+  }
+  if (slug == "TileSurvive") {
+    description = "A TileSurvive Game";
+    img = "/sample4.jpg";
+    isGameExist = true;
+    playerOne = "Niunjap#22";
+    secondPlayer = "Bhindi";
+    thirdPlayer = "Akkobaiii";
+    timePlayed = "6+";
+    maker = "@marchedev"
+    isUnity = true
+  }
+
   return {
     props: {
       slug,
@@ -324,6 +381,8 @@ export async function getServerSideProps(context) {
       secondPlayer,
       thirdPlayer,
       timePlayed,
+      maker,
+      isUnity
     },
   };
 }
