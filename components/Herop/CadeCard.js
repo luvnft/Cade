@@ -16,6 +16,8 @@ const CadeCard = () => {
 
     return (
         <>
+        <div>
+        <h1 className='flex justify-center text-6xl text-orange-400 font-abc'>Arcade Card</h1>
             <div class="max-h-60 border-2 border-gray-200 relative bg-center bg-[url('/ig.png')] object-center bg-no-repeat lg:h-1/2 p-6 mt-5 from-gray-300 to-purple-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <div className='flex flex-row'>
                     <div className='w-4/5'>
@@ -33,6 +35,7 @@ const CadeCard = () => {
                         Ben zonak <span className='text-2xl'>(member since : 12/24)</span>
                     </h1>
                 </div>
+            </div>
             </div>
         </>
     )

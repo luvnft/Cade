@@ -7,7 +7,7 @@ const ArcadeBoard = () => {
                 {/* Rectangle */}
                 <div className="flex justify-center items-center absolute top-0 left-0 right-0 bottom-0">
                     <div className='h-max flex justify-center items-center'>
-                        <h1 className='text-5xl font-abc text-yellow-300'>Four In Line </h1>
+                        <h1 className='text-5xl font-abc text-yellow-300'>Game Of The Week </h1>
                     </div>
                 
 

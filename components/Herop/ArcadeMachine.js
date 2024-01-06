@@ -46,7 +46,7 @@ export default function ArcadeMachine({ images }) {
                             className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-32 object-cover z-30"
                         /> */}
                         <img
-                            src="/sft.png"
+                            src="/molegame.jpeg"
                             alt="Image 2"
                             className="mt-12 lg:mt-20  rounded-2xl absolute top-1/3 left-1/2 transform -translate-x-1/2 w-24 h-24 lg:w-32 lg:h-32 -translate-y-1/2 object-cover z-20"
                         />
