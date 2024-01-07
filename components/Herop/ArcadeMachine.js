@@ -6,6 +6,7 @@ import { truncateHeadline, truncateSublie } from "../../hooks/Truncate";
 import AfterHero from "./AfterHero";
 import CadeSocial from "./CadeSocial";
 import ArcadeBoard from "./ArcadeBoard";
+import Link from "next/link";
 
 export default function ArcadeMachine({ images }) {
 
@@ -16,16 +17,18 @@ export default function ArcadeMachine({ images }) {
                     <ArcadeBoard />
                 </div>
                 <div className="relative ">
-                    <div className='flex justify-center'>
+                    <Link href='/Games/SkylineSkaddle'>
+                        <div className='flex justify-center'>
 
-                        <img
-                            src="/gowmain.png"
-                            alt="Image 1"
-                            className="w-50 h-50 object-cover"
-                        />
-                    </div>
+                            <img
+                                src="/gowmain.png"
+                                alt="Image 1"
+                                className="w-50 h-50 object-cover"
+                            />
+                        </div>
+                    </Link>
                 </div>
-              
+
                 <div class="block lg:hidden mt-2 border-t-2 border-gray-700"></div>
             </div>
 
