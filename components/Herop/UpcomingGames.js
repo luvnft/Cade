@@ -4,24 +4,21 @@ const UpcomingGames = () => {
   const Data = [
     {
       name: "Space Invaders",
-      img: "/spacenew.webp",
+      img: "/ug1.png",
       link: "/Games/SpaceInvaders",
       desc: "Control a spaceship and defend Earth from waves of alien.",
-      arcadeMachineImage: "/a3.png"
     },
     {
       name: "Chess",
-      img: "/chess.avif",
+      img: "/ug2.png",
       link: "/Games/Chess",
       desc: "Checkmate your way to victory in this classic chess game!",
-      arcadeMachineImage: "/a6.png"
     },
     {
       name: "Car Race",
-      img: "/car.jpg",
+      img: "/ug3.png",
       link: "/Games/Carrace",
       desc: "Ready to race against the best in this high-speed car game!",
-      arcadeMachineImage: "/a1.png"
 
     },
   ];
@@ -75,23 +72,10 @@ const UpcomingGames = () => {
                 <div className='flex justify-center'>
 
                   <img
-                    src={item.arcadeMachineImage}
+                    src={item.img}
                     alt="Image 1"
                     className="w-50 h-50 object-cover"
                   />
-                </div>
-                <div className=''>
-                  {/* <img
-                            src="/display.png"
-                            alt="Image 3"
-                            className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-32 object-cover z-30"
-                        /> */}
-                  <img
-                    src={item.img}
-                    alt="Image 2"
-                    className="mt-32 lg:mt-12  rounded-2xl absolute top-1/3 left-1/2 transform -translate-x-1/2 w-24 h-24 lg:w-24 lg:h-24 -translate-y-1/2 object-cover z-20"
-                  />
-
                 </div>
                 </Link>
                 </div>

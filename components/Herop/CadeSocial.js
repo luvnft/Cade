@@ -43,7 +43,7 @@ const CadeSocial = () => {
                             <div class="mt-5 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-950 dark:border-gray-700">
                                 <div class="flex items-center justify-between mb-4">
                                     <h5 class="font-abc text-4xl font-bold leading-none text-gray-900 dark:text-white">Cade Feed🤝</h5>
-
+                                    <div className="rounded-full w-4 h-4 bg-green-500 animate-blink"></div>
                                 </div>
                                 <div class="flow-root">
                                     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">

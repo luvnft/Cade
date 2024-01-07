@@ -7,8 +7,9 @@ const MiniLeaderBoard = () => {
 
 
             <div class="mt-5 w-full max-w-md  bg-white border border-gray-200 rounded-lg shadow lg:p-12 p-5 dark:bg-gray-950 dark:border-gray-700">
-                <div class="flex items-center justify-between mb-4">
+                <div class="flex flex-row items-center justify-between mb-4">
                     <h5 class="text-4xl font-abc font-bold leading-none text-gray-900 dark:text-white">LeaderBoard</h5>
+                <div className="rounded-full w-4 h-4 bg-yellow-300 animate-blink"></div>
                    
                 </div>
                 <div class="flow-root">
