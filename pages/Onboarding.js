@@ -34,10 +34,10 @@ const Onboarding = () => {
               </div>
               <div class="flex flex-row justify-center">
                 <div>
-                  <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2"><Link href='/Cadefaucet'>Join Cade </Link></button>
+                  <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2"><Link href='/'>Join Cade </Link></button>
                 </div>
                 <div>
-                  <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2"><Link href='/Cadefaucet'>To Arcade</Link></button>
+                  <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2"><Link href='/'>To Arcade</Link></button>
                 </div>
               </div>
               <div class="mt-10 flex flex-row justify-center overflow-x-hidden ">
@@ -77,10 +77,10 @@ const Onboarding = () => {
                 </div>
                 <div class="flex flex-row">
                   <div>
-                    <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-10 py-3 me-2 mb-2"><Link href='/Cadefaucet'>Join Cade </Link></button>
+                    <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-10 py-3 me-2 mb-2"><Link href='/'>Join Cade </Link></button>
                   </div>
                   <div>
-                    <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-10 py-3  me-2 mb-2"><Link href='/Cadefaucet'>To Arcade</Link></button>
+                    <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-10 py-3  me-2 mb-2"><Link href='/'>To Arcade</Link></button>
                   </div>
                 </div>
               </div>
