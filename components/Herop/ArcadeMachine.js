@@ -21,9 +21,9 @@ export default function ArcadeMachine({ images }) {
                         <div className='flex justify-center'>
 
                             <img
-                                src="/gowmain.png"
+                                src="/gow.png"
                                 alt="Image 1"
-                                className="w-50 h-50 object-cover"
+                                className="w-96 h-96 object-cover"
                             />
                         </div>
                     </Link>

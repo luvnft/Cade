@@ -4,19 +4,19 @@ const UpcomingGames = () => {
   const Data = [
     {
       name: "Space Invaders",
-      img: "/ug1.png",
+      img: "/upca1.png",
       link: "/Games/SpaceInvaders",
       desc: "Control a spaceship and defend Earth from waves of alien.",
     },
     {
       name: "Chess",
-      img: "/ug2.png",
+      img: "/upca2.png",
       link: "/Games/Chess",
       desc: "Checkmate your way to victory in this classic chess game!",
     },
     {
       name: "Car Race",
-      img: "/ug3.png",
+      img: "/upca3.png",
       link: "/Games/Carrace",
       desc: "Ready to race against the best in this high-speed car game!",
 

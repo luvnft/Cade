@@ -3,31 +3,31 @@ import CadeInput from '../CadeInput/CadeInput';
 const CadeSocial = () => {
     const Data = [
         {
-            name: "Space Invaders",
+            name: "Emma Thompson",
             img: "fourinline.png",
             link: "/Games/SpaceInvaders",
-            desc: "ddReady to race against the best in this high-speed car game!",
+            desc: "Arcade nostalgia hits hard",
             no: "1"
         },
         {
-            name: "Chess",
+            name: "Jackson Davis",
             img: "/chess.avif",
             link: "/Games/Chess",
-            desc: "Ready to race against the best in this high-speed car game! ",
+            desc: "Arcade nights are the best",
             no: "2"
         },
         {
-            name: "FourInLine Game",
+            name: "Sophia Martinez",
             img: "/fourinline.png",
             link: "/Games/FourInLine",
-            desc: "Ready to race against the best in this high-speed car game!",
+            desc: "I finally beat the high score on that game",
             no: "3"
         },
         {
-            name: "Car Race",
+            name: "Liam Robinson",
             img: "/carnew.jpg",
             link: "/Games/Carrace",
-            desc: "Ready to race against the best in this high-speed car game!",
+            desc: "Hey, did you check out that new arcade game",
             no: "4"
         },
     ];
@@ -58,10 +58,10 @@ const CadeSocial = () => {
                                                             </div>
                                                             <div class="flex-1 min-w-0">
                                                                 <p class="font-abc text-2xl font-medium text-black truncate dark:text-white">
-                                                                    Username
+                                                                   {item.name}
                                                                 </p>
                                                                 <p class="font-abc text-lg text-gray-500 truncate dark:text-gray-400">
-                                                                    In publishing and graphic design, Lorem ipsum is a placeholder
+                                                                    {item.desc}
                                                                 </p>
 
                                                             </div>
