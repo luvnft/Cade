@@ -67,7 +67,7 @@ const Onboarding = () => {
         <div class="hidden lg:flex flex-col h-3/4 overflow-y-hidden mt-5">
 
           <div class="h-1/2 flex flex-row">
-            <div class="relative w-1/5 mb-5 flex justify-center">
+            <div class="relative w-1/5 mb-10 flex justify-center">
               <button type="button" class="cursor-default absolute top-1/2 left-1/2 font-abc text-4xl bg-black text-yellow-400 border-2 border-yellow-400 focus:outline-none rounded-lg px-12 py-4 me-2 mb-2"><span className='animate-blink'>Open <ImEnter className='mt-2' /></span></button>
             </div>
 
@@ -87,7 +87,7 @@ const Onboarding = () => {
               </div>
             </div>
 
-            <div class="relative w-1/5 mb-5 flex justify-center">
+            <div class="relative w-1/5 mb-10 flex justify-center">
               <button type="button" class="cursor-default absolute top-1/2 right-1/2 font-abc text-4xl bg-black text-yellow-400 border-2 border-yellow-400 focus:outline-none rounded-lg px-12 py-4 me-2 mb-2"><span className='animate-blink'>Open <ImEnter className='mt-2' /> </span></button>
             </div>
           </div>
