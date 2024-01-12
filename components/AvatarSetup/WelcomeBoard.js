@@ -3,7 +3,7 @@ import React from 'react'
 const WelcomeBoard = ({ message , width }) => {
     return (
         <>
-            <div className={`border-4 border-gray-300 relative h-36 w-${width} mb-3 bg-gray-950 flex items-center justify-center`}>
+            <div className={`border-4 border-gray-300 relative h-36 xl:h-44 w-${width} mb-3 bg-gray-950 flex items-center justify-center`}>
                 {/* Rectangle */}
                 <div className="flex justify-center items-center absolute top-0 left-0 right-0 bottom-0">
                     <div className='h-max flex justify-center items-center'>
