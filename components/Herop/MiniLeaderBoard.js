@@ -6,26 +6,26 @@ const MiniLeaderBoard = () => {
         <>
 
 
-            <div class="mt-5 w-full max-w-md  bg-white border border-gray-200 rounded-lg shadow lg:p-12 p-5 dark:bg-gray-950 dark:border-gray-700">
+            <div class="mt-5 w-full max-w-md border border-gray-600  shadow lg:p-12 p-5 rounded-lg bg-gray-950">
                 <div class="flex flex-row items-center justify-between mb-4">
-                    <h5 class="text-4xl font-abc font-bold leading-none text-gray-900 dark:text-white">LeaderBoard</h5>
+                    <h5 class="text-4xl font-abc font-bold leading-none text-white">LeaderBoard</h5>
                 <div className="rounded-full w-4 h-4 bg-yellow-300 animate-blink"></div>
                    
                 </div>
                 <div class="flow-root">
-                    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                    <ul role="list" class="divide-y divide-gray-700">
                         <li class="py-3 sm:py-4">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <img class="w-12 h-12 rounded-full" src="/gmedal.png" alt="Neil image" />
                                 </div>
                                 <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
+                                    <p class="text-2xl font-abc truncate text-white">
                                         Neil Sims
                                     </p>
                                     
                                 </div>
-                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-white">
                                     <BiSolidUpArrow className="text-green-400 text-2xl" />
                                     320 XP
                                 </div>
@@ -37,12 +37,12 @@ const MiniLeaderBoard = () => {
                                     <img class="w-12 h-12 rounded-full" src="/smedal.png" alt="Bonnie image" />
                                 </div>
                                 <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
+                                    <p class="text-2xl font-abc truncate text-white">
                                         Bonnie Green
                                     </p>
                                    
                                 </div>
-                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-white">
                                     <BiSolidUpArrow className="text-green-400 text-2xl" />
                                     280 XP
                                 </div>
@@ -54,12 +54,12 @@ const MiniLeaderBoard = () => {
                                     <img class="w-12 h-12 rounded-full" src="/bmedal.png" alt="Michael image" />
                                 </div>
                                 <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
+                                    <p class="text-2xl font-abc truncate text-white">
                                         Michael Gough
                                     </p>
                                     
                                 </div>
-                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-white">
                                     <BiSolidUpArrow className="text-green-400 text-2xl" />
                                     180 XP
                                 </div>
@@ -71,14 +71,14 @@ const MiniLeaderBoard = () => {
                             <div class="flex items-center mt-2">
                                 <FaUserCircle className='text-3xl text-yellow-300' />
                                 <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-2xl font-abc  text-gray-900 truncate dark:text-white">
+                                    <p class="text-2xl font-abc  truncate text-white">
                                         Thomes Lean
                                     </p>
-                                    <p class="font-abc text-xl text-gray-500 truncate dark:text-gray-400">
+                                    <p class="font-abc text-xl truncate text-gray-400">
                                       Position - 23
                                     </p>
                                 </div>
-                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div class="gap-2 flex flex-row items-center text-base font-semibold text-white">
                                     <BiSolidDownArrow className="text-red-400 text-2xl" />
                                     9 XP
                                 </div>

@@ -33,7 +33,7 @@ const CadeCardOnboarding = () => {
 
                 <div class="m-3 absolute bottom-0 left-0">
                     <h1 className='text-3xl font-abc text-white'>
-                        Ben zonak <span className='text-2xl'>(member since : 12/24)</span>
+                        - <span className='text-2xl'>-</span>
                     </h1>
                 </div>
                 {/* <button type="button" class="mt-5 font-abc text-4xl bg-gray-950 text-white border-2 border-green-400 focus:outline-none rounded-lg px-3 py-3 me-2 mb-2 "><Link href='/Cadefaucet'>Join Cade </Link></button> */}

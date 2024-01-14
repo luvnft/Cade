@@ -29,16 +29,19 @@ const UpcomingGames = () => {
       </h1>
 
       <div>
-        <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+        <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
           {Data.map((item, key) => {
             return (
               <div className="relative " key={key}>
                 <div className="flex justify-center">
-                  <div className="relative h-28 w-72 mb-3 bg-transparent flex items-center justify-center">
+                  <div className="relative h-32 w-72 mb-3 bg-transparent flex items-center justify-center">
                     {/* Rectangle */}
-                    <div className="mt-3 flex justify-center items-center absolute top-0 left-0 right-0 bottom-0">
-                      <div className='h-max flex justify-center items-center'>
-                        <h1 className='text-5xl font-abc text-orange-500'>{item.name} </h1>
+                    <div className="mt-3 flex flex-row justify-center items-center absolute top-0 left-0 right-0 bottom-0">
+                      <div className={`m-5 w-1/2 h-20 flex justify-center items-center bg-orange-500 rounded-lg`}>
+                        <h1 className='text-6xl font-abc text-yellow-300'>⌛</h1>
+                      </div>
+                      <div className='w-1/2 h-max flex justify-center items-center'>
+                        <h1 className='text-5xl font-abc text-yellow-300'>{item.name}</h1>
                       </div>
 
 
@@ -68,16 +71,16 @@ const UpcomingGames = () => {
                   </div>
                 </div>
                 <div>
-                <Link href={item.link}>
-                <div className='flex justify-center'>
+                  <Link href={item.link}>
+                    <div className='flex justify-center'>
 
-                  <img
-                    src={item.img}
-                    alt="Image 1"
-                    className="w-50 h-50 object-cover"
-                  />
-                </div>
-                </Link>
+                      <img
+                        src={item.img}
+                        alt="Image 1"
+                        className="w-50 h-50 object-cover"
+                      />
+                    </div>
+                  </Link>
                 </div>
                 <div className="hidden lg:block mt-5">
                   <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-950 dark:border-gray-700 dark:hover:bg-gray-700">
@@ -85,9 +88,9 @@ const UpcomingGames = () => {
                       {item.desc}
                     </p>
                     <Link href={item.link}>
-                    <button className="mt-5 px-3 text-4xl font-abc bg-transparent  hover:bg-blue-500 text-white font-semibold hover:text-white  border border-white hover:border-transparent rounded">
-                      Play Now
-                    </button>
+                      <button className="mt-5 px-3 text-4xl font-abc bg-transparent  hover:bg-blue-500 text-white font-semibold hover:text-white  border border-white hover:border-transparent rounded">
+                        Play Now
+                      </button>
                     </Link>
                   </div>
                 </div>

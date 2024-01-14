@@ -31,7 +31,8 @@ const Games = ({
   thirdPlayer,
   timePlayed,
   maker,
-  isUnity
+  isUnity,
+  arcadeMachineImage
 }) => {
   const [isMobile, setIsMobile] = useState(false)
   const { createTransaction } = useUSDCPay();
@@ -149,136 +150,114 @@ const Games = ({
 
   return (
     <>
-      <section className="text-gray-600 body-font relative lg:px-32 px-5 py-10 mx-auto bg-gray-900">
+      <section className="text-gray-600 body-font  lg:px-32 px-5 py-10 bg-gray-900">
 
         {isGameExist ? (
           <>
-            <div className="">
 
-              <>
-                <div className="flex flex-col border rounded-xl border-gray-700">
-                  <GameDetails maker={maker} timePlayed={timePlayed} />
-                  {show ? (
-                    <>
-                      <div className="bg-gray-950 p-6 flex rounded-b-xl  flex-row h-max">
-                        <div className="w-2/5">
-                          <div className="flex items-center m-4 h-full">
-                            <img
-                              className="flex justify-center w-64 rounded-xl"
-                              src={img}
-                              alt="gggg"
-                            />
-                          </div>
-                        </div>
-                        <div className="ml-3 w-3/5">
 
-                          <div className="h-1/5">
-                            <h1 className="flex justify-start text-4xl font-abc text-white">
-                              {slug}
-                            </h1>
-                          </div>
 
-                          <div className="mt-3 h-2/5 overflow-y-auto overflow-x-hidden">
-                            <h6 className="flex justify-start text-2xl font-abc text-gray-500">
-                              {description}
-                            </h6>
-                          </div>
+            <div className=" border rounded-xl border-gray-700">
+              <GameDetails maker={maker} timePlayed={timePlayed} />
+              {show ? (
+                <>
+                  <div className="flex flex-col items-center justify-center bg-gray-950 p-6 rounded-b-xl h-max">
 
-                          <div className="h-2/5">
-                            <div className="mb-5 hidden lg:block xl:block">
-                              <button
-                                className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
-                                onClick={() => playGameForLargeScreen()}
-                              >
-                                Play NowL
-                              </button>
+                    <img className="w-96 h-96" src={arcadeMachineImage} alt="" />
 
-                            </div>
-                            <div className="mb-5 block lg:hidden xl:hidden">
-                              <button
-                                className="py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
-                                onClick={() => playGameForMobile()}
-                              >
-                                Play NowS
-                              </button>
+                    <div className="flex justify-center mt-5 block lg:hidden xl:hidden">
+                      <button
+                        className="py-2 text-black flex justify-center font-abc bg-white border-0 px-6 focus:outline-none rounded text-4xl"
+                        onClick={() => playGameForMobile()}
+                      >
+                        Play NowS
+                      </button>
+                    </div>
 
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="flex justify-center mt-5 hidden lg:block xl:block">
+                      <button
+                        className="py-2 text-black font-abc bg-white border-0 px-6 focus:outline-none rounded text-4xl"
+                        onClick={() => playGameForLargeScreen()}
+                      >
+                        Play NowL
+                      </button>
+                    </div>
 
-                    </>
-                  ) : (
-                    <>
-                      {renderGame()}
-                      {/* <button
+                  </div>
+
+
+                </>
+              ) : (
+                <>
+                  {renderGame()}
+                  {/* <button
                         className="block lg:hidden xl:hidden py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
                         onClick={handleFullScreenClick}
                       >
                         Full Screen
                       </button> */}
-                    </>
-                  )}
+                </>
+              )}
 
+            </div>
+            {/* //ss */}
+            <div className="bg-gray-950 p-6 flex flex-col rounded-xl mt-5 h-max border border-gray-700">
+
+              <div className="flex flex-row">
+                <div className="flex justify-center w-3/4">
+                  <h1 className="text-3xl font-abc text-white">Game ScreenShots</h1>
                 </div>
-                {/* //ss */}
-                <div className="bg-gray-950 p-6 flex flex-col rounded-xl mt-5 h-max border border-gray-700">
+                <div className="flex justify-center w-1/4">
+                  <h1 className="text-3xl font-abc text-white ml-2">Played By</h1>
+                </div>
+              </div>
 
+              <div className="flex flex-row">
+                <div className="w-3/4 overflow-x-auto overflow-y-hidden">
                   <div className="flex flex-row">
-                    <div className="flex justify-center w-3/4">
-                      <h1 className="text-3xl font-abc text-white">Game ScreenShots</h1>
-                    </div>
-                    <div className="flex justify-center w-1/4">
-                      <h1 className="text-3xl font-abc text-white ml-2">Played By</h1>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-row">
-                    <div className="w-3/4 overflow-x-auto overflow-y-hidden">
-                      <div className="flex flex-row">
-                        <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/200" alt="" />
-                        <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/201" alt="" />
-                        <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/202" alt="" />
-                        <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/203" alt="" />
-                        <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/208" alt="" />
-                      </div>
-                    </div>
-                    <div className="ml-5 flex flex-row items-center w-1/4 overflow-x-auto overflow-y-hidden">
-                      <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/200" alt="Bordered avatar" />
-                      <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/201" alt="Bordered avatar" />
-                      <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/202" alt="Bordered avatar" />
-                    </div>
+                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/200" alt="" />
+                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/201" alt="" />
+                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/202" alt="" />
+                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/203" alt="" />
+                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/208" alt="" />
                   </div>
                 </div>
+                <div className="ml-5 flex flex-row items-center w-1/4 overflow-x-auto overflow-y-hidden">
+                  <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/200" alt="Bordered avatar" />
+                  <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/201" alt="Bordered avatar" />
+                  <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/202" alt="Bordered avatar" />
+                </div>
+              </div>
+            </div>
 
-                <section className="text-gray-600 body-font relative ">
-                  <div className="gap-x-5 container px-2 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-                    <div className="mt-2">
-                      <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
-                        <div>
-                          <GameLeaderBoard />
-                        </div>
-                        <div className="">
-                          <GameForum />
-                        </div>
-                        <div className="md:mt-5 flex justify-center">
-                          <PlayMore />
-                        </div>
-                      </div>
+            <section className="text-gray-600 body-font relative ">
+              <div className="gap-x-5 container px-2 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
+                <div className="mt-2">
+                  <div className="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
+                    <div>
+                      <GameLeaderBoard />
+                    </div>
+                    <div className="">
+                      <GameForum />
+                    </div>
+                    <div className="md:mt-5 flex justify-center">
+                      <PlayMore />
                     </div>
                   </div>
-                </section>
+                </div>
+              </div>
+            </section>
 
-              </>
 
-              {/* <DownwardBar
+
+            {/* <DownwardBar
                       slug={slug}
                       show={show}
                       playerOne={playerOne}
                       secondPlayer={secondPlayer}
                       thirdPlayer={thirdPlayer}
                     /> */}
-            </div>
+
           </>
           //
         ) : (
@@ -305,6 +284,7 @@ export async function getServerSideProps(context) {
   let thirdPlayer = "";
   let timePlayed = "";
   let maker = ""
+  let arcadeMachineImage = ""
   console.log(`slug is my ${slug}`);
   if (slug == "CoinFlip") {
     (description = "A coinflipgame"), (img = "/gamethu1.jpg");
@@ -315,6 +295,7 @@ export async function getServerSideProps(context) {
     timePlayed = "20+";
     maker = "@marchedev"
     isUnity = false
+    arcadeMachineImage = "/ca44.png"
   }
   if (slug == "TowerDefence") {
     (description = "A TowerDefence Game"),
@@ -326,6 +307,7 @@ export async function getServerSideProps(context) {
     timePlayed = "10+";
     maker = "@marchedev"
     isUnity = false
+    arcadeMachineImage = "/ca11.png"
   }
   if (slug == "FourInLine") {
     description = "A Four In Line Game";
@@ -337,6 +319,8 @@ export async function getServerSideProps(context) {
     timePlayed = "5+";
     maker = "@marchedev"
     isUnity = false
+    arcadeMachineImage = "/ca66.png"
+
   } if (slug == "MoleSmash") {
     description = "A MoleSmash Game";
     img = "/molegame.jpeg";
@@ -347,6 +331,7 @@ export async function getServerSideProps(context) {
     timePlayed = "6+";
     maker = "@benzonak"
     isUnity = true
+    arcadeMachineImage = "/ca22.png"
   }
   if (slug == "SkylineSkaddle") {
     description = "A SkylineSkaddle Game";
@@ -358,6 +343,7 @@ export async function getServerSideProps(context) {
     timePlayed = "15+";
     maker = "@benzonak"
     isUnity = true
+    arcadeMachineImage = "/ca33.png"
   }
   if (slug == "TileSurvive") {
     description = "A TileSurvive Game";
@@ -369,6 +355,7 @@ export async function getServerSideProps(context) {
     timePlayed = "6+";
     maker = "@benzonak"
     isUnity = true
+    arcadeMachineImage = "/ca55.png"
   }
 
   return {
@@ -382,7 +369,8 @@ export async function getServerSideProps(context) {
       thirdPlayer,
       timePlayed,
       maker,
-      isUnity
+      isUnity,
+      arcadeMachineImage
     },
   };
 }

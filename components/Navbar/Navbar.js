@@ -14,7 +14,7 @@ const Navbarm = () => {
   return (
     <>
 
-      <nav class="bg-white border-gray-200 dark:bg-gray-950">
+      <nav class="border-gray-200 dark:bg-transparent">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link href="/">
 

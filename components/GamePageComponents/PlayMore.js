@@ -63,7 +63,7 @@ const PlayMore = () => {
                                                 <div className="mt-10" key={item.name}>
                                                     <div
                                                         href="#"
-                                                        className="flex flex-col items-center bg-gray-950 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-950 dark:hover:bg-gray-700"
+                                                        className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-gray-700 bg-gray-950 hover:bg-gray-700"
                                                     >
                                                         <img
                                                             className="object-cover rounded-t-lg h-36 w-36 md:rounded-none md:rounded-l-lg"
@@ -71,7 +71,7 @@ const PlayMore = () => {
                                                             alt="d"
                                                         />
                                                         <div className="flex flex-col justify-between p-4 leading-normal overflow-x-auto overflow-y-hidden">
-                                                            <h5 className="font-abc mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                                            <h5 className="font-abc mb-2 text-3xl font-bold tracking-tight text-white">
                                                                 {item.name}
                                                             </h5>
 

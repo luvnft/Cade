@@ -126,7 +126,7 @@ const Herop = ({
 
   return (
     <>
-      <section className="text-gray-600 body-font relative bg-gray-950">
+      <section className="text-gray-600 body-font relative bg-gradient-to-bl from-blue-950 via-black to-black">
         <div className="gap-x-5 container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
           <div className="mt-2">
             <div className="rounded-xl p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5 bg-transparent">

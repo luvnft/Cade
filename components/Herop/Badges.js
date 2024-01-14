@@ -3,7 +3,7 @@ import React from 'react'
 const Badges = () => {
     return (
         <>
-            <div class="mt-5  p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-gray-700">
+            <div class="mt-5 border border-gray-600 p-6 rounded-lg shadow bg-gray-950">
 
                 <div class="flex flex-row items-center justify-between mb-4">
                     <h1 className='font-abc font-bold text-white text-4xl mt-5'>Your Trophies</h1>

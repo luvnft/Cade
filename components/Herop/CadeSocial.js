@@ -40,13 +40,13 @@ const CadeSocial = () => {
                 <div className="container  ">
                     <div class="flex justify-start mt-1 flex-wrap -m-5 p-5 sm:px-2 ">
                         <>
-                            <div class="mt-5 w-full max-w-md bg-white border border-gray-200 rounded-lg shadow p-6 dark:bg-gray-950 dark:border-gray-700">
+                            <div class="mt-5 w-full max-w-md rounded-lg shadow p-6 bg-gray-950 border border-gray-600">
                                 <div class="flex items-center justify-between mb-4">
-                                    <h5 class="font-abc text-4xl font-bold leading-none text-gray-900 dark:text-white">Cade Feed🤝</h5>
+                                    <h5 class="font-abc text-4xl font-bold leading-none text-white">Cade Feed🤝</h5>
                                     <div className="rounded-full w-4 h-4 bg-green-500 animate-blink"></div>
                                 </div>
                                 <div class="flow-root">
-                                    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                                    <ul role="list" class="divide-y divide-gray-700">
                                         {Data.map((item) => {
 
                                             return (
@@ -57,10 +57,10 @@ const CadeSocial = () => {
                                                                 <img class="w-12 h-12 rounded-full" src={`https://picsum.photos/20${item.no}`} alt="Neil image" />
                                                             </div>
                                                             <div class="flex-1 min-w-0">
-                                                                <p class="font-abc text-2xl font-medium text-black truncate dark:text-white">
+                                                                <p class="font-abc text-2xl font-medium truncate text-white">
                                                                    {item.name}
                                                                 </p>
-                                                                <p class="font-abc text-lg text-gray-500 truncate dark:text-gray-400">
+                                                                <p class="font-abc text-lg truncate text-gray-400">
                                                                     {item.desc}
                                                                 </p>
 
