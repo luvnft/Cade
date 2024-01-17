@@ -56,17 +56,17 @@ GameDetails = ({maker , timePlayed}) => {
                   <h1 className='text-3xl font-abc text-yellow-400'>{maker}</h1>
                   {/* <BiSolidUpArrow className='text-4xl text-green-400 p-2'/> */}
                   </div>
-                  <div className='animate-blink p-4 flex flex-row justify-center w-1/5'>
-                  <h1 className='text-3xl font-abc text-green-400'>+10</h1>
-                  <BiSolidUpArrow className='hidden lg:block text-4xl text-green-400 p-2'/>
+                  <div className='animate-none p-4 flex flex-row justify-center w-1/5'>
+                  <h1 className='text-3xl font-abc text-blue-400'>+10</h1>
+                  <BiSolidUpArrow className='hidden lg:block text-4xl text-blue-400 p-2'/>
                   </div>
-                  <div className='animate-blink p-4 flex flex-row justify-center w-1/5'>
-                  <h1 className='text-3xl font-abc text-green-400'>+1</h1>
-                  <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
+                  <div className='animate-none p-4 flex flex-row justify-center w-1/5'>
+                  <h1 className='text-3xl font-abc text-blue-400'>+1</h1>
+                  <BiSolidUpArrow className='text-4xl hidden lg:block text-blue-400 p-2'/>
                   </div>
-                  <div className='animate-blink p-4 flex flex-row  justify-center w-1/5'>
-                  <h1 className='text-3xl font-abc text-green-400'>{timePlayed}</h1>
-                  <BiSolidUpArrow className='text-4xl hidden lg:block text-green-400 p-2'/>
+                  <div className='animate-none p-4 flex flex-row  justify-center w-1/5'>
+                  <h1 className='text-3xl font-abc text-blue-400'>{timePlayed}</h1>
+                  <BiSolidUpArrow className='text-4xl hidden lg:block text-blue-400 p-2'/>
                   </div>
                 </div>
                 </div>

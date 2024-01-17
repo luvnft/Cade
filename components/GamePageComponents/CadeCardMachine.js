@@ -5,6 +5,7 @@ import { PublicKey } from "@solana/web3.js";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useUSDCPay } from "../../hooks/transfer";
 import { FaCheck } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 const CadeCardMachine = ({color}) => {
 
     useEffect(()=> {
@@ -43,11 +44,11 @@ const CadeCardMachine = ({color}) => {
                 <div id='first' style={{ height: "30rem" }} className={`z-10 border-4  border-gray-200 relative flex flex-col justify-center items-center bg-${color} w-80 rounded-xl`}>
                     <div className='w-72 h-80 bg-transparent rounded-xl'>
                         <div className='rounded-2xl absolute top-0 w-64 m-4 mt-5 h-7 bg-black'>
-                            <div className='flex flex-row justify-center gap-x-10 mt-2'>
-                                <div className={`rounded-full w-3 h-3 bg-${blinkingLightColor} animate-blink`}></div>
-                                <div className={`rounded-full w-3 h-3 bg-${blinkingLightColor} animate-blink`}></div>
-                                <div className={`rounded-full w-3 h-3 bg-${blinkingLightColor} animate-blink`}></div>
-                                <div className={`rounded-full w-3 h-3 bg-${blinkingLightColor} animate-blink`}></div>
+                            <div className='flex flex-row justify-center gap-x-10 mt-1.5'>
+                                <div className={`rounded-full w-4 h-4 bg-${blinkingLightColor} animate-blink`}></div>
+                                <div className={`rounded-full w-4 h-4 bg-${blinkingLightColor} animate-blink`}></div>
+                                <div className={`rounded-full w-4 h-4 bg-${blinkingLightColor} animate-blink`}></div>
+                                <div className={`rounded-full w-4 h-4 bg-${blinkingLightColor} animate-blink`}></div>
                             </div>
                         </div>
 
@@ -75,23 +76,25 @@ const CadeCardMachine = ({color}) => {
                             </div>
                         </div>
 
-                        <div style={{ height: "9rem" }} className='mt-5 border-4 border-gray-500 rounded-xl w-72 bg-slate-800 '>
-                            <div className='ml-6 flex  flex-row h-1/2'>
+                        <div style={{ height: "10rem" }} className='mt-5 border-4 border-gray-500 rounded-xl w-72 bg-slate-800 '>
+                            <div className=' flex  flex-row h-1/2'>
                                 <div className='flex  flex-col items-center w-1/2 cursor-pointer' onClick={insertCadeCard}>
-                                    <div className='border-4 border-gray-400 flex justify-center items-center w-14 h-10 mt-2 rounded-lg bg-gray-900 text-green-400'>
-                                        <h1 className='text-green-400 font-abc text-xl'><FaCheck className='text-green-400' /></h1>
+                                    <div className='border-4 border-gray-400 flex justify-center items-center w-14 h-20 mt-2 rounded-lg bg-gray-900 text-green-400'>
+                                        <h1 className='text-green-400 font-abc text-xl'><FaCheck className='text-green-400 text-2xl' /></h1>
                                     </div>
-                                    <h1 className='text-white font-abc text-xl'>Insert</h1>
+                                    <h1 className='text-white font-abc text-3xl'>Insert</h1>
                                 </div>
-                                <div className='flex flex-col  w-1/2 cursor-pointer' onClick={takeOutCard}>
-                                    <div className='border-4 border-gray-400 flex justify-center items-center w-14 h-10 mt-2 rounded-lg bg-gray-900'>❌</div>
-                                    <h1 className='text-white font-abc text-xl'>Decline</h1>
+                                <div className='flex flex-col items-center  w-1/2 cursor-pointer' onClick={takeOutCard}>
+                                    <div className='border-4 border-gray-400 flex justify-center items-center w-14 h-20 mt-2 rounded-lg bg-gray-900'>
+                                    <ImCross className='text-red-500 text-xl' />
+                                    </div>
+                                    <h1 className='text-white font-abc text-3xl'>Decline</h1>
                                 </div>
                             </div>
                             <div className='flex flex-row h-1/2 mt-3'>
                                 <div className='flex justify-center items-center ml-3 w-1/3'>
 
-                                    <h1 className='text-white font-abc text-lg'>or Pay with</h1>
+                                    <h1 className='text-white font-abc text-xl'>or Pay with</h1>
 
                                 </div>
                                 <div className='flex justify-center w-1/3 '>

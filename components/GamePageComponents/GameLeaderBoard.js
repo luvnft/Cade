@@ -6,7 +6,7 @@ const GameLeaderBoard = () => {
         <>
 
 
-            <div class="mt-3 w-full max-w-lg rounded-lg shadow lg:p-12 p-5 bg-gray-950 border-gray-700">
+            <div class="mt-3 w-full max-w-lg rounded-lg shadow lg:p-12 p-5 bg-gray-950 border border-gray-700">
                 <div class="flex items-center justify-between mb-4">
                     <h5 class="text-4xl font-abc font-bold leading-none text-white">GameLeaderBoard</h5>
 

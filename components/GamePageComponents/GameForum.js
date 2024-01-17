@@ -27,7 +27,7 @@ const GameForum = () => {
                 <div className="container  ">
                     <div class="flex justify-start mt-1 flex-wrap -m-5  sm:px-2 ">
                         <>
-                            <div class="mt-2 w-full max-w-lg rounded-lg shadow p-8 bg-gray-950 border-gray-700">
+                            <div class="mt-2 w-full max-w-lg rounded-lg shadow p-8 bg-gray-950 border border-gray-700">
                                 <div class="flex items-center justify-between mb-4">
                                     <h5 class="font-abc text-4xl font-bold leading-none text-white">GameForum</h5>
 

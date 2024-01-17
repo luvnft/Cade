@@ -63,7 +63,7 @@ const PlayMore = () => {
                                                 <div className="mt-10" key={item.name}>
                                                     <div
                                                         href="#"
-                                                        className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border-gray-700 bg-gray-950 hover:bg-gray-700"
+                                                        className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl border border-gray-700 bg-gray-950 hover:bg-gray-700"
                                                     >
                                                         <img
                                                             className="object-cover rounded-t-lg h-36 w-36 md:rounded-none md:rounded-l-lg"
