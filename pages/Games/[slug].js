@@ -21,6 +21,9 @@ import UpcomingGames from "../../components/Herop/UpcomingGames";
 import MoleSmash from "../../components/games/MoleSmash";
 import TileSurive from "../../components/games/TileSurive";
 import SkylineSkaddle from "../../components/games/SkylineSkaddle";
+import GamesAdditionalDetails from "../../components/GamePageComponents/GamesAdditionalDetails";
+import CadeMachineAndTicketClaim from "../../components/GamePageComponents/CadeMachineAndTicketClaim";
+import CadeCardMachine from "../../components/GamePageComponents/CadeCardMachine";
 const Games = ({
   slug,
   description,
@@ -32,7 +35,8 @@ const Games = ({
   timePlayed,
   maker,
   isUnity,
-  arcadeMachineImage
+  arcadeMachineImage,
+  color
 }) => {
   const [isMobile, setIsMobile] = useState(false)
   const { createTransaction } = useUSDCPay();
@@ -154,36 +158,52 @@ const Games = ({
 
         {isGameExist ? (
           <>
-
-
-
-            <div className=" border rounded-xl border-gray-700">
+          <div style={{ height: "1400px" }} className="block lg:hidden border rounded-xl border-gray-700 overflow-y-hidden">
               <GameDetails maker={maker} timePlayed={timePlayed} />
               {show ? (
                 <>
-                  <div className="flex flex-col items-center justify-center bg-gray-950 p-6 rounded-b-xl h-max">
+                  <div className="rounded-xl grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5 bg-transparent">
 
-                    <img className="w-96 h-96" src={arcadeMachineImage} alt="" />
 
-                    <div className="flex justify-center mt-5 block lg:hidden xl:hidden">
-                      <button
-                        className="py-2 text-black flex justify-center font-abc bg-white border-0 px-6 focus:outline-none rounded text-4xl"
-                        onClick={() => playGameForMobile()}
-                      >
-                        Play NowS
-                      </button>
+                    <div className="flex flex-col items-center justify-center bg-transparent  rounded-b-xl h-max mt-20">
+
+                      <img className="w-96 h-96" src={arcadeMachineImage} alt="" />
+
+                      <div className="flex justify-center mt-5 block lg:hidden xl:hidden">
+                        <button
+                          className="py-2 text-black flex justify-center font-abc bg-white border-0 px-6 focus:outline-none rounded text-4xl"
+                          onClick={() => playGameForMobile()}
+                        >
+                          Play NowS
+                        </button>
+                      </div>
+
+                      <div className="flex justify-center mt-5 hidden lg:block xl:block">
+                        <button
+                          className="py-2 text-black font-abc bg-white border-0 px-6 focus:outline-none rounded text-4xl"
+                          onClick={() => playGameForLargeScreen()}
+                        >
+                          Play NowL
+                        </button>
+                      </div>
+
                     </div>
 
-                    <div className="flex justify-center mt-5 hidden lg:block xl:block">
-                      <button
-                        className="py-2 text-black font-abc bg-white border-0 px-6 focus:outline-none rounded text-4xl"
-                        onClick={() => playGameForLargeScreen()}
-                      >
-                        Play NowL
-                      </button>
+                    <div className="mt-5 flex justify-center items-center overflow-x-auto">
+                      <div>
+                        <div className='flex justify-center '>
+                          <h1 className="text-3xl font-abc text-white">Insert Your Card to Play</h1>
+                        </div>
+                        <div className='mt-5 flex justify-center'>
+                          <CadeCardMachine color={color} />
+                        </div>
+                      </div>
                     </div>
+
+
 
                   </div>
+
 
 
                 </>
@@ -200,36 +220,70 @@ const Games = ({
               )}
 
             </div>
-            {/* //ss */}
-            <div className="bg-gray-950 p-6 flex flex-col rounded-xl mt-5 h-max border border-gray-700">
+            <div style={{ height: "800px" }} className="hidden lg:block border rounded-xl border-gray-700 overflow-y-hidden">
+              <GameDetails maker={maker} timePlayed={timePlayed} />
+              {show ? (
+                <>
+                  <div className="rounded-xl grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-5 bg-transparent">
 
-              <div className="flex flex-row">
-                <div className="flex justify-center w-3/4">
-                  <h1 className="text-3xl font-abc text-white">Game ScreenShots</h1>
-                </div>
-                <div className="flex justify-center w-1/4">
-                  <h1 className="text-3xl font-abc text-white ml-2">Played By</h1>
-                </div>
-              </div>
 
-              <div className="flex flex-row">
-                <div className="w-3/4 overflow-x-auto overflow-y-hidden">
-                  <div className="flex flex-row">
-                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/200" alt="" />
-                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/201" alt="" />
-                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/202" alt="" />
-                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/203" alt="" />
-                    <img className="w-32 h-16 m-4 border-4 border-gray-200" src="https://picsum.photos/208" alt="" />
+                    <div className="flex flex-col items-center justify-center bg-transparent p-6 rounded-b-xl h-max mt-20">
+
+                      <img className="w-96 h-96" src={arcadeMachineImage} alt="" />
+
+                      <div className="flex justify-center mt-5 block lg:hidden xl:hidden">
+                        <button
+                          className="py-2 text-black flex justify-center font-abc bg-white border-0 px-6 focus:outline-none rounded text-4xl"
+                          onClick={() => playGameForMobile()}
+                        >
+                          Play NowS
+                        </button>
+                      </div>
+
+                      <div className="flex justify-center mt-5 hidden lg:block xl:block">
+                        <button
+                          className="py-2 text-black font-abc bg-white border-0 px-6 focus:outline-none rounded text-4xl"
+                          onClick={() => playGameForLargeScreen()}
+                        >
+                          Play NowL
+                        </button>
+                      </div>
+
+                    </div>
+
+                    <div className="mt-5 flex justify-center items-center overflow-x-auto">
+                      <div>
+                        <div className='flex justify-center '>
+                          <h1 className="text-3xl font-abc text-white">Insert Your Card to Play</h1>
+                        </div>
+                        <div className='mt-5 flex justify-center'>
+                          <CadeCardMachine color={color} />
+                        </div>
+                      </div>
+                    </div>
+
+
+
                   </div>
-                </div>
-                <div className="ml-5 flex flex-row items-center w-1/4 overflow-x-auto overflow-y-hidden">
-                  <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/200" alt="Bordered avatar" />
-                  <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/201" alt="Bordered avatar" />
-                  <img class="flex ml-2 justify-center w-12 h-12 p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500" src="https://picsum.photos/202" alt="Bordered avatar" />
-                </div>
-              </div>
-            </div>
 
+
+
+                </>
+              ) : (
+                <>
+                  {renderGame()}
+                  {/* <button
+                        className="block lg:hidden xl:hidden py-2 text-black font-abc bg-white border-0  px-6 focus:outline-none rounded text-4xl"
+                        onClick={handleFullScreenClick}
+                      >
+                        Full Screen
+                      </button> */}
+                </>
+              )}
+
+            </div>
+            {/* <CadeMachineAndTicketClaim /> */}
+            <GamesAdditionalDetails />
             <section className="text-gray-600 body-font relative ">
               <div className="gap-x-5 container px-2 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
                 <div className="mt-2">
@@ -285,7 +339,9 @@ export async function getServerSideProps(context) {
   let timePlayed = "";
   let maker = ""
   let arcadeMachineImage = ""
-  console.log(`slug is my ${slug}`);
+  let color = ""
+  console.log(`slug is my ${maker}`);
+ 
   if (slug == "CoinFlip") {
     (description = "A coinflipgame"), (img = "/gamethu1.jpg");
     (isGameExist = true),
@@ -296,6 +352,7 @@ export async function getServerSideProps(context) {
     maker = "@marchedev"
     isUnity = false
     arcadeMachineImage = "/ca44.png"
+    color = "orange-400"
   }
   if (slug == "TowerDefence") {
     (description = "A TowerDefence Game"),
@@ -308,6 +365,7 @@ export async function getServerSideProps(context) {
     maker = "@marchedev"
     isUnity = false
     arcadeMachineImage = "/ca11.png"
+    color = "red-500"
   }
   if (slug == "FourInLine") {
     description = "A Four In Line Game";
@@ -320,6 +378,7 @@ export async function getServerSideProps(context) {
     maker = "@marchedev"
     isUnity = false
     arcadeMachineImage = "/ca66.png"
+    color = "blue-500"
 
   } if (slug == "MoleSmash") {
     description = "A MoleSmash Game";
@@ -332,6 +391,7 @@ export async function getServerSideProps(context) {
     maker = "@benzonak"
     isUnity = true
     arcadeMachineImage = "/ca22.png"
+    color = "yellow-400"
   }
   if (slug == "SkylineSkaddle") {
     description = "A SkylineSkaddle Game";
@@ -344,6 +404,7 @@ export async function getServerSideProps(context) {
     maker = "@benzonak"
     isUnity = true
     arcadeMachineImage = "/ca33.png"
+    color = "green-400"
   }
   if (slug == "TileSurvive") {
     description = "A TileSurvive Game";
@@ -356,6 +417,7 @@ export async function getServerSideProps(context) {
     maker = "@benzonak"
     isUnity = true
     arcadeMachineImage = "/ca55.png"
+    color = "green-400"
   }
 
   return {
@@ -370,7 +432,8 @@ export async function getServerSideProps(context) {
       timePlayed,
       maker,
       isUnity,
-      arcadeMachineImage
+      arcadeMachineImage,
+      color, 
     },
   };
 }
