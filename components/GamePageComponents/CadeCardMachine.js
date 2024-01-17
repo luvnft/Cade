@@ -23,11 +23,11 @@ const CadeCardMachine = ({color}) => {
             setHeading("In Progress (-5CDX)")
         },200)
         setTimeout(() => {
-            createTransaction(
-                publicKey,
-                new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
-                5
-            );
+            // createTransaction(
+            //     publicKey,
+            //     new PublicKey("2JSg1MdNqRg9z4RP7yiE2NV86fux2BNtF3pSDjhoi767"),
+            //     5
+            // );
         }, 300)
     }
 
